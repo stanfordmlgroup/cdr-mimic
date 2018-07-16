@@ -1,0 +1,7 @@
+PAD_ID = 0
+UNK_ID = 1
+NUM_RESERVED_IDS = 2
+
+O_IN_BIO = 0
+B_IN_BIO = 1
+I_IN_BIO = 2

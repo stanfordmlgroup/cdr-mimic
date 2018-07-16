@@ -1,0 +1,1 @@
+from .squid import SQuID
