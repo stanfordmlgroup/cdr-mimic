@@ -1,4 +1,4 @@
-#!/deep/u/sharonz/cdr_scripts/venv/bin/python
+#!/deep/u/sharonz/cdr_mimic/data_analysis/venv/bin/python
 
 import sys
 import getopt

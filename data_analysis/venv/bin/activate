@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/deep/u/sharonz/cdr_scripts/venv"
+VIRTUAL_ENV="/deep/u/sharonz/cdr_mimic/data_analysis/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

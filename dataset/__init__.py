@@ -1,1 +1,1 @@
-from .squid import SQuID
+from .mimic import MimicDataset

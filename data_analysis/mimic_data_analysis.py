@@ -14,6 +14,19 @@ diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 icustays_table_path = '/deep/group/med/mimic-iii/ICUSTAYS.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
 
+
+def dataset_datetime_range():
+    admissions_df = pd.read_csv(admissions_table_path)
+    # print(list(admissions_df.columns.values))
+    # print(admissions_df.head())
+    # print(admissions_df.head().sort_values(['ADMITTIME'], ascending=True))
+    admissions_df['ADMITTIME'] = pd.to_datetime(admissions_df['ADMITTIME'])
+    print(admissions_df['ADMITTIME'].max(), admissions_df['ADMITTIME'].min(), 
+        'range of dates:', admissions_df['ADMITTIME'].max() - admissions_df['ADMITTIME'].min())
+    # for index, row in admissions_df.iterrows():
+    #     print(row['ADMITTIME'])
+    # print(admissions_df[0], admissions_df[-1])
+
 def chart_events_stats():
     start_time = time.time()
     df = pd.read_csv(chart_events_table_path)
@@ -149,7 +162,7 @@ def sparse_loadtxt(file):
 
 def main():
     # record_frequency_stats()
-    chart_events_stats()
+    dataset_datetime_range()
 
 if __name__ == "__main__":
     main()
