@@ -1,4 +1,4 @@
-name: pytorch_nn
+name: cdr
 channels:
   - pytorch
   - conda-forge

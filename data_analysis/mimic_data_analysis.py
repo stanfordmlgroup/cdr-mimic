@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 
 import csv
 import time
+from datetime import timedelta
 
 import pandas as pd
 
@@ -13,6 +14,39 @@ chart_events_table_path = '/deep/group/med/mimic-iii/CHARTEVENTS.csv'
 diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 icustays_table_path = '/deep/group/med/mimic-iii/ICUSTAYS.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
+
+def get_dods():
+    patients_df = pd.read_csv(patients_table_path)
+    dobs = np.array(patients_df['DOB']).astype('datetime64[Y]')
+    print('dobs\n', dobs[:5])
+   
+    MAX_AGE_YEARS = 120
+    max_ages = [np.timedelta64(MAX_AGE_YEARS, 'Y')] * len(dobs)
+    print(max_ages[:5])
+
+    max_dods = dobs + max_ages
+    max_dods = max_dods.astype(str).astype(int)
+    print('maxes\n', max_dods[:5])
+    print(max_dods.dtype)
+    # print(max_dods.dtype)
+    # print(patients_df['DOD'].type)
+    print('init dods\n', patients_df['DOD'].head())
+    max_dods_dict = {k: v for k, v in enumerate(max_dods)}
+    dods = patients_df['DOD'].astype('int32', errors='ignore').fillna(max_dods_dict)
+    print('final dods\n', dods.head())
+
+def admission(n_days_since_admission):
+    # for each hospital admission, get datetime of 2nd day and use that for ICD diagnosis
+    # store per admission (todo: aggregate per patient)
+    admissions_df = pd.read_csv(admissions_table_path)
+    admissions_df['ADMITTIME'] = pd.to_datetime(admissions_df['ADMITTIME'])
+
+    admissions_df['NDAYSADMIT'] = admissions_df['ADMITTIME'] + timedelta(days=n_days_since_admission)
+
+    diagnoses_df = pd.read_csv(diagnoses_icd_table_path)
+    joined_df = pd.merge(admissions_df, diagnoses_df, on='HADM_ID', how='outer', suffixes=('_admissions', '_diagnoses'))
+    joined_df = joined_df.groupby(['HADM_ID'])
+    print(joined_df.head())
 
 
 def dataset_datetime_range():
@@ -162,7 +196,8 @@ def sparse_loadtxt(file):
 
 def main():
     # record_frequency_stats()
-    dataset_datetime_range()
+    # admission(2)
+    get_dods()
 
 if __name__ == "__main__":
     main()
