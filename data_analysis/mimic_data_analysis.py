@@ -15,25 +15,42 @@ diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 icustays_table_path = '/deep/group/med/mimic-iii/ICUSTAYS.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
 
+def get_icd():
+    icd_df = pd.read_csv(diagnoses_icd_table_path)
+    print(icd_df.sort_values("HADM_ID").head())
+    icd_df_grouped_admissions = icd_df.groupby(["HADM_ID", "SUBJECT_ID"])["ICD9_CODE"].apply(list)
+    icd_df_grouped_subjects = icd_df.groupby(["SUBJECT_ID"])["ICD9_CODE"].apply(list)
+    print(icd_df_grouped_admissions.head())
+    print(icd_df_grouped_subjects.head(20))
+    icd_df_grouped_subjects.to_csv("icd_subject_source.csv", encoding="utf-8", index=False)
+
 def get_dods():
     patients_df = pd.read_csv(patients_table_path)
-    dobs = np.array(patients_df['DOB']).astype('datetime64[Y]')
+    patients_df = patients_df.sort_values("SUBJECT_ID")
+    subject_ids = patients_df["SUBJECT_ID"]
+    dobs = np.array(patients_df['DOB']).astype('datetime64[D]')
     print('dobs\n', dobs[:5])
    
-    MAX_AGE_YEARS = 120
-    max_ages = [np.timedelta64(MAX_AGE_YEARS, 'Y')] * len(dobs)
+    MAX_AGE_YEARS = 120*365
+    max_ages = [np.timedelta64(MAX_AGE_YEARS, 'D')] * len(dobs)
     print(max_ages[:5])
 
     max_dods = dobs + max_ages
-    max_dods = max_dods.astype(str).astype(int)
+    # max_dods = max_dods.astype(str).astype(int)
+    max_dods = [time.strftime(x) for x in max_dods.astype(str)]
+
     print('maxes\n', max_dods[:5])
-    print(max_dods.dtype)
     # print(max_dods.dtype)
-    # print(patients_df['DOD'].type)
+    # print(max_dods.dtype)
+    # print(patients_df['DOD'].dtypes)
     print('init dods\n', patients_df['DOD'].head())
     max_dods_dict = {k: v for k, v in enumerate(max_dods)}
     dods = patients_df['DOD'].astype('int32', errors='ignore').fillna(max_dods_dict)
     print('final dods\n', dods.head())
+    dods.to_csv("icd_subject_target.csv", encoding="utf-8", index=False)
+    # combined = pd.concat([subject_ids, dods], axis=1, keys=["SUBJECT_ID", "DOD"])
+    # print(combined.head())
+    # combined.to_csv("labels.csv", encoding="utf-8", index=False)
 
 def admission(n_days_since_admission):
     # for each hospital admission, get datetime of 2nd day and use that for ICD diagnosis
@@ -197,6 +214,7 @@ def sparse_loadtxt(file):
 def main():
     # record_frequency_stats()
     # admission(2)
+    get_icd()
     get_dods()
 
 if __name__ == "__main__":
