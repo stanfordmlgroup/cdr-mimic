@@ -22,7 +22,9 @@ def get_icd():
     icd_df_grouped_subjects = icd_df.groupby(["SUBJECT_ID"])["ICD9_CODE"].apply(list)
     print(icd_df_grouped_admissions.head())
     print(icd_df_grouped_subjects.head(20))
-    icd_df_grouped_subjects.to_csv("icd_subject_source.csv", encoding="utf-8", index=False)
+    # icd_df_grouped_subjects.to_csv("icd_subject_source.csv", encoding="utf-8", index=False)
+    print(icd_df_grouped_subjects.values[:5])
+    np.save('icd_df_grouped_subjects.npy', icd_df_grouped_subjects)
 
 def get_dods():
     patients_df = pd.read_csv(patients_table_path)
@@ -47,7 +49,11 @@ def get_dods():
     max_dods_dict = {k: v for k, v in enumerate(max_dods)}
     dods = patients_df['DOD'].astype('int32', errors='ignore').fillna(max_dods_dict)
     print('final dods\n', dods.head())
-    dods.to_csv("icd_subject_target.csv", encoding="utf-8", index=False)
+    # dods.to_csv("icd_subject_target.csv", encoding="utf-8", index=False)
+    print(dods.values[:5])
+    np.save('dods.npy', dods)
+
+    # Combined subject ids with dods
     # combined = pd.concat([subject_ids, dods], axis=1, keys=["SUBJECT_ID", "DOD"])
     # print(combined.head())
     # combined.to_csv("labels.csv", encoding="utf-8", index=False)
