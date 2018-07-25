@@ -10,7 +10,7 @@ class BaseArgParser(object):
     """Base argument parser for args shared between test and train modes."""
     def __init__(self):
         self.parser = argparse.ArgumentParser(description='Head and Spine CT')
-        self.parser.add_argument('--model', type=str, choices=('QANet',), default='QANet',
+        self.parser.add_argument('--model', type=str, choices=('QANet', 'SimpleNN'), default='SimpleNN',
                                  help='Model name.')
         self.parser.add_argument('--batch_size', type=int, default=16, help='Batch size.')
         self.parser.add_argument('--ckpt_path', type=str, default='',
@@ -24,10 +24,6 @@ class BaseArgParser(object):
         self.parser.add_argument('--model_depth', default=50, type=int,
                                  help='Depth of the model. Meaning of depth depends on the model.')
         self.parser.add_argument('--name', type=str, required=True, help='Experiment name.')
-        self.parser.add_argument('--resize_shape', type=str, default='192,192',
-                                 help='Comma-separated 2D shape for images after resizing (before cropping).')
-        self.parser.add_argument('--crop_shape', type=str, default='208,208',
-                                 help='Comma-separated 2D shape for images after cropping (crop comes after resize).')
         self.parser.add_argument('--num_channels', default=3, type=int, help='Number of channels in the input.')
         self.parser.add_argument('--num_classes', default=1, type=int, help='Number of classes to predict.')
         self.parser.add_argument('--num_workers', default=8, type=int, help='Number of threads for the DataLoader.')
@@ -35,28 +31,7 @@ class BaseArgParser(object):
                                  help='Directory in which to save model checkpoints.')
         self.parser.add_argument('--dataset', type=str, default='squid', choices=('squid',),
                                  help='Dataset to use. Gets mapped to dataset class name.')
-        self.parser.add_argument('--word_emb_file', type=str, default='word_embs.npy',
-                                 help='Name of pre-processed word embedding file.')
-        self.parser.add_argument('--word_emb_size', type=int, default=300,
-                                 help='Size of a single word embedding.')
-        self.parser.add_argument('--char_emb_file', type=str, default='char_embs.npy',
-                                 help='Name of pre-processed char embedding file.')
-        self.parser.add_argument('--char_emb_size', type=int, default=64,
-                                 help='Size of a single char embedding.')
-        self.parser.add_argument('--bio_emb_size', type=int, default=64,
-                                 help='Size of a single BIO embedding.')
-        self.parser.add_argument('--alphabet_size', type=int, default=98,  # TODO: Bigger alphabet
-                                 help='Number of characters recognized by the model.')
-        self.parser.add_argument('--max_c_len', type=int, default=400,
-                                 help='Maximum length (words) of context at train time.')
-        self.parser.add_argument('--max_q_len', type=int, default=80,
-                                 help='Maximum length (words) of question at train time.')
-        self.parser.add_argument('--max_c_len_test', type=int, default=400,
-                                 help='Maximum length (words) of context at test time.')
-        self.parser.add_argument('--max_q_len_test', type=int, default=80,
-                                 help='Maximum length (words) of question at test time.')
-        self.parser.add_argument('--num_highway_layers', type=int, default=2,
-                                 help='Number of highway layers in HighwayNetwork.')
+
         self.is_training = None
 
     def parse_args(self):
@@ -81,10 +56,6 @@ class BaseArgParser(object):
             args.maximize_metric = not args.metric_name.endswith('loss')
             if args.lr_scheduler == 'multi_step':
                 args.lr_milestones = util.args_to_list(args.lr_milestones, allow_empty=False)
-
-        # Set up resize and crop
-        args.resize_shape = util.args_to_list(args.resize_shape, allow_empty=False, arg_type=int, allow_negative=False)
-        args.crop_shape = util.args_to_list(args.crop_shape, allow_empty=False, arg_type=int, allow_negative=False)
 
         # Set up available GPUs
         args.gpu_ids = util.args_to_list(args.gpu_ids, allow_empty=True, arg_type=int, allow_negative=False)

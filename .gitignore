@@ -1,2 +1,6 @@
+.idea
 *.csv
 *.npy
+logs/
+venv/
+*__pycache__*

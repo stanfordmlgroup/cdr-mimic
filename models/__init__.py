@@ -1,1 +1,1 @@
-from .qanet import QANet
+from .simple_ff import SimpleNN
