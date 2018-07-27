@@ -10,7 +10,7 @@ from torch.autograd import Variable
 
 
 class Dataset(data.Dataset):
-    def __init__(self, args, split):
+    def __init__(self, args, phase, is_training_set=True):
         datadir = Path(args.data_dir)
 
         src_csv_path = datadir / 'icd_subject_source_sample.csv'
@@ -33,6 +33,8 @@ class Dataset(data.Dataset):
         self.vocab_i2w = {}
         index = 0
         self.encoded_df_src = []
+        self.is_training_set = is_training_set
+        self.phase = phase
 
         for i, row in enumerate(self.df_src):
             parsed_row = row[0].replace(" ", "").replace("'", "").split(',')
@@ -94,7 +96,7 @@ class Dataset(data.Dataset):
         return len(self.df_src)
 
 
-def load_data(args):
+def load_data(args, is_training_set=True):
     train_dataset = Dataset(args, 'train')
     # valid_dataset = Dataset(args, 'valid')
     # test_dataset = Dataset(args, 'test')

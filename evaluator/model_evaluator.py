@@ -1,13 +1,16 @@
+from __future__ import print_function
+
 import torch
 import torch.nn as nn
+from tqdm import tqdm
 
 from evaluator.average_meter import AverageMeter
-from tqdm import tqdm
 
 
 class ModelEvaluator(object):
     """Class for evaluating a model during training."""
-    def __init__(self, data_loaders, logger,  max_eval=None, epochs_per_eval=1):
+
+    def __init__(self, data_loaders, logger, max_eval=None, epochs_per_eval=1):
         """
         Args:
             data_loaders: List of Torch `DataLoader`s to sample from.
@@ -69,7 +72,7 @@ class ModelEvaluator(object):
             num_examples = min(num_examples, self.max_eval)
 
         # Sample from the data loader and record model outputs
-        loss_fn = nn.CrossEntropyLoss()
+        loss_fn = nn.KLDivLoss()
         num_evaluated = 0
         with tqdm(total=num_examples, unit=' ' + phase) as progress_bar:
             for inputs, targets in data_loader:
@@ -79,6 +82,7 @@ class ModelEvaluator(object):
                 with torch.no_grad():
                     logits = model.forward(inputs.to(device))
                     loss = loss_fn(logits, targets.to(device))
+                    print(logits.int(), targets)
 
                 self._record_batch(logits, loss, **records)
 

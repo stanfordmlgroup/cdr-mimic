@@ -8,13 +8,16 @@ class SimpleNN(nn.Module):
         self.data_dir = data_dir
         self.model = nn.Sequential(
             nn.Linear(9, 1024),
+            # nn.LeakyReLU(0.2, inplace=True),
             nn.ReLU(),
-            nn.Linear(1024, 400),
-            nn.ReLU(),
-            nn.Linear(400, 200),
-            nn.ReLU(),
-            nn.Linear(200, 1)
+            nn.Linear(1024, 1)
         )
+        self.model.apply(self.init_weights)
+
+    def init_weights(self, m):
+        if type(m) == nn.Linear:
+            nn.init.xavier_uniform(m.weight)
+            m.bias.data.fill_(0.01)
 
     def forward(self, src):
         pred = self.model(src)
