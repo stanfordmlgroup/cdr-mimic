@@ -16,7 +16,7 @@ def loss_fn(pred_params, tgts):
     loss_val = 0
     for pred_param, tgt in zip(pred_params, tgts):
         mu, s = pred_param[0], pred_param[1]
-        pred = torch.distributions.LogNormal(mu, abs(s))
+        pred = torch.distributions.LogNormal(mu, s.exp())
         tte, is_alive = tgt[0], tgt[1]
         print("tte", tte)
         print("log prob", pred.log_prob(tte + 1e-5))
@@ -35,7 +35,7 @@ def train(args):
         model_fn = models.__dict__[args.model]
         model = model_fn(**vars(args))
         model = nn.DataParallel(model, args.gpu_ids)
-    model = model.to(args.device)
+    model = model.to(args.device) # erik was here
     model.train()
 
     # Get optimizer and scheduler
