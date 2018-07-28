@@ -1,6 +1,7 @@
 # DATADIR="/deep/group/med/mimic-iii/train/"
-DATADIR="/Users/dmorina/mnt/cdr_mimic/"
+# DATADIR="/Users/dmorina/mnt/cdr_mimic/"
+DATADIR="/deep/group/sharonz/cdr_mimic/data/"
 
-ARGUMENTS="--datadir $DATADIR --verbose"
+ARGUMENTS="--data_dir $DATADIR --verbose"
 
-python3 test_loader.py ${ARGUMENTS}
+python test_loader.py ${ARGUMENTS}

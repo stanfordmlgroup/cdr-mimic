@@ -3,4 +3,5 @@
 *.npy
 logs/
 venv/
+ckpts/
 *__pycache__*

@@ -12,11 +12,19 @@ from saver import ModelSaver
 
 
 # def loss(self, pred, tgt, is_alive):
-def loss(pred_params, tgt):
-    pred = torch.distributions.LogNormal(pred_params.mu, pred_params.s)
-    tte, is_alive = tgt[0], tgt[1]
-    return - ((1 - is_alive) * pred.log_prob(tte) + (1 - pred.cdf(tte) + 1e-5).log() * is_alive)
+def loss_fn(pred_params, tgts):
+    loss_val = 0
+    for pred_param, tgt in zip(pred_params, tgts):
+        mu, s = pred_param[0], pred_param[1]
+        pred = torch.distributions.LogNormal(mu, abs(s))
+        tte, is_alive = tgt[0], tgt[1]
+        print("tte", tte)
+        print("log prob", pred.log_prob(tte + 1e-5))
+        print("cdf", pred.cdf(tte))
+        loss_val += - ((1 - is_alive) * pred.log_prob(tte + 1e-5) + (1 - pred.cdf(tte) + 1e-5).log() * is_alive)
+    print("loss", loss_val)
 
+    return loss_val / tgts.shape[0]
 
 def train(args):
     train_loader = load_data(args=args)
@@ -49,7 +57,7 @@ def train(args):
                                                shuffle=False)
     valid_loader.phase = 'valid'
     eval_loaders = [valid_loader]
-    # data.DataLoader(SQuID(args, 'dev', args.data_dir, is_training_set=False),
+    # data.DataLoader(MIMICDataset(args, 'dev', args.data_dir, is_training_set=False),
     #                 args.batch_size, shuffle=False, num_workers=args.num_workers, pin_memory=True)]
     evaluator = ModelEvaluator(eval_loaders, logger, args.max_eval, args.epochs_per_eval)
     saver = ModelSaver(**vars(args))
@@ -64,14 +72,14 @@ def train(args):
             logger.start_iter()
             with torch.set_grad_enabled(True):
                 pred_params = model.forward(src.to(args.device))
+                print("pred_params:", pred_params)
                 # print("training", logits.int())
                 # loss = loss_fn(logits, tgt.to(args.device))
-                loss = loss(pred_params, tgt.to(args.device))
+                loss = loss_fn(pred_params, tgt.to(args.device))
 
                 logger.log_iter(loss)
 
-                grad_weight = loss.backward()
-                print("grad weight:", grad_weight)
+                loss.backward()
                 optimizer.zero_grad()
                 optimizer.step()
             logger.end_iter()

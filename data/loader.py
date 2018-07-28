@@ -13,12 +13,11 @@ class Dataset(data.Dataset):
     def __init__(self, args, phase, is_training_set=True):
         datadir = Path(args.data_dir)
 
-        src_csv_path = datadir / 'icd_subject_source_sample.csv'
-        tgt_csv_path = datadir / 'icd_subject_target_sample.csv'
+        src_csv_path = datadir / 'sample_src_3.csv'
+        tgt_csv_path = datadir / 'sample_tgt_3.csv'
 
         self.df_src = pd.read_csv(src_csv_path, delimiter='\n', header=None).values
-        # print(pd.read_csv(tgt_csv_path, delimiter=',').iloc[[0]].values)
-        self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',', header=None).values
+        self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',').values
 
         # if args.toy:
         #     df = df.sample(frac=0.01)
@@ -87,7 +86,7 @@ class Dataset(data.Dataset):
         src = self.src_tensor[index]
         tgt = self.df_tgt[index]
 
-        tgt = np.array([time.mktime(time.strptime(tgt[0], "%Y-%m-%d"))])
+        # tgt = np.array([np.array([time.mktime(time.strptime(tgt[0], "%Y-%m-%d"))]), tgt[1]])
         tgt = torch.FloatTensor(tgt)
 
         return src, tgt
@@ -113,5 +112,5 @@ def load_data(args, is_training_set=True):
     #                                           batch_size=args.batch_size,
     #                                           num_workers=args.workers,
     #                                           shuffle=False)
-
+    # print(list(iter(train_loader)))
     return train_loader  # , valid_loader, test_loader

@@ -1,6 +1,8 @@
 # DATADIR="/deep/group/med/mimic-iii/train/"
-DATADIR="/Users/dmorina/mnt/cdr_mimic/"
+# DATADIR="/Users/dmorina/mnt/cdr_mimic/"
+DATADIR="/deep/group/sharonz/cdr_mimic/data/"
+
 
 ARGUMENTS="--data_dir $DATADIR --name SIMPLEMIMIC --num_epochs 5 --model SimpleNN"
 
-python3 train.py ${ARGUMENTS}
+python train.py ${ARGUMENTS}

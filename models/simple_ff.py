@@ -8,11 +8,10 @@ class SimpleNN(nn.Module):
         self.data_dir = data_dir
         self.model = nn.Sequential(
             nn.Linear(9, 1024),
-            # nn.LeakyReLU(0.2, inplace=True),
             nn.ReLU(),
-            nn.Linear(1024, 1)
+            nn.Linear(1024, 2)
         )
-        self.model.apply(self.init_weights)
+        # self.model.apply(self.init_weights)
 
     def init_weights(self, m):
         if type(m) == nn.Linear:
