@@ -10,11 +10,13 @@ from evaluator import ModelEvaluator
 from logger import TrainLogger
 from saver import ModelSaver
 
+
 # def loss(self, pred, tgt, is_alive):
 def loss(pred_params, tgt):
     pred = torch.distributions.LogNormal(pred_params.mu, pred_params.s)
     tte, is_alive = tgt[0], tgt[1]
     return - ((1 - is_alive) * pred.log_prob(tte) + (1 - pred.cdf(tte) + 1e-5).log() * is_alive)
+
 
 def train(args):
     train_loader = load_data(args=args)
@@ -27,7 +29,7 @@ def train(args):
         model = nn.DataParallel(model, args.gpu_ids)
     model = model.to(args.device)
     model.train()
-    
+
     # Get optimizer and scheduler
     optimizer = optim.get_optimizer(filter(lambda p: p.requires_grad, model.parameters()), args)
     # lr_scheduler = optim.get_scheduler(optimizer, args)
@@ -55,7 +57,9 @@ def train(args):
     # Train model
     while not logger.is_finished_training():
         logger.start_epoch()
-        # todo: tte, is_alive = tgt[0], tgt[1]... tgt needs to have time to event, not dod, and second column in csv with is_alive bool. if alive, the date in the first col is not time to death event, but the time (from discharge or second day of admission) to last event recorded in db
+        # todo: tte, is_alive = tgt[0], tgt[1]... tgt needs to have time to event, not dod, and second column in csv
+        # with is_alive bool. if alive, the date in the first col is not time to death event, but the time
+        # (from discharge or second day of admission) to last event recorded in db
         for src, tgt in train_loader:
             logger.start_iter()
             with torch.set_grad_enabled(True):
