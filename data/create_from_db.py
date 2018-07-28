@@ -25,14 +25,14 @@ def get_icd():
     # Ensure to print out at least one patient who has >1 admissions, for debugging groupby
     print(icd_df_grouped.head(18))
 
-    # Roll up past ICD codes for extra col in data
-    subject_id = None
+    # TODO: Roll up past ICD codes for extra col in data
+    # subject_id = None
     # for row in icd_df_grouped:
     #     if subject_id != row['SUBJECT_ID']:
     #         subject_id = row['SUBJECT_ID']
 
-    # np.save('src.npy', icd_df_grouped)
-    # icd_df_grouped.to_csv("src.csv", encoding="utf-8", index=False)
+    np.save('src.npy', icd_df_grouped)
+    icd_df_grouped.to_csv("src.csv", encoding="utf-8", index=False)
 
 
 def get_tte():
