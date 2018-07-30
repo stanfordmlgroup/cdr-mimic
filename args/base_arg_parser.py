@@ -17,7 +17,7 @@ class BaseArgParser(object):
                                  help='Path to checkpoint to load. If empty, start from scratch.')
         self.parser.add_argument('--data_dir', type=str, default='/deep/group/data/squad_question_generation/',
                                  help='Path to data directory with question answering dataset.')
-        self.parser.add_argument('--gpu_ids', type=str, default='0,1,2',
+        self.parser.add_argument('--gpu_ids', type=str, default='0,1,2,3',
                                  help='Comma-separated list of GPU IDs. Use -1 for CPU.')
         self.parser.add_argument('--init_method', type=str, default='kaiming', choices=('kaiming', 'normal', 'xavier'),
                                  help='Initialization method to use for conv kernels and linear weights.')
@@ -29,7 +29,7 @@ class BaseArgParser(object):
         self.parser.add_argument('--num_workers', default=8, type=int, help='Number of threads for the DataLoader.')
         self.parser.add_argument('--save_dir', type=str, default='ckpts/',
                                  help='Directory in which to save model checkpoints.')
-        self.parser.add_argument('--dataset', type=str, default='squid', choices=('squid',),
+        self.parser.add_argument('--dataset', type=str, default='mimic', choices=('mimic',),
                                  help='Dataset to use. Gets mapped to dataset class name.')
 
         self.is_training = None
@@ -67,8 +67,8 @@ class BaseArgParser(object):
         else:
             args.device = 'cpu'
 
-        if args.dataset == 'squid':
-            args.dataset = 'SQuID'
+        if args.dataset == 'mimic':
+            args.dataset = 'MimicDataset'
 
         # Set up output dir (test mode only)
         if not self.is_training:

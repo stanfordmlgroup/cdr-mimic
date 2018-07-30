@@ -25,7 +25,8 @@ class TrainLogger(BaseLogger):
         """Log info for start of an iteration."""
         self.iter_start_time = time()
 
-    def log_iter(self, loss):
+    def log_iter(self, src, pred_params, tgt, loss):
+
         """Log results from a training iteration."""
         loss = loss.item()
         self.loss_meter.update(loss, self.batch_size)
@@ -42,7 +43,10 @@ class TrainLogger(BaseLogger):
             self._log_scalars({'batch_loss': self.loss_meter.avg}, print_to_stdout=False)
             self.loss_meter.reset()
 
+            message += '\n[debugging] src: {}, pred_params: {}, tgt: {}'.format(src, pred_params, tgt)
+            
             self.write(message)
+
 
     def end_iter(self):
         """Log info for end of an iteration."""

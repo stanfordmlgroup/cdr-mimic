@@ -3,5 +3,6 @@
 *.npy
 logs/
 venv/
-ckpts/
+ckpts/*
 *__pycache__*
+*.log

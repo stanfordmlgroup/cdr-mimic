@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.utils.data as data
 from torch.autograd import Variable
 
-
+# MIMIC Dataset
 class Dataset(data.Dataset):
     def __init__(self, args, phase, is_training_set=True):
         datadir = Path(args.data_dir)
@@ -22,7 +22,6 @@ class Dataset(data.Dataset):
         # if args.toy:
         #     df = df.sample(frac=0.01)
 
-        # If binary, no need to project to 2 dimensions (since using BCEWithLogitsLoss)
         self.num_classes = 1
 
         # if args.verbose:
@@ -72,15 +71,15 @@ class Dataset(data.Dataset):
         #                                            -np.log(0.5) / total
         #         print (f"{split} random loss: {random_loss}")
 
-    def weighted_loss(self, prediction, target):
-        weights_npy = np.array([self.weights[int(t[0])] for t in target.data])
-        weights_torch = Variable(torch.FloatTensor(weights_npy).cuda())
+    # def weighted_loss(self, prediction, target):
+    #     weights_npy = np.array([self.weights[int(t[0])] for t in target.data])
+    #     weights_torch = Variable(torch.FloatTensor(weights_npy).cuda())
 
-        loss = nn.functional.binary_cross_entropy_with_logits(prediction,
-                                                              target,
-                                                              weight=weights_torch)
+    #     loss = nn.functional.binary_cross_entropy_with_logits(prediction,
+    #                                                           target,
+    #                                                           weight=weights_torch)
 
-        return loss
+    #     return loss
 
     def __getitem__(self, index):
         src = self.src_tensor[index]
@@ -94,23 +93,12 @@ class Dataset(data.Dataset):
     def __len__(self):
         return len(self.df_src)
 
+def get_loader(args, phase='train', is_training=True):
 
-def load_data(args, is_training_set=True):
-    train_dataset = Dataset(args, 'train')
-    # valid_dataset = Dataset(args, 'valid')
-    # test_dataset = Dataset(args, 'test')
-
-    train_loader = torch.utils.data.DataLoader(train_dataset,
-                                               batch_size=args.batch_size,
-                                               num_workers=args.num_workers,
-                                               shuffle=True)
-    # valid_loader = torch.utils.data.DataLoader(valid_dataset,
-    #                                            batch_size=args.batch_size,
-    #                                            num_workers=args.workers,
-    #                                            shuffle=False)
-    # test_loader = torch.utils.data.DataLoader(test_dataset,
-    #                                           batch_size=args.batch_size,
-    #                                           num_workers=args.workers,
-    #                                           shuffle=False)
-    # print(list(iter(train_loader)))
-    return train_loader  # , valid_loader, test_loader
+    dataset = Dataset(args, phase)
+    loader = torch.utils.data.DataLoader(dataset,
+                                         batch_size=args.batch_size,
+                                         num_workers=args.num_workers,
+                                         shuffle=is_training)
+    loader.phase = phase
+    return loader

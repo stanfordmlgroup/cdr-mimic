@@ -46,3 +46,5 @@ class TrainArgParser(BaseArgParser):
         self.parser.add_argument('--sgd_dampening', type=float, default=0.9, help='SGD momentum (SGD only).')
         self.parser.add_argument('--weight_decay', type=float, default=1e-4,
                                  help='Weight decay (i.e., L2 regularization factor).')
+        self.parser.add_argument('--loss_fn', type=str, default='crps', choices=('crps'),
+                         help='Loss function to use.')
