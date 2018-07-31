@@ -37,7 +37,7 @@ def train(args):
     evaluator = ModelEvaluator(eval_loaders, logger, args.max_eval, args.epochs_per_eval)
     # evaluator = ModelEvaluator(args.loss_fn, args, eval_loaders, logger,
     #                         args.num_visuals, args.max_eval, args.epochs_per_eval)
-    
+
     saver = ModelSaver(**vars(args))
 
     # Train model

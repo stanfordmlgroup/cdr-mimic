@@ -44,7 +44,7 @@ class TrainLogger(BaseLogger):
             self.loss_meter.reset()
 
             message += '\n[debugging] src: {}, pred_params: {}, tgt: {}'.format(src, pred_params, tgt)
-            
+
             self.write(message)
 
 
