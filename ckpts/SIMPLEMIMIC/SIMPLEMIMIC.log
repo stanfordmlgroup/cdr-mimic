@@ -1270,3 +1270,3099 @@
 [end of epoch 2, epoch time: 4.2]
 [train_loss: nan]
 [valid_loss: nan]
+[start of epoch 1]
+[start of epoch 1]
+[start of epoch 1]
+[start of epoch 1]
+[start of epoch 1]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 3, time: 0.73, loss: -109]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.]]), pred_params: tensor([[ 0.2123, -0.0965],
+        [-2.8180,  1.4926],
+        [-6.2348,  2.1116]], device='cuda:0'), tgt: tensor([[ 1.0000e+02,  1.0000e+00],
+        [ 1.9476e+07,  0.0000e+00],
+        [ 1.0000e+02,  1.0000e+00]])
+[end of epoch 1, epoch time: 15]
+[train_loss: 3.98e+08]
+[valid_loss: 3.98e+08]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 3, time: 0.00, loss: -1.01e+03]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[ -105.7086,  -893.8372],
+        [ -226.2056, -1904.3140],
+        [   -1.9636,   -17.4195]], device='cuda:0'), tgt: tensor([[ 1.9476e+07,  0.0000e+00],
+        [ 1.0000e+02,  1.0000e+00],
+        [ 1.0000e+02,  1.0000e+00]])
+[end of epoch 2, epoch time: 3.6]
+[train_loss: nan]
+[valid_loss: nan]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 3, time: 0.77, loss: -1.02e+03]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.]]), pred_params: tensor([[-0.3901, -0.0437],
+        [-2.3347, -3.0960],
+        [-5.0313, -5.7389]], device='cuda:0'), tgt: tensor([[ 1.0000e+02,  1.0000e+00],
+        [ 1.9476e+07,  0.0000e+00],
+        [ 1.0000e+02,  1.0000e+00]])
+[end of epoch 1, epoch time: 15]
+[train_loss: 3.55e+09]
+[valid_loss: 3.55e+09]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 3, time: 0.00, loss: -1.01e+03]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.]]), pred_params: tensor([[-1078.0065, -1265.3042],
+        [  -18.0971,   -20.8275],
+        [-2304.6423, -2704.1187]], device='cuda:0'), tgt: tensor([[ 1.9476e+07,  0.0000e+00],
+        [ 1.0000e+02,  1.0000e+00],
+        [ 1.0000e+02,  1.0000e+00]])
+[end of epoch 2, epoch time: 3.4]
+[train_loss: nan]
+[valid_loss: nan]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 3, time: 0.75, loss: -363]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.]]), pred_params: tensor([[-1.3555, -0.0316],
+        [ 0.2053, -0.1517],
+        [-2.9394, -1.0767]], device='cuda:0'), tgt: tensor([[ 1.9476e+07,  0.0000e+00],
+        [ 1.0000e+02,  1.0000e+00],
+        [ 1.0000e+02,  1.0000e+00]])
+[end of epoch 1, epoch time: 15]
+[train_loss: 1.26e+09]
+[valid_loss: 1.26e+09]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 3, time: 0.00, loss: -1.01e+03]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [ 12.,  13.,  14.,  15.,  16.,  17.,  18.,  19.,  20.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[   -6.0703,   -55.1403],
+        [ -790.9990, -7150.8691],
+        [ -370.1135, -3344.9268]], device='cuda:0'), tgt: tensor([[ 1.0000e+02,  1.0000e+00],
+        [ 1.0000e+02,  1.0000e+00],
+        [ 1.9476e+07,  0.0000e+00]])
+[end of epoch 2, epoch time: 4.1]
+[train_loss: nan]
+[valid_loss: nan]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.39, loss: -22.9]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[-0.0026, -0.2437],
+        [-1.1125,  0.4180]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 1, epoch time: 8.6]
+[train_loss: 403]
+[valid_loss: 403]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[ -6.6593, -15.4740],
+        [ -0.1014,  -0.5182]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 2, epoch time: 2.2]
+[train_loss: 534]
+[valid_loss: 534]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.39, loss: -12.5]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[ 0.6458,  3.8233],
+        [-0.0589,  0.0728]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 1, epoch time: 8.8]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-1.3931, -0.2870],
+        [-0.3876, -0.6824]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 2, epoch time: 2.3]
+[train_loss: 329]
+[valid_loss: 329]
+[start of epoch 3]
+[epoch: 3, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-3.2278, -3.9858],
+        [-0.6835, -1.3621]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 3, epoch time: 2.3]
+[train_loss: 378]
+[valid_loss: 378]
+[start of epoch 4]
+[epoch: 4, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[-0.9498, -1.9738],
+        [-4.8788, -7.3144]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 4, epoch time: 2.2]
+[train_loss: 422]
+[valid_loss: 422]
+[start of epoch 5]
+[epoch: 5, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -1.1895,  -2.5244],
+        [ -6.3646, -10.3097]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 5, epoch time: 2.2]
+[train_loss: 462]
+[valid_loss: 462]
+[start of epoch 6]
+[epoch: 6, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[ -7.7017, -13.0052],
+        [ -1.4052,  -3.0199]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 6, epoch time: 2.2]
+[train_loss: 498]
+[valid_loss: 498]
+[start of epoch 7]
+[epoch: 7, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -1.5994,  -3.4658],
+        [ -8.9050, -15.4310]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 7, epoch time: 2.3]
+[train_loss: 530]
+[valid_loss: 530]
+[start of epoch 8]
+[epoch: 8, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[ -9.9878, -17.6140],
+        [ -1.7741,  -3.8672]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 8, epoch time: 2.3]
+[train_loss: 559]
+[valid_loss: 559]
+[start of epoch 9]
+[epoch: 9, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-10.9623, -19.5786],
+        [ -1.9313,  -4.2284]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 9, epoch time: 2.3]
+[train_loss: 585]
+[valid_loss: 585]
+[start of epoch 10]
+[epoch: 10, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-11.8393, -21.3466],
+        [ -2.0729,  -4.5535]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 10, epoch time: 2.6]
+[train_loss: 608]
+[valid_loss: 608]
+[start of epoch 11]
+[epoch: 11, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.2002,  -4.8460],
+        [-12.6285, -22.9377]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 11, epoch time: 2.3]
+[train_loss: 629]
+[valid_loss: 629]
+[start of epoch 12]
+[epoch: 12, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-13.3388, -24.3697],
+        [ -2.3149,  -5.1094]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 12, epoch time: 2.3]
+[train_loss: 648]
+[valid_loss: 648]
+[start of epoch 13]
+[epoch: 13, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.4181,  -5.3464],
+        [-13.9780, -25.6583]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 13, epoch time: 2.3]
+[train_loss: 665]
+[valid_loss: 665]
+[start of epoch 14]
+[epoch: 14, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-14.5533, -26.8181],
+        [ -2.5109,  -5.5596]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 14, epoch time: 2.2]
+[train_loss: 680]
+[valid_loss: 680]
+[start of epoch 15]
+[epoch: 15, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.5945,  -5.7516],
+        [-15.0710, -27.8618]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 15, epoch time: 2.3]
+[train_loss: 694]
+[valid_loss: 694]
+[start of epoch 16]
+[epoch: 16, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.6697,  -5.9244],
+        [-15.5369, -28.8011]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 16, epoch time: 2.3]
+[train_loss: 707]
+[valid_loss: 707]
+[start of epoch 17]
+[epoch: 17, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.7374,  -6.0799],
+        [-15.9562, -29.6464]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 17, epoch time: 2.2]
+[train_loss: 718]
+[valid_loss: 718]
+[start of epoch 18]
+[epoch: 18, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.7983,  -6.2198],
+        [-16.3336, -30.4072]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 18, epoch time: 2.3]
+[train_loss: 728]
+[valid_loss: 728]
+[start of epoch 19]
+[epoch: 19, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-16.6732, -31.0919],
+        [ -2.8531,  -6.3457]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 19, epoch time: 2.3]
+[train_loss: 737]
+[valid_loss: 737]
+[start of epoch 20]
+[epoch: 20, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-16.9789, -31.7081],
+        [ -2.9025,  -6.4591]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 20, epoch time: 2.3]
+[train_loss: 745]
+[valid_loss: 745]
+[start of epoch 21]
+[epoch: 21, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.9469,  -6.5611],
+        [-17.2539, -32.2627]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 21, epoch time: 2.3]
+[train_loss: 752]
+[valid_loss: 752]
+[start of epoch 22]
+[epoch: 22, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -2.9869,  -6.6529],
+        [-17.5015, -32.7618]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 22, epoch time: 2.3]
+[train_loss: 759]
+[valid_loss: 759]
+[start of epoch 23]
+[epoch: 23, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.0228,  -6.7356],
+        [-17.7243, -33.2110]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 23, epoch time: 2.7]
+[train_loss: 765]
+[valid_loss: 765]
+[start of epoch 24]
+[epoch: 24, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-17.9248, -33.6153],
+        [ -3.0552,  -6.8099]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 24, epoch time: 2.2]
+[train_loss: 770]
+[valid_loss: 770]
+[start of epoch 25]
+[epoch: 25, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-18.1053, -33.9791],
+        [ -3.0844,  -6.8768]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 25, epoch time: 2.3]
+[train_loss: 775]
+[valid_loss: 775]
+[start of epoch 26]
+[epoch: 26, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-18.2677, -34.3066],
+        [ -3.1106,  -6.9371]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 26, epoch time: 2.3]
+[train_loss: 779]
+[valid_loss: 779]
+[start of epoch 27]
+[epoch: 27, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.1342,  -6.9913],
+        [-18.4139, -34.6013]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 27, epoch time: 2.3]
+[train_loss: 783]
+[valid_loss: 783]
+[start of epoch 28]
+[epoch: 28, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-18.5455, -34.8665],
+        [ -3.1554,  -7.0401]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 28, epoch time: 2.9]
+[train_loss: 787]
+[valid_loss: 787]
+[start of epoch 29]
+[epoch: 29, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-18.6639, -35.1052],
+        [ -3.1745,  -7.0840]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 29, epoch time: 2.5]
+[train_loss: 790]
+[valid_loss: 790]
+[start of epoch 30]
+[epoch: 30, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.1917,  -7.1235],
+        [-18.7704, -35.3200]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 30, epoch time: 2.3]
+[train_loss: 793]
+[valid_loss: 793]
+[start of epoch 31]
+[epoch: 31, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-18.8663, -35.5134],
+        [ -3.2072,  -7.1591]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 31, epoch time: 2.2]
+[train_loss: 795]
+[valid_loss: 795]
+[start of epoch 32]
+[epoch: 32, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2212,  -7.1911],
+        [-18.9526, -35.6874]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 32, epoch time: 2.3]
+[train_loss: 798]
+[valid_loss: 798]
+[start of epoch 33]
+[epoch: 33, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2337,  -7.2199],
+        [-19.0303, -35.8440]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 33, epoch time: 2.3]
+[train_loss: 800]
+[valid_loss: 800]
+[start of epoch 34]
+[epoch: 34, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2450,  -7.2459],
+        [-19.1002, -35.9849]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 34, epoch time: 2.2]
+[train_loss: 802]
+[valid_loss: 802]
+[start of epoch 35]
+[epoch: 35, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2552,  -7.2692],
+        [-19.1632, -36.1118]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 35, epoch time: 2.9]
+[train_loss: 803]
+[valid_loss: 803]
+[start of epoch 36]
+[epoch: 36, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2643,  -7.2902],
+        [-19.2198, -36.2259]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 36, epoch time: 2.3]
+[train_loss: 805]
+[valid_loss: 805]
+[start of epoch 37]
+[epoch: 37, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2725,  -7.3091],
+        [-19.2707, -36.3287]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 37, epoch time: 2.3]
+[train_loss: 806]
+[valid_loss: 806]
+[start of epoch 38]
+[epoch: 38, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2799,  -7.3261],
+        [-19.3166, -36.4212]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 38, epoch time: 2.5]
+[train_loss: 807]
+[valid_loss: 807]
+[start of epoch 39]
+[epoch: 39, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2866,  -7.3414],
+        [-19.3579, -36.5044]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 39, epoch time: 2.3]
+[train_loss: 808]
+[valid_loss: 808]
+[start of epoch 40]
+[epoch: 40, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2926,  -7.3552],
+        [-19.3950, -36.5793]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 40, epoch time: 2.2]
+[train_loss: 809]
+[valid_loss: 809]
+[start of epoch 41]
+[epoch: 41, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.2980,  -7.3676],
+        [-19.4285, -36.6467]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 41, epoch time: 2.2]
+[train_loss: 810]
+[valid_loss: 810]
+[start of epoch 42]
+[epoch: 42, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.4586, -36.7073],
+        [ -3.3029,  -7.3788]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 42, epoch time: 2.6]
+[train_loss: 811]
+[valid_loss: 811]
+[start of epoch 43]
+[epoch: 43, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3072,  -7.3888],
+        [-19.4856, -36.7619]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 43, epoch time: 2.3]
+[train_loss: 812]
+[valid_loss: 812]
+[start of epoch 44]
+[epoch: 44, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.5100, -36.8111],
+        [ -3.3112,  -7.3978]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 44, epoch time: 2.2]
+[train_loss: 812]
+[valid_loss: 812]
+[start of epoch 45]
+[epoch: 45, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3147,  -7.4060],
+        [-19.5320, -36.8553]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 45, epoch time: 2.3]
+[train_loss: 813]
+[valid_loss: 813]
+[start of epoch 46]
+[epoch: 46, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.5517, -36.8951],
+        [ -3.3179,  -7.4133]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 46, epoch time: 2.3]
+[train_loss: 814]
+[valid_loss: 814]
+[start of epoch 47]
+[epoch: 47, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3208,  -7.4199],
+        [-19.5695, -36.9309]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 47, epoch time: 2.2]
+[train_loss: 814]
+[valid_loss: 814]
+[start of epoch 48]
+[epoch: 48, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.5855, -36.9632],
+        [ -3.3233,  -7.4258]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 48, epoch time: 2.2]
+[train_loss: 815]
+[valid_loss: 815]
+[start of epoch 49]
+[epoch: 49, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.5998, -36.9922],
+        [ -3.3257,  -7.4312]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 49, epoch time: 2.3]
+[train_loss: 815]
+[valid_loss: 815]
+[start of epoch 50]
+[epoch: 50, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3278,  -7.4360],
+        [-19.6128, -37.0183]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 50, epoch time: 2.3]
+[train_loss: 815]
+[valid_loss: 815]
+[start of epoch 51]
+[epoch: 51, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3296,  -7.4403],
+        [-19.6244, -37.0418]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 51, epoch time: 2.3]
+[train_loss: 816]
+[valid_loss: 816]
+[start of epoch 52]
+[epoch: 52, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.6349, -37.0629],
+        [ -3.3313,  -7.4442]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 52, epoch time: 2.2]
+[train_loss: 816]
+[valid_loss: 816]
+[start of epoch 53]
+[epoch: 53, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3329,  -7.4477],
+        [-19.6444, -37.0820]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 53, epoch time: 2.3]
+[train_loss: 816]
+[valid_loss: 816]
+[start of epoch 54]
+[epoch: 54, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3342,  -7.4508],
+        [-19.6529, -37.0991]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 54, epoch time: 2.3]
+[train_loss: 816]
+[valid_loss: 816]
+[start of epoch 55]
+[epoch: 55, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3355,  -7.4537],
+        [-19.6605, -37.1145]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 55, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 56]
+[epoch: 56, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3366,  -7.4562],
+        [-19.6674, -37.1284]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 56, epoch time: 2.2]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 57]
+[epoch: 57, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3376,  -7.4585],
+        [-19.6736, -37.1409]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 57, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 58]
+[epoch: 58, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3385,  -7.4606],
+        [-19.6792, -37.1521]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 58, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 59]
+[epoch: 59, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3393,  -7.4624],
+        [-19.6842, -37.1622]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 59, epoch time: 2.6]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 60]
+[epoch: 60, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.6887, -37.1713],
+        [ -3.3400,  -7.4641]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 60, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 61]
+[epoch: 61, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.6928, -37.1795],
+        [ -3.3407,  -7.4656]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 61, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 62]
+[epoch: 62, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.6964, -37.1869],
+        [ -3.3413,  -7.4670]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 62, epoch time: 2.3]
+[train_loss: 817]
+[valid_loss: 817]
+[start of epoch 63]
+[epoch: 63, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.6997, -37.1935],
+        [ -3.3418,  -7.4682]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 63, epoch time: 2.6]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 64]
+[epoch: 64, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3423,  -7.4693],
+        [-19.7027, -37.1995]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 64, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 65]
+[epoch: 65, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7053, -37.2048],
+        [ -3.3427,  -7.4703]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 65, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 66]
+[epoch: 66, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3431,  -7.4712],
+        [-19.7077, -37.2097]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 66, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 67]
+[epoch: 67, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3434,  -7.4720],
+        [-19.7099, -37.2140]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 67, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 68]
+[epoch: 68, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7118, -37.2179],
+        [ -3.3438,  -7.4727]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 68, epoch time: 2.6]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 69]
+[epoch: 69, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7136, -37.2214],
+        [ -3.3440,  -7.4733]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 69, epoch time: 2.5]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 70]
+[epoch: 70, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3443,  -7.4739],
+        [-19.7151, -37.2246]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 70, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 71]
+[epoch: 71, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3445,  -7.4744],
+        [-19.7165, -37.2275]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 71, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 72]
+[epoch: 72, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7178, -37.2300],
+        [ -3.3447,  -7.4749]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 72, epoch time: 2.4]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 73]
+[epoch: 73, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7190, -37.2323],
+        [ -3.3449,  -7.4753]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 73, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 74]
+[epoch: 74, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3451,  -7.4757],
+        [-19.7200, -37.2344]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 74, epoch time: 2.6]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 75]
+[epoch: 75, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3452,  -7.4761],
+        [-19.7209, -37.2363]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 75, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 76]
+[epoch: 76, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3454,  -7.4764],
+        [-19.7217, -37.2379]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 76, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 77]
+[epoch: 77, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3455,  -7.4767],
+        [-19.7225, -37.2395]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 77, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 78]
+[epoch: 78, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3456,  -7.4769],
+        [-19.7232, -37.2408]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 78, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 79]
+[epoch: 79, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3457,  -7.4771],
+        [-19.7238, -37.2420]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 79, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 80]
+[epoch: 80, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3458,  -7.4773],
+        [-19.7243, -37.2431]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 80, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 81]
+[epoch: 81, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3458,  -7.4775],
+        [-19.7248, -37.2441]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 81, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 82]
+[epoch: 82, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7253, -37.2450],
+        [ -3.3459,  -7.4777]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 82, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 83]
+[epoch: 83, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3460,  -7.4778],
+        [-19.7257, -37.2458]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 83, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 84]
+[epoch: 84, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7260, -37.2465],
+        [ -3.3460,  -7.4780]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 84, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 85]
+[epoch: 85, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3461,  -7.4781],
+        [-19.7263, -37.2472]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 85, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 86]
+[epoch: 86, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7266, -37.2478],
+        [ -3.3461,  -7.4782]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 86, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 87]
+[epoch: 87, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7269, -37.2483],
+        [ -3.3462,  -7.4783]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 87, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 88]
+[epoch: 88, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7271, -37.2488],
+        [ -3.3462,  -7.4784]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 88, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 89]
+[epoch: 89, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3463,  -7.4784],
+        [-19.7273, -37.2492]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 89, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 90]
+[epoch: 90, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3463,  -7.4785],
+        [-19.7275, -37.2496]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 90, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 91]
+[epoch: 91, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3463,  -7.4786],
+        [-19.7277, -37.2499]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 91, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 92]
+[epoch: 92, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3463,  -7.4786],
+        [-19.7278, -37.2502]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 92, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 93]
+[epoch: 93, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7280, -37.2505],
+        [ -3.3464,  -7.4787]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 93, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 94]
+[epoch: 94, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3464,  -7.4787],
+        [-19.7281, -37.2507]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 94, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 95]
+[epoch: 95, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3464,  -7.4788],
+        [-19.7282, -37.2509]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 95, epoch time: 2.5]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 96]
+[epoch: 96, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3464,  -7.4788],
+        [-19.7283, -37.2511]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 96, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 97]
+[epoch: 97, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.],
+        [  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.]]), pred_params: tensor([[ -3.3464,  -7.4788],
+        [-19.7284, -37.2513]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 97, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 98]
+[epoch: 98, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7285, -37.2515],
+        [ -3.3464,  -7.4789]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 98, epoch time: 2.3]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 99]
+[epoch: 99, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7285, -37.2516],
+        [ -3.3464,  -7.4789]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 99, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 100]
+[epoch: 100, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.],
+        [  0.,   1.,   2.,  -1.,  -1.,  -1.,  -1.,  -1.,  -1.]]), pred_params: tensor([[-19.7286, -37.2517],
+        [ -3.3465,  -7.4789]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 100, epoch time: 2.2]
+[train_loss: 818]
+[valid_loss: 818]
+[start of epoch 1]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.39, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.1817, -0.3958],
+        [-0.0340, -1.9076]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 1, epoch time: 8.3]
+[train_loss: 232]
+[valid_loss: 232]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.1382, -2.1381],
+        [ 0.0956, -0.5862]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 2, epoch time: 2.6]
+[train_loss: 236]
+[valid_loss: 236]
+[start of epoch 3]
+[epoch: 3, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.0179, -0.7581],
+        [-0.2323, -2.3462]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 3, epoch time: 2.7]
+[train_loss: 240]
+[valid_loss: 240]
+[start of epoch 4]
+[epoch: 4, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.0520, -0.9129],
+        [-0.3170, -2.5335]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 4, epoch time: 2.2]
+[train_loss: 244]
+[valid_loss: 244]
+[start of epoch 5]
+[epoch: 5, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.3932, -2.7021],
+        [-0.1149, -1.0521]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 5, epoch time: 2.2]
+[train_loss: 247]
+[valid_loss: 247]
+[start of epoch 6]
+[epoch: 6, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.1715, -1.1775],
+        [-0.4618, -2.8538]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 6, epoch time: 2.2]
+[train_loss: 250]
+[valid_loss: 250]
+[start of epoch 7]
+[epoch: 7, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.2225, -1.2903],
+        [-0.5235, -2.9903]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 7, epoch time: 2.3]
+[train_loss: 253]
+[valid_loss: 253]
+[start of epoch 8]
+[epoch: 8, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.2684, -1.3918],
+        [-0.5791, -3.1132]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 8, epoch time: 2.3]
+[train_loss: 255]
+[valid_loss: 255]
+[start of epoch 9]
+[epoch: 9, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.3097, -1.4832],
+        [-0.6291, -3.2238]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 9, epoch time: 2.2]
+[train_loss: 257]
+[valid_loss: 257]
+[start of epoch 10]
+[epoch: 10, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.3468, -1.5654],
+        [-0.6741, -3.3234]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 10, epoch time: 2.3]
+[train_loss: 259]
+[valid_loss: 259]
+[start of epoch 11]
+[epoch: 11, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.7146, -3.4130],
+        [-0.3803, -1.6394]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 11, epoch time: 2.3]
+[train_loss: 261]
+[valid_loss: 261]
+[start of epoch 12]
+[epoch: 12, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.4104, -1.7060],
+        [-0.7510, -3.4936]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 12, epoch time: 2.2]
+[train_loss: 262]
+[valid_loss: 262]
+[start of epoch 13]
+[epoch: 13, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.4375, -1.7660],
+        [-0.7838, -3.5661]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 13, epoch time: 2.2]
+[train_loss: 264]
+[valid_loss: 264]
+[start of epoch 14]
+[epoch: 14, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.8134, -3.6314],
+        [-0.4618, -1.8199]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 14, epoch time: 2.4]
+[train_loss: 265]
+[valid_loss: 265]
+[start of epoch 15]
+[epoch: 15, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.4838, -1.8685],
+        [-0.8399, -3.6902]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 15, epoch time: 2.6]
+[train_loss: 266]
+[valid_loss: 266]
+[start of epoch 16]
+[epoch: 16, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.5035, -1.9122],
+        [-0.8638, -3.7431]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 16, epoch time: 2.3]
+[train_loss: 267]
+[valid_loss: 267]
+[start of epoch 17]
+[epoch: 17, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.5213, -1.9515],
+        [-0.8854, -3.7907]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 17, epoch time: 2.3]
+[train_loss: 268]
+[valid_loss: 268]
+[start of epoch 18]
+[epoch: 18, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.5373, -1.9869],
+        [-0.9047, -3.8336]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 18, epoch time: 2.2]
+[train_loss: 269]
+[valid_loss: 269]
+[start of epoch 19]
+[epoch: 19, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.5517, -2.0188],
+        [-0.9222, -3.8721]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 19, epoch time: 2.3]
+[train_loss: 269]
+[valid_loss: 269]
+[start of epoch 20]
+[epoch: 20, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.9379, -3.9068],
+        [-0.5646, -2.0475]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 20, epoch time: 2.2]
+[train_loss: 270]
+[valid_loss: 270]
+[start of epoch 21]
+[epoch: 21, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.9520, -3.9381],
+        [-0.5763, -2.0733]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 21, epoch time: 2.3]
+[train_loss: 271]
+[valid_loss: 271]
+[start of epoch 22]
+[epoch: 22, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.5868, -2.0965],
+        [-0.9647, -3.9662]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 22, epoch time: 2.3]
+[train_loss: 271]
+[valid_loss: 271]
+[start of epoch 23]
+[epoch: 23, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.9761, -3.9915],
+        [-0.5963, -2.1174]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 23, epoch time: 2.3]
+[train_loss: 272]
+[valid_loss: 272]
+[start of epoch 24]
+[epoch: 24, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6048, -2.1362],
+        [-0.9864, -4.0143]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 24, epoch time: 2.3]
+[train_loss: 272]
+[valid_loss: 272]
+[start of epoch 25]
+[epoch: 25, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.9957, -4.0348],
+        [-0.6124, -2.1531]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 25, epoch time: 2.3]
+[train_loss: 272]
+[valid_loss: 272]
+[start of epoch 26]
+[epoch: 26, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0040, -4.0532],
+        [-0.6193, -2.1684]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 26, epoch time: 2.5]
+[train_loss: 273]
+[valid_loss: 273]
+[start of epoch 27]
+[epoch: 27, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0115, -4.0698],
+        [-0.6255, -2.1821]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 27, epoch time: 2.2]
+[train_loss: 273]
+[valid_loss: 273]
+[start of epoch 28]
+[epoch: 28, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0183, -4.0847],
+        [-0.6311, -2.1944]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 28, epoch time: 2.4]
+[train_loss: 273]
+[valid_loss: 273]
+[start of epoch 29]
+[epoch: 29, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6361, -2.2055],
+        [-1.0244, -4.0982]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 29, epoch time: 2.2]
+[train_loss: 274]
+[valid_loss: 274]
+[start of epoch 30]
+[epoch: 30, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6406, -2.2155],
+        [-1.0298, -4.1103]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 30, epoch time: 2.3]
+[train_loss: 274]
+[valid_loss: 274]
+[start of epoch 31]
+[epoch: 31, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0348, -4.1212],
+        [-0.6447, -2.2245]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 31, epoch time: 2.3]
+[train_loss: 274]
+[valid_loss: 274]
+[start of epoch 32]
+[epoch: 32, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0392, -4.1310],
+        [-0.6483, -2.2326]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 32, epoch time: 2.3]
+[train_loss: 274]
+[valid_loss: 274]
+[start of epoch 33]
+[epoch: 33, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0432, -4.1398],
+        [-0.6516, -2.2399]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 33, epoch time: 2.4]
+[train_loss: 274]
+[valid_loss: 274]
+[start of epoch 34]
+[epoch: 34, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0468, -4.1477],
+        [-0.6546, -2.2465]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 34, epoch time: 2.3]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 35]
+[epoch: 35, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0500, -4.1549],
+        [-0.6572, -2.2524]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 35, epoch time: 2.2]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 36]
+[epoch: 36, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0529, -4.1613],
+        [-0.6596, -2.2577]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 36, epoch time: 2.4]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 37]
+[epoch: 37, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6618, -2.2625],
+        [-1.0555, -4.1671]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 37, epoch time: 2.2]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 38]
+[epoch: 38, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0579, -4.1723],
+        [-0.6638, -2.2668]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 38, epoch time: 2.2]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 39]
+[epoch: 39, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0600, -4.1770],
+        [-0.6655, -2.2707]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 39, epoch time: 2.2]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 40]
+[epoch: 40, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0619, -4.1812],
+        [-0.6671, -2.2741]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 40, epoch time: 2.3]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 41]
+[epoch: 41, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0636, -4.1850],
+        [-0.6685, -2.2773]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 41, epoch time: 2.5]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 42]
+[epoch: 42, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0652, -4.1884],
+        [-0.6698, -2.2801]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 42, epoch time: 2.3]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 43]
+[epoch: 43, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0666, -4.1915],
+        [-0.6709, -2.2826]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 43, epoch time: 2.3]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 44]
+[epoch: 44, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0678, -4.1943],
+        [-0.6720, -2.2849]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 44, epoch time: 2.3]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 45]
+[epoch: 45, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6729, -2.2870],
+        [-1.0689, -4.1968]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 45, epoch time: 2.5]
+[train_loss: 275]
+[valid_loss: 275]
+[start of epoch 46]
+[epoch: 46, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6737, -2.2888],
+        [-1.0700, -4.1990]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 46, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 47]
+[epoch: 47, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6745, -2.2905],
+        [-1.0709, -4.2010]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 47, epoch time: 2.6]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 48]
+[epoch: 48, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0717, -4.2028],
+        [-0.6752, -2.2920]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 48, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 49]
+[epoch: 49, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0724, -4.2045],
+        [-0.6758, -2.2934]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 49, epoch time: 2.5]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 50]
+[epoch: 50, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6763, -2.2946],
+        [-1.0731, -4.2059]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 50, epoch time: 2.6]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 51]
+[epoch: 51, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6768, -2.2957],
+        [-1.0737, -4.2073]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 51, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 52]
+[epoch: 52, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0742, -4.2085],
+        [-0.6772, -2.2966]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 52, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 53]
+[epoch: 53, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0747, -4.2095],
+        [-0.6776, -2.2975]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 53, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 54]
+[epoch: 54, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6780, -2.2983],
+        [-1.0751, -4.2105]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 54, epoch time: 2.6]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 55]
+[epoch: 55, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6783, -2.2990],
+        [-1.0755, -4.2114]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 55, epoch time: 2.7]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 56]
+[epoch: 56, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0759, -4.2121],
+        [-0.6786, -2.2997]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 56, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 57]
+[epoch: 57, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6789, -2.3003],
+        [-1.0762, -4.2128]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 57, epoch time: 2.7]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 58]
+[epoch: 58, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0765, -4.2135],
+        [-0.6791, -2.3008]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 58, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 59]
+[epoch: 59, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6793, -2.3013],
+        [-1.0768, -4.2140]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 59, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 60]
+[epoch: 60, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0770, -4.2146],
+        [-0.6795, -2.3017]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 60, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 61]
+[epoch: 61, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6797, -2.3021],
+        [-1.0772, -4.2150]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 61, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 62]
+[epoch: 62, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0774, -4.2154],
+        [-0.6799, -2.3024]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 62, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 63]
+[epoch: 63, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0775, -4.2158],
+        [-0.6800, -2.3027]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 63, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 64]
+[epoch: 64, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6801, -2.3030],
+        [-1.0777, -4.2161]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 64, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 65]
+[epoch: 65, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0778, -4.2164],
+        [-0.6802, -2.3033]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 65, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 66]
+[epoch: 66, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0780, -4.2167],
+        [-0.6803, -2.3035]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 66, epoch time: 2.9]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 67]
+[epoch: 67, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0781, -4.2170],
+        [-0.6804, -2.3037]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 67, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 68]
+[epoch: 68, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6805, -2.3039],
+        [-1.0782, -4.2172]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 68, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 69]
+[epoch: 69, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0783, -4.2174],
+        [-0.6806, -2.3040]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 69, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 70]
+[epoch: 70, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0783, -4.2175],
+        [-0.6806, -2.3042]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 70, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 71]
+[epoch: 71, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0784, -4.2177],
+        [-0.6807, -2.3043]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 71, epoch time: 2.6]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 72]
+[epoch: 72, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6808, -2.3044],
+        [-1.0785, -4.2179]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 72, epoch time: 2.6]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 73]
+[epoch: 73, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6808, -2.3045],
+        [-1.0785, -4.2180]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 73, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 74]
+[epoch: 74, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0786, -4.2181],
+        [-0.6809, -2.3046]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 74, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 75]
+[epoch: 75, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6809, -2.3047],
+        [-1.0786, -4.2182]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 75, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 76]
+[epoch: 76, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6809, -2.3048],
+        [-1.0787, -4.2183]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 76, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 77]
+[epoch: 77, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0787, -4.2184],
+        [-0.6810, -2.3049]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 77, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 78]
+[epoch: 78, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0788, -4.2185],
+        [-0.6810, -2.3049]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 78, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 79]
+[epoch: 79, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0788, -4.2185],
+        [-0.6810, -2.3050]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 79, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 80]
+[epoch: 80, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0788, -4.2186],
+        [-0.6810, -2.3050]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 80, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 81]
+[epoch: 81, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0788, -4.2186],
+        [-0.6811, -2.3051]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 81, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 82]
+[epoch: 82, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0789, -4.2187],
+        [-0.6811, -2.3051]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 82, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 83]
+[epoch: 83, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0789, -4.2187],
+        [-0.6811, -2.3052]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 83, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 84]
+[epoch: 84, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0789, -4.2188],
+        [-0.6811, -2.3052]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 84, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 85]
+[epoch: 85, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6811, -2.3052],
+        [-1.0789, -4.2188]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 85, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 86]
+[epoch: 86, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0789, -4.2188],
+        [-0.6811, -2.3052]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 86, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 87]
+[epoch: 87, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0789, -4.2189],
+        [-0.6811, -2.3053]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 87, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 88]
+[epoch: 88, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3053],
+        [-1.0790, -4.2189]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 88, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 89]
+[epoch: 89, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2189],
+        [-0.6812, -2.3053]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 89, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 90]
+[epoch: 90, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2189],
+        [-0.6812, -2.3053]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 90, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 91]
+[epoch: 91, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3053],
+        [-1.0790, -4.2190]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 91, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 92]
+[epoch: 92, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2190],
+        [-0.6812, -2.3054]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 92, epoch time: 2.4]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 93]
+[epoch: 93, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2190],
+        [-0.6812, -2.3054]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 93, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 94]
+[epoch: 94, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2190],
+        [-0.6812, -2.3054]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 94, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 95]
+[epoch: 95, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2190],
+        [-0.6812, -2.3054]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 95, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 96]
+[epoch: 96, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3054],
+        [-1.0790, -4.2190]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 96, epoch time: 2.2]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 97]
+[epoch: 97, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3054],
+        [-1.0790, -4.2190]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 97, epoch time: 2.5]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 98]
+[epoch: 98, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3054],
+        [-1.0790, -4.2191]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 98, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 99]
+[epoch: 99, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-1.0790, -4.2191],
+        [-0.6812, -2.3054]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 99, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 100]
+[epoch: 100, iter: 0 / 2, time: 0.00, loss: -23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.6812, -2.3054],
+        [-1.0790, -4.2191]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 100, epoch time: 2.3]
+[train_loss: 276]
+[valid_loss: 276]
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.37, loss: 23]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.4057, -1.7018],
+        [ 1.3820, -2.2464]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.38, loss: 23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.4806, -0.5694],
+        [-1.8680,  0.1339]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 1, epoch time: 8.7]
+[train_loss: 261]
+[valid_loss: 261]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 2, time: 0.00, loss: 23]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.5466, -0.4309],
+        [-1.7874,  0.3050]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 2, epoch time: 3.2]
+[train_loss: 254]
+[valid_loss: 254]
+[start of epoch 3]
+[epoch: 3, iter: 0 / 2, time: 0.00, loss: 22.1]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.6729, -0.1650],
+        [-1.6309,  0.6406]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 3, epoch time: 2.7]
+[train_loss: 162]
+[valid_loss: 162]
+[start of epoch 4]
+[epoch: 4, iter: 0 / 2, time: 0.00, loss: 2.07]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 2.1579,  3.2152],
+        [ 0.4742,  5.7123]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 4, epoch time: 2.4]
+[train_loss: 72.3]
+[valid_loss: 72.3]
+[start of epoch 5]
+[epoch: 5, iter: 0 / 2, time: 0.00, loss: 1.43]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  3.6141,   6.4264],
+        [  2.5346,  10.5256]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 5, epoch time: 2.4]
+[train_loss: -9.53]
+[valid_loss: -9.53]
+[start of epoch 6]
+[epoch: 6, iter: 0 / 2, time: 0.00, loss: 1.38]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  4.9403,   9.3253],
+        [  4.4092,  14.8699]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 6, epoch time: 2.5]
+[train_loss: -83.4]
+[valid_loss: -83.4]
+[start of epoch 7]
+[epoch: 7, iter: 0 / 2, time: 0.00, loss: 1.38]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  6.1371,  11.9339],
+        [  6.1006,  18.7792]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 7, epoch time: 2.5]
+[train_loss: -150]
+[valid_loss: -150]
+[start of epoch 8]
+[epoch: 8, iter: 0 / 2, time: 0.00, loss: 1.38]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  7.6239,  22.2968],
+        [  7.2152,  14.2809]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 8, epoch time: 2.5]
+[train_loss: -210]
+[valid_loss: -210]
+[start of epoch 9]
+[epoch: 9, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  8.9952,  25.4623],
+        [  8.1858,  16.3929]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 9, epoch time: 2.6]
+[train_loss: -264]
+[valid_loss: -264]
+[start of epoch 10]
+[epoch: 10, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 10.2295,  28.3110],
+        [  9.0593,  18.2935]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 10, epoch time: 2.7]
+[train_loss: -312]
+[valid_loss: -312]
+[start of epoch 11]
+[epoch: 11, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[  9.8456,  20.0040],
+        [ 11.3403,  30.8747]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 11, epoch time: 2.4]
+[train_loss: -356]
+[valid_loss: -356]
+[start of epoch 12]
+[epoch: 12, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 10.5532,  21.5433],
+        [ 12.3401,  33.1819]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 12, epoch time: 2.4]
+[train_loss: -395]
+[valid_loss: -395]
+[start of epoch 13]
+[epoch: 13, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 11.1901,  22.9287],
+        [ 13.2400,  35.2584]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 13, epoch time: 2.4]
+[train_loss: -430]
+[valid_loss: -430]
+[start of epoch 14]
+[epoch: 14, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 14.0498,  37.1273],
+        [ 11.7633,  24.1756]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 14, epoch time: 2.5]
+[train_loss: -462]
+[valid_loss: -462]
+[start of epoch 15]
+[epoch: 15, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 14.7787,  38.8092],
+        [ 12.2792,  25.2978]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 15, epoch time: 2.5]
+[train_loss: -491]
+[valid_loss: -491]
+[start of epoch 16]
+[epoch: 16, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 12.7435,  26.3077],
+        [ 15.4347,  40.3230]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 16, epoch time: 2.4]
+[train_loss: -517]
+[valid_loss: -517]
+[start of epoch 17]
+[epoch: 17, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 16.0250,  41.6854],
+        [ 13.1614,  27.2167]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 17, epoch time: 2.5]
+[train_loss: -540]
+[valid_loss: -540]
+[start of epoch 18]
+[epoch: 18, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 16.5564,  42.9115],
+        [ 13.5375,  28.0347]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 18, epoch time: 2.5]
+[train_loss: -561]
+[valid_loss: -561]
+[start of epoch 19]
+[epoch: 19, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 17.0346,  44.0151],
+        [ 13.8760,  28.7710]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 19, epoch time: 2.6]
+[train_loss: -579]
+[valid_loss: -579]
+[start of epoch 20]
+[epoch: 20, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 14.1806,  29.4336],
+        [ 17.4650,  45.0082]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 20, epoch time: 2.7]
+[train_loss: -596]
+[valid_loss: -596]
+[start of epoch 21]
+[epoch: 21, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 14.4548,  30.0300],
+        [ 17.8524,  45.9021]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 21, epoch time: 2.4]
+[train_loss: -612]
+[valid_loss: -612]
+[start of epoch 22]
+[epoch: 22, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 18.2010,  46.7066],
+        [ 14.7015,  30.5667]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 22, epoch time: 2.5]
+[train_loss: -625]
+[valid_loss: -625]
+[start of epoch 23]
+[epoch: 23, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 18.5148,  47.4306],
+        [ 14.9236,  31.0497]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 23, epoch time: 2.9]
+[train_loss: -638]
+[valid_loss: -638]
+[start of epoch 24]
+[epoch: 24, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 15.1235,  31.4845],
+        [ 18.7972,  48.0822]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 24, epoch time: 2.4]
+[train_loss: -649]
+[valid_loss: -649]
+[start of epoch 25]
+[epoch: 25, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 19.0513,  48.6687],
+        [ 15.3034,  31.8757]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 25, epoch time: 2.5]
+[train_loss: -659]
+[valid_loss: -659]
+[start of epoch 26]
+[epoch: 26, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 15.4653,  32.2279],
+        [ 19.2800,  49.1965]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 26, epoch time: 2.5]
+[train_loss: -668]
+[valid_loss: -668]
+[start of epoch 27]
+[epoch: 27, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 15.6110,  32.5448],
+        [ 19.4859,  49.6715]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 27, epoch time: 2.5]
+[train_loss: -676]
+[valid_loss: -676]
+[start of epoch 28]
+[epoch: 28, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 15.7421,  32.8300],
+        [ 19.6712,  50.0991]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 28, epoch time: 2.5]
+[train_loss: -683]
+[valid_loss: -683]
+[start of epoch 29]
+[epoch: 29, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 15.8601,  33.0867],
+        [ 19.8379,  50.4838]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 29, epoch time: 2.5]
+[train_loss: -690]
+[valid_loss: -690]
+[start of epoch 30]
+[epoch: 30, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 19.9880,  50.8301],
+        [ 15.9663,  33.3178]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 30, epoch time: 2.4]
+[train_loss: -696]
+[valid_loss: -696]
+[start of epoch 31]
+[epoch: 31, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 20.1230,  51.1418],
+        [ 16.0619,  33.5257]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 31, epoch time: 2.5]
+[train_loss: -701]
+[valid_loss: -701]
+[start of epoch 32]
+[epoch: 32, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 20.2446,  51.4223],
+        [ 16.1480,  33.7129]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 32, epoch time: 2.6]
+[train_loss: -706]
+[valid_loss: -706]
+[start of epoch 33]
+[epoch: 33, iter: 0 / 2, time: 0.00, loss: 1.39]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 20.3540,  51.6747],
+        [ 16.2254,  33.8813]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[start of epoch 1]
+[epoch: 1, iter: 0 / 2, time: 0.38, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ 0.1130,  2.8247],
+        [ 0.9676,  2.4553]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 1, epoch time: 8.6]
+[train_loss: 271]
+[valid_loss: 271]
+[start of epoch 2]
+[epoch: 2, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-0.8949,  0.8131],
+        [-0.7230, -0.8335]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 2, epoch time: 3.2]
+[train_loss: 335]
+[valid_loss: 335]
+[start of epoch 3]
+[epoch: 3, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-2.3037, -3.9560],
+        [-1.8514, -1.1333]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 3, epoch time: 2.8]
+[train_loss: 394]
+[valid_loss: 394]
+[start of epoch 4]
+[epoch: 4, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-2.7121, -2.8849],
+        [-3.7261, -6.7661]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 4, epoch time: 2.6]
+[train_loss: 446]
+[valid_loss: 446]
+[start of epoch 5]
+[epoch: 5, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-5.0062, -9.2949],
+        [-3.4867, -4.4611]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 5, epoch time: 2.6]
+[train_loss: 493]
+[valid_loss: 493]
+[start of epoch 6]
+[epoch: 6, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -6.1581, -11.5706],
+        [ -4.1838,  -5.8796]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 6, epoch time: 2.8]
+[train_loss: 536]
+[valid_loss: 536]
+[start of epoch 7]
+[epoch: 7, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -4.8112,  -7.1562],
+        [ -7.1948, -13.6187]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 7, epoch time: 2.5]
+[train_loss: 574]
+[valid_loss: 574]
+[start of epoch 8]
+[epoch: 8, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -5.3757,  -8.3050],
+        [ -8.1278, -15.4618]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 8, epoch time: 2.5]
+[train_loss: 608]
+[valid_loss: 608]
+[start of epoch 9]
+[epoch: 9, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -8.9675, -17.1205],
+        [ -5.8838,  -9.3388]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 9, epoch time: 2.6]
+[train_loss: 639]
+[valid_loss: 639]
+[start of epoch 10]
+[epoch: 10, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -9.7231, -18.6132],
+        [ -6.3411, -10.2692]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 10, epoch time: 2.5]
+[train_loss: 667]
+[valid_loss: 667]
+[start of epoch 11]
+[epoch: 11, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -6.7526, -11.1065],
+        [-10.4031, -19.9566]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 11, epoch time: 2.5]
+[train_loss: 692]
+[valid_loss: 692]
+[start of epoch 12]
+[epoch: 12, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-11.0151, -21.1657],
+        [ -7.1229, -11.8601]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 12, epoch time: 2.5]
+[train_loss: 715]
+[valid_loss: 715]
+[start of epoch 13]
+[epoch: 13, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -7.4563, -12.5383],
+        [-11.5659, -22.2537]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 13, epoch time: 2.5]
+[train_loss: 735]
+[valid_loss: 735]
+[start of epoch 14]
+[epoch: 14, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -7.7562, -13.1486],
+        [-12.0616, -23.2330]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 14, epoch time: 2.4]
+[train_loss: 753]
+[valid_loss: 753]
+[start of epoch 15]
+[epoch: 15, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-12.5077, -24.1143],
+        [ -8.0262, -13.6979]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 15, epoch time: 2.5]
+[train_loss: 769]
+[valid_loss: 769]
+[start of epoch 16]
+[epoch: 16, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-12.9092, -24.9074],
+        [ -8.2691, -14.1923]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 16, epoch time: 2.5]
+[train_loss: 784]
+[valid_loss: 784]
+[start of epoch 17]
+[epoch: 17, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -8.4878, -14.6372],
+        [-13.2705, -25.6212]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 17, epoch time: 2.5]
+[train_loss: 798]
+[valid_loss: 798]
+[start of epoch 18]
+[epoch: 18, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -8.6846, -15.0376],
+        [-13.5957, -26.2636]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 18, epoch time: 2.5]
+[train_loss: 810]
+[valid_loss: 810]
+[start of epoch 19]
+[epoch: 19, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -8.8617, -15.3979],
+        [-13.8884, -26.8417]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 19, epoch time: 2.5]
+[train_loss: 820]
+[valid_loss: 820]
+[start of epoch 20]
+[epoch: 20, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -9.0211, -15.7223],
+        [-14.1518, -27.3621]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 20, epoch time: 2.5]
+[train_loss: 830]
+[valid_loss: 830]
+[start of epoch 21]
+[epoch: 21, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-14.3888, -27.8303],
+        [ -9.1645, -16.0141]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 21, epoch time: 2.6]
+[train_loss: 839]
+[valid_loss: 839]
+[start of epoch 22]
+[epoch: 22, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-14.6022, -28.2518],
+        [ -9.2936, -16.2768]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 22, epoch time: 2.5]
+[train_loss: 847]
+[valid_loss: 847]
+[start of epoch 23]
+[epoch: 23, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-14.7942, -28.6311],
+        [ -9.4098, -16.5132]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 23, epoch time: 2.5]
+[train_loss: 854]
+[valid_loss: 854]
+[start of epoch 24]
+[epoch: 24, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-14.9670, -28.9724],
+        [ -9.5144, -16.7260]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 24, epoch time: 2.6]
+[train_loss: 860]
+[valid_loss: 860]
+[start of epoch 25]
+[epoch: 25, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-15.1225, -29.2797],
+        [ -9.6085, -16.9175]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 25, epoch time: 2.4]
+[train_loss: 866]
+[valid_loss: 866]
+[start of epoch 26]
+[epoch: 26, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -9.6932, -17.0898],
+        [-15.2625, -29.5562]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 26, epoch time: 2.5]
+[train_loss: 871]
+[valid_loss: 871]
+[start of epoch 27]
+[epoch: 27, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-15.3885, -29.8050],
+        [ -9.7694, -17.2450]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 27, epoch time: 2.5]
+[train_loss: 876]
+[valid_loss: 876]
+[start of epoch 28]
+[epoch: 28, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-15.5018, -30.0290],
+        [ -9.8380, -17.3845]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 28, epoch time: 2.8]
+[train_loss: 880]
+[valid_loss: 880]
+[start of epoch 29]
+[epoch: 29, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -9.8998, -17.5102],
+        [-15.6039, -30.2305]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 29, epoch time: 2.6]
+[train_loss: 884]
+[valid_loss: 884]
+[start of epoch 30]
+[epoch: 30, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[ -9.9554, -17.6233],
+        [-15.6957, -30.4119]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 30, epoch time: 2.5]
+[train_loss: 887]
+[valid_loss: 887]
+[start of epoch 31]
+[epoch: 31, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-15.7783, -30.5752],
+        [-10.0054, -17.7250]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 31, epoch time: 2.5]
+[train_loss: 890]
+[valid_loss: 890]
+[start of epoch 32]
+[epoch: 32, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.0504, -17.8166],
+        [-15.8527, -30.7221]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 32, epoch time: 2.5]
+[train_loss: 893]
+[valid_loss: 893]
+[start of epoch 33]
+[epoch: 33, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-15.9197, -30.8544],
+        [-10.0909, -17.8990]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 33, epoch time: 2.5]
+[train_loss: 895]
+[valid_loss: 895]
+[start of epoch 34]
+[epoch: 34, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.1273, -17.9732],
+        [-15.9799, -30.9734]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 34, epoch time: 3]
+[train_loss: 897]
+[valid_loss: 897]
+[start of epoch 35]
+[epoch: 35, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.0341, -31.0805],
+        [-10.1602, -18.0400]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 35, epoch time: 2.8]
+[train_loss: 899]
+[valid_loss: 899]
+[start of epoch 36]
+[epoch: 36, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.1897, -18.1001],
+        [-16.0829, -31.1769]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 36, epoch time: 2.5]
+[train_loss: 901]
+[valid_loss: 901]
+[start of epoch 37]
+[epoch: 37, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.2163, -18.1541],
+        [-16.1268, -31.2636]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 37, epoch time: 2.5]
+[train_loss: 903]
+[valid_loss: 903]
+[start of epoch 38]
+[epoch: 38, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.1664, -31.3417],
+        [-10.2402, -18.2028]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 38, epoch time: 2.4]
+[train_loss: 904]
+[valid_loss: 904]
+[start of epoch 39]
+[epoch: 39, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.2617, -18.2466],
+        [-16.2019, -31.4120]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 39, epoch time: 2.5]
+[train_loss: 906]
+[valid_loss: 906]
+[start of epoch 40]
+[epoch: 40, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.2340, -31.4752],
+        [-10.2811, -18.2860]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 40, epoch time: 2.5]
+[train_loss: 907]
+[valid_loss: 907]
+[start of epoch 41]
+[epoch: 41, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.2628, -31.5322],
+        [-10.2985, -18.3215]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 41, epoch time: 2.5]
+[train_loss: 908]
+[valid_loss: 908]
+[start of epoch 42]
+[epoch: 42, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.2887, -31.5834],
+        [-10.3142, -18.3534]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 42, epoch time: 2.4]
+[train_loss: 909]
+[valid_loss: 909]
+[start of epoch 43]
+[epoch: 43, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.3283, -18.3822],
+        [-16.3120, -31.6295]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 43, epoch time: 2.5]
+[train_loss: 910]
+[valid_loss: 910]
+[start of epoch 44]
+[epoch: 44, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.3330, -31.6710],
+        [-10.3410, -18.4080]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 44, epoch time: 2.5]
+[train_loss: 910]
+[valid_loss: 910]
+[start of epoch 45]
+[epoch: 45, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.3519, -31.7083],
+        [-10.3525, -18.4313]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 45, epoch time: 2.5]
+[train_loss: 911]
+[valid_loss: 911]
+[start of epoch 46]
+[epoch: 46, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.3628, -18.4523],
+        [-16.3690, -31.7419]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 46, epoch time: 2.4]
+[train_loss: 912]
+[valid_loss: 912]
+[start of epoch 47]
+[epoch: 47, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.3720, -18.4711],
+        [-16.3843, -31.7722]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 47, epoch time: 2.5]
+[train_loss: 912]
+[valid_loss: 912]
+[start of epoch 48]
+[epoch: 48, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.3981, -31.7994],
+        [-10.3804, -18.4881]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 48, epoch time: 2.5]
+[train_loss: 913]
+[valid_loss: 913]
+[start of epoch 49]
+[epoch: 49, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4105, -31.8239],
+        [-10.3879, -18.5033]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 49, epoch time: 2.7]
+[train_loss: 913]
+[valid_loss: 913]
+[start of epoch 50]
+[epoch: 50, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4216, -31.8459],
+        [-10.3946, -18.5171]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 50, epoch time: 2.5]
+[train_loss: 914]
+[valid_loss: 914]
+[start of epoch 51]
+[epoch: 51, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4317, -31.8658],
+        [-10.4007, -18.5295]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 51, epoch time: 2.6]
+[train_loss: 914]
+[valid_loss: 914]
+[start of epoch 52]
+[epoch: 52, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4062, -18.5406],
+        [-16.4407, -31.8836]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 52, epoch time: 2.8]
+[train_loss: 914]
+[valid_loss: 914]
+[start of epoch 53]
+[epoch: 53, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4111, -18.5506],
+        [-16.4488, -31.8997]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 53, epoch time: 2.5]
+[train_loss: 915]
+[valid_loss: 915]
+[start of epoch 54]
+[epoch: 54, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4155, -18.5596],
+        [-16.4562, -31.9142]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 54, epoch time: 2.5]
+[train_loss: 915]
+[valid_loss: 915]
+[start of epoch 55]
+[epoch: 55, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4195, -18.5677],
+        [-16.4627, -31.9272]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 55, epoch time: 2.5]
+[train_loss: 915]
+[valid_loss: 915]
+[start of epoch 56]
+[epoch: 56, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4687, -31.9389],
+        [-10.4231, -18.5750]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 56, epoch time: 2.6]
+[train_loss: 915]
+[valid_loss: 915]
+[start of epoch 57]
+[epoch: 57, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4740, -31.9494],
+        [-10.4263, -18.5816]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 57, epoch time: 2.5]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 58]
+[epoch: 58, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4293, -18.5875],
+        [-16.4788, -31.9589]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 58, epoch time: 2.5]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 59]
+[epoch: 59, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4319, -18.5928],
+        [-16.4831, -31.9675]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 59, epoch time: 2.4]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 60]
+[epoch: 60, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4342, -18.5976],
+        [-16.4870, -31.9751]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 60, epoch time: 2.5]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 61]
+[epoch: 61, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4905, -31.9821],
+        [-10.4363, -18.6019]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 61, epoch time: 2.6]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 62]
+[epoch: 62, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.4937, -31.9883],
+        [-10.4382, -18.6058]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 62, epoch time: 2.4]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 63]
+[epoch: 63, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4400, -18.6093],
+        [-16.4965, -31.9939]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 63, epoch time: 2.5]
+[train_loss: 916]
+[valid_loss: 916]
+[start of epoch 64]
+[epoch: 64, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4415, -18.6124],
+        [-16.4991, -31.9989]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 64, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 65]
+[epoch: 65, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5014, -32.0035],
+        [-10.4429, -18.6153]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 65, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 66]
+[epoch: 66, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4441, -18.6178],
+        [-16.5034, -32.0075]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 66, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 67]
+[epoch: 67, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4453, -18.6201],
+        [-16.5053, -32.0112]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 67, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 68]
+[epoch: 68, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5069, -32.0145],
+        [-10.4463, -18.6222]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 68, epoch time: 2.4]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 69]
+[epoch: 69, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5085, -32.0175],
+        [-10.4472, -18.6240]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 69, epoch time: 3.1]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 70]
+[epoch: 70, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4480, -18.6257],
+        [-16.5098, -32.0202]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 70, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 71]
+[epoch: 71, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5110, -32.0226],
+        [-10.4487, -18.6272]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 71, epoch time: 2.4]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 72]
+[epoch: 72, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5121, -32.0247],
+        [-10.4494, -18.6285]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 72, epoch time: 2.6]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 73]
+[epoch: 73, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4500, -18.6298],
+        [-16.5131, -32.0267]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 73, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 74]
+[epoch: 74, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4505, -18.6308],
+        [-16.5140, -32.0284]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 74, epoch time: 2.4]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 75]
+[epoch: 75, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5148, -32.0300],
+        [-10.4510, -18.6318]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 75, epoch time: 2.8]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 76]
+[epoch: 76, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4515, -18.6327],
+        [-16.5155, -32.0314]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 76, epoch time: 2.6]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 77]
+[epoch: 77, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4519, -18.6335],
+        [-16.5162, -32.0327]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 77, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 78]
+[epoch: 78, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5167, -32.0339],
+        [-10.4522, -18.6342]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 78, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 79]
+[epoch: 79, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4525, -18.6349],
+        [-16.5173, -32.0349]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 79, epoch time: 2.6]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 80]
+[epoch: 80, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4528, -18.6354],
+        [-16.5177, -32.0358]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 80, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 81]
+[epoch: 81, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4531, -18.6360],
+        [-16.5182, -32.0366]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 81, epoch time: 2.6]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 82]
+[epoch: 82, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4533, -18.6364],
+        [-16.5185, -32.0374]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 82, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 83]
+[epoch: 83, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4535, -18.6369],
+        [-16.5189, -32.0381]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 83, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 84]
+[epoch: 84, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5192, -32.0387],
+        [-10.4537, -18.6372]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 84, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 85]
+[epoch: 85, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4538, -18.6376],
+        [-16.5195, -32.0392]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 85, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 86]
+[epoch: 86, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5197, -32.0397],
+        [-10.4540, -18.6379]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 86, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 87]
+[epoch: 87, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4541, -18.6382],
+        [-16.5199, -32.0402]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 87, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 88]
+[epoch: 88, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5201, -32.0405],
+        [-10.4543, -18.6384]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 88, epoch time: 3.1]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 89]
+[epoch: 89, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4544, -18.6386],
+        [-16.5203, -32.0409]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 89, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 90]
+[epoch: 90, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5205, -32.0412],
+        [-10.4545, -18.6388]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 90, epoch time: 2.7]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 91]
+[epoch: 91, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5206, -32.0415],
+        [-10.4545, -18.6390]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 91, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 92]
+[epoch: 92, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4546, -18.6392],
+        [-16.5207, -32.0418]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 92, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 93]
+[epoch: 93, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5209, -32.0420],
+        [-10.4547, -18.6393]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 93, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 94]
+[epoch: 94, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4548, -18.6394],
+        [-16.5210, -32.0422]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 94, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 95]
+[epoch: 95, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5211, -32.0424],
+        [-10.4548, -18.6395]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 95, epoch time: 2.8]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 96]
+[epoch: 96, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4549, -18.6397],
+        [-16.5211, -32.0426]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 96, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 97]
+[epoch: 97, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-10.4549, -18.6397],
+        [-16.5212, -32.0427]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 97, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 98]
+[epoch: 98, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5213, -32.0428],
+        [-10.4550, -18.6398]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 98, epoch time: 2.8]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 99]
+[epoch: 99, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5213, -32.0430],
+        [-10.4550, -18.6399]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 99, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]
+[start of epoch 100]
+[epoch: 100, iter: 0 / 2, time: 0.00, loss: nan]
+[debugging] src: tensor([[  9.,  10.,  11.,   3.,   4.,   5.,   6.,   7.,   8.],
+        [  0.,   1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.]]), pred_params: tensor([[-16.5214, -32.0431],
+        [-10.4550, -18.6400]], device='cuda:0'), tgt: tensor([[ 100.,    1.],
+        [ 100.,    1.]])
+[end of epoch 100, epoch time: 2.5]
+[train_loss: 917]
+[valid_loss: 917]

@@ -1,1 +1,1 @@
-from .mle import MLELoss
+from .mle import MLE

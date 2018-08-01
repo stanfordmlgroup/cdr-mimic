@@ -94,11 +94,15 @@ class Dataset(data.Dataset):
         return len(self.df_src)
 
 def get_loader(args, phase='train', is_training=True):
-
     dataset = Dataset(args, phase)
     loader = torch.utils.data.DataLoader(dataset,
                                          batch_size=args.batch_size,
                                          num_workers=args.num_workers,
                                          shuffle=is_training)
     loader.phase = phase
-    return loader
+    if is_training:
+        D_in = dataset.max_src_len
+        return loader, D_in
+    else:
+        return loader
+

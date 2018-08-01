@@ -10,10 +10,6 @@ diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
 
 def get_icd():
-    def _group_icd(row):
-        print(row)
-        return row
-
     icd_df = pd.read_csv(diagnoses_icd_table_path)
     icd_df_grouped = icd_df.groupby(["SUBJECT_ID", "HADM_ID"],
                                     as_index=False)
@@ -22,9 +18,21 @@ def get_icd():
     icd_df_grouped = icd_df_grouped.sort_values(["SUBJECT_ID", "HADM_ID"])
 
     # Ensure to print out at least one patient who has >1 admissions, for debugging groupby
+    # print(icd_df_grouped.head(18))
+
+    # Assign patient's gender
+    patients_df = pd.read_csv(patients_table_path)
+    def _include_gender(row):
+        patient = patients_df["SUBJECT_ID" == row["SUBJECT_ID"]]
+        print("row in patients.csv is", patient)
+        print("returning gender", patient["GENDER"])
+        return patient["GENDER"]
+    icd_df_grouped.apply(_include_gender, axis=1)
     print(icd_df_grouped.head(18))
 
-    # TODO: Roll up past ICD codes for extra col in data
+    # TODO: Age at which prediction was made: DISCHTIME (admissions.csv) - DOB (patients.csv)
+
+    # TODO LATER: Roll up past ICD codes for extra col in data
     # subject_id = None
     # for row in icd_df_grouped:
     #     if subject_id != row['SUBJECT_ID']:
@@ -82,7 +90,7 @@ def get_tte():
 
 def main():
     get_icd()
-    get_tte()
+    # get_tte()
 
 
 if __name__ == "__main__":

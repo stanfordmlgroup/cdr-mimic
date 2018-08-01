@@ -2,12 +2,12 @@ import torch.nn as nn
 
 
 class SimpleNN(nn.Module):
-    def __init__(self, data_dir, **kwargs):
+    def __init__(self, data_dir, D_in, **kwargs):
         super(SimpleNN, self).__init__()
 
         self.data_dir = data_dir
         self.model = nn.Sequential(
-            nn.Linear(9, 1024),
+            nn.Linear(D_in, 1024),
             nn.ReLU(),
             nn.Linear(1024, 2)
         )

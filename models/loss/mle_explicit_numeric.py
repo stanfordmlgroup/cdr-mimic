@@ -45,7 +45,6 @@ class MLE(nn.Module):
             cum_loss += loss
         
         return -cum_loss
-        # Vectorize after debug
         # score_dead = self.log_density(mu, s2, time)
         # score_alive = self.log_tailmass(mu, s2, time)
         # losses =  - (mask * (score_dead * (1-censor) + score_alive * censor))

@@ -11,12 +11,13 @@ from logger import TrainLogger
 from saver import ModelSaver
 
 def train(args):
-    train_loader = get_loader(args=args)
+    train_loader, D_in = get_loader(args=args)
     if args.ckpt_path:
         model, ckpt_info = ModelSaver.load_model(args.ckpt_path, args.gpu_ids)
         args.start_epoch = ckpt_info['epoch'] + 1
     else:
         model_fn = models.__dict__[args.model]
+        args.D_in = D_in
         model = model_fn(**vars(args))
         model = nn.DataParallel(model, args.gpu_ids)
     model = model.to(args.device)
