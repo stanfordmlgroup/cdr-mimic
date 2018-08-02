@@ -7,7 +7,7 @@ class SimpleNN(nn.Module):
 
         self.data_dir = data_dir
         self.model = nn.Sequential(
-            nn.Linear(D_in, 1024),
+            nn.Linear(int(D_in), 1024),
             nn.ReLU(),
             nn.Linear(1024, 2)
         )

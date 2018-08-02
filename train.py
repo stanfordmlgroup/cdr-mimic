@@ -19,7 +19,7 @@ def train(args):
         model_fn = models.__dict__[args.model]
         args.D_in = D_in
         model = model_fn(**vars(args))
-        model = nn.DataParallel(model, args.gpu_ids)
+        # model = nn.DataParallel(model, args.gpu_ids)
     model = model.to(args.device)
     model.train()
 
@@ -61,10 +61,10 @@ def train(args):
 
             logger.end_iter()
 
-        metrics = evaluator.evaluate(model, args.device, logger.epoch)
+        # metrics = evaluator.evaluate(model, args.device, logger.epoch)
         # saver.save(logger.epoch, model, optimizer, lr_scheduler, args.device,
         #            metric_val=metrics.get(args.metric_name, None))
-        logger.end_epoch(metrics=metrics)
+        # logger.end_epoch(metrics=metrics)
         # print(metrics)
         # logger.end_epoch({})
         # optim.step_scheduler(lr_scheduler, metrics, logger.epoch)
@@ -72,5 +72,5 @@ def train(args):
 
 if __name__ == '__main__':
     parser = TrainArgParser()
-    args_ = parser.parse_args()
-    train(args_)
+    args = parser.parse_args()
+    train(args)
