@@ -8,9 +8,6 @@ class MLE(nn.Module):
     def __init__(self):
         super(MLE, self).__init__()
 
-    # def arithmetic_mean(self, mu, s):
-    #     return np.exp((mu + s.exp()/2.).cpu().data.numpy())
-
     def forward(self, pred_params, tgts):
         cum_loss = 0
         for pred_param, tgt in zip(pred_params, tgts):
@@ -25,6 +22,7 @@ class MLE(nn.Module):
             # print("tte", tte)
             # print("log prob", pred.log_prob(tte + 1e-5))
             # print("cdf", pred.cdf(tte))
+
             if is_alive:
                 incr_loss = -((1 - pred.cdf(tte) + 1e-5).log())
             else:

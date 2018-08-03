@@ -3,7 +3,7 @@
     "adam_beta_2": 0.999,
     "batch_size": 16,
     "ckpt_path": "",
-    "data_dir": "/deep/group/sharonz/cdr_mimic/data/",
+    "data_dir": "/deep/group/tony/cdr-mimic/data/icd_codes_only",
     "dataset": "mimic",
     "epochs_per_eval": 1,
     "epochs_per_save": 5,

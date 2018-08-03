@@ -51,7 +51,7 @@ class Dataset(data.Dataset):
         src_lengths = np.array([len(i) for i in self.encoded_df_src])
         self.max_src_len = np.amax(src_lengths)
 
-        self.src_tensor = torch.FloatTensor(np.size(self.encoded_df_src), self.max_src_len).fill_(-1)
+        self.src_tensor = torch.FloatTensor(np.size(self.encoded_df_src), int(self.max_src_len)).fill_(-1)
         for i, row in enumerate(self.encoded_df_src):
             self.src_tensor[i, :np.size(row)] = torch.from_numpy(row)
 
