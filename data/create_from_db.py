@@ -27,7 +27,7 @@ def get_icd():
     patients_df = pd.read_csv(patients_table_path)
     admissions_df = pd.read_csv(admissions_table_path)
 
-    """ Convert to python list, b/c pandas encounters a memory error, with below code:
+    """ Convert all df to python list, b/c pandas encounters a memory error, with below code:
             def _include_gender(row):
                 patient = patients_df.loc[patients_df["SUBJECT_ID"] == row["SUBJECT_ID"]]
                 # print("row in patients.csv is", patient)
@@ -39,19 +39,34 @@ def get_icd():
     icd_codes_py = icd_df_grouped.values
     patients_py = patients_df.values
     admissions_py = admissions_df.values
-    print('patients_py', patients_py[0])
-    print('icd_codes_py', icd_codes_py[0])
-    print('admissions_py', admissions_py[0])
+    print('patients_py eg', patients_py[0])
+    print('icd_codes_py eg', icd_codes_py[0])
+    print('admissions_py eg', admissions_py[0])
+
+    """ Information from the patients table that we want
+
+        gender: str, 'M' or 'F'
+        dob (date of birth): str, in format to convert to datetime
+
+    """
 
     patients = {}
     for row in patients_py:
         subject_id = row[1]
         gender = row[2]
         dob = row[3]
-        dod_hosp = row[5]
-        patients[subject_id] = {"gender": gender, "dob": dob}
-    print('patients', patients[2])
-    print('patients gender', patients[2]['gender'])
+        dod = row[4]
+        is_dod_hosp = row[5]
+        patients[subject_id] = {
+                                    "gender": gender, 
+                                    "dob": dob, 
+                                    "dod": dod,
+                                    "is_dod_hosp": False if str(is_dod_hosp) == 'nan' else True,
+                                }
+    print('patients eg', patients[2])
+    print('patients gender eg', patients[2]['gender'])
+    print('patients dob eg', patients[2]['dob'])
+    print('patients dod eg', patients[2]['dod'])
 
     """ NB: implemented to make it easy to later add other demographics 
             in admissions.csv. 
@@ -65,20 +80,36 @@ def get_icd():
         dischtime = row[4]
         admissions[hadm_id] = {"dischtime": dischtime}
 
-    data_all = []
-    data_all_ids = []
+    src = []
+    src_ids = []
     obscured_age_count = 0
+    dod_hosp_hadm_ids = []
+    dod_hosp_count = 0
     # DOBs are obscured if patients are ever older than 89 in the system, and set back 300 years
     obscure_age_seconds = 300 * (365 * 24 * 60 * 60)
     for row in icd_codes_py:
         subject_id = row[0]
         hadm_id = row[1]
 
+        # Remove hospital admissions where patients died in the hospital: if dischtime is after patient deathtime
+        dod = patients[subject_id]['dod']
+        dod = datetime.strptime(dod, "%Y-%m-%d %H:%M:%S")
+        dischtime = admissions[hadm_id]['dischtime']
+        dischtime = datetime.strptime(dischtime, "%Y-%m-%d %H:%M:%S")
+        if dischtime > dod:
+            dod_hosp_hadm_ids.append(hadm_id)
+            dod_hosp_count += 1
+
+        # Double check if patient died in hospital at this hadm (hospital admission)
+        # by seeing if this hadm is their last && they have a is_dod_hosp flag
+        # if patients[subject_id]['is_dod_hosp']:
+            # TODO HERE: reverse the icd_codes_py list (then re-reverse back the src list) to figure out it it's the last hospital admission
+
+        # Remove 
+
         # Age at which prediction was made: DISCHTIME (admissions.csv) - DOB (patients.csv)
         dob = patients[subject_id]['dob']
-        dischtime = admissions[hadm_id]['dischtime']
         dob = datetime.strptime(dob, "%Y-%m-%d %H:%M:%S")
-        dischtime = datetime.strptime(dischtime, "%Y-%m-%d %H:%M:%S")
 
         age_of_pred = dischtime - dob
         age_of_pred = age_of_pred.total_seconds()
@@ -90,23 +121,30 @@ def get_icd():
 
         # Do not include hadm_ids or subject_ids
         data_individual = list(patients[subject_id]['gender']) + list([age_of_pred]) + list(row[-1])
+        src.append(data_individual)
+
+        # Include hadm_ids and subject_ids here in master csv file
         data_individual_ids = list(row[:-1]) + data_individual
-        data_all.append(data_individual)
-        data_all_ids.append(data_individual_ids)
+        src_ids.append(data_individual_ids)
 
     print(f'{obscured_age_count/len(patients_py)*100:.2f}% of patients had their dobs obscured. Absolute nums are: {obscured_age_count}/{len(patients_py)}')
-    print('data_all', data_all[0])
+    print('src eg', src[0])
     
-    np.save('src_master.npy', data_all_ids)
-    with open('src_master.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerows(data_all_ids)
+    # Save to files
+    # np.save('src_master.npy', src_ids)
+    # with open('src_master.csv', 'w') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerows(src_ids)
 
-    np.save('src.npy', data_all)
-    with open('src.csv', 'w') as f:
+    # np.save('src_disch_alive.npy', src)
+    with open('src_disch_alive.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerows(data_all)
-        
+        writer.writerows(src)
+    
+    # Return patient/subject ids that need to be removed from targets (tgt.csv) file(s)
+    print(f'{dod_hosp_count} patients died in the hospital - to be removed from dataset')
+    return dod_hosp_hadm_ids
+
     # TODO LATER: Roll up past ICD codes for extra col in data
     # subject_id = None
     # for row in icd_df_grouped:
@@ -130,7 +168,7 @@ def get_icd():
     #     sample_icd_df_grouped.to_csv("sample_src_" + str(num_samples) + ".csv", encoding="utf-8", index=False)
 
 
-def get_tte():
+def get_tte(dod_hosp_hadm_ids):
     # Get time to event (mortality), from time of ICD code which is discharge time
     def _tte(row):
         if pd.isna(row['DOD']):
@@ -152,23 +190,56 @@ def get_tte():
     merged_df = merged_df.sort_values(["SUBJECT_ID", "HADM_ID"])
     print(merged_df.head())
 
-    np.save('tgt_master.npy', merged_df)
-    merged_df.to_csv("tgt_master.csv", encoding="utf-8", index=False)
+    merged_py = merged_df.values
+    print('merged_py eg', merged_py[0])
 
-    select_merged_df = merged_df[['TTE', 'IS_ALIVE']]
-    np.save('tgt.npy', select_merged_df)
-    select_merged_df.to_csv("tgt.csv", encoding="utf-8", index=False)
+    # Remove patients who died in the hospital
+    tgt_disch_alive = []
+    tgt_disch_alive_ids = []
+    for row in merged_py:
+        subject_id = row[2]
+        if subject_id in dod_hosp_hadm_ids:
+            continue
 
-    num_samples_list = [3, 20]
-    for num_samples in num_samples_list:
-        sample_merged_df = select_merged_df.head(num_samples)
-        np.save('sample_tgt_' + str(num_samples) + '.npy', sample_merged_df)
-        sample_merged_df.to_csv("sample_tgt_" + str(num_samples) + ".csv", encoding="utf-8", index=False)
+        # Do not include hadm_ids and subject_ids
+        tgt_individual = list(row[:2])
+        tgt_disch_alive.append(tgt_individual)
+        
+        # Include hadm_ids and subject_ids here in master csv file
+        tgt_individual_ids = list(row)
+        tgt_disch_alive_ids.append(tgt_individual_ids)
+    print('tgt_disch_alive eg', tgt_disch_alive[0])
+    
+    # Save to files
+    # np.save('tgt_master.npy', tgt_disch_alive_ids)
+    # with open('tgt_master.csv', 'w') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerows(tgt_disch_alive_ids)
+
+    # np.save('tgt_disch_alive.npy', tgt_disch_alive)
+    with open('tgt_disch_alive.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerows(tgt_disch_alive)
+    
+    return 
+    # Using pandas df
+    # np.save('tgt_master.npy', merged_df)
+    # merged_df.to_csv("tgt_master.csv", encoding="utf-8", index=False)
+
+    # select_merged_df = merged_df[['TTE', 'IS_ALIVE']]
+    # np.save('tgt.npy', select_merged_df)
+    # select_merged_df.to_csv("tgt.csv", encoding="utf-8", index=False)
+
+    # num_samples_list = [3, 20]
+    # for num_samples in num_samples_list:
+    #     sample_merged_df = select_merged_df.head(num_samples)
+    #     np.save('sample_tgt_' + str(num_samples) + '.npy', sample_merged_df)
+    #     sample_merged_df.to_csv("sample_tgt_" + str(num_samples) + ".csv", encoding="utf-8", index=False)
 
 
 def main():
-    get_icd()
-    # get_tte()
+    dod_hosp_hadm_ids = get_icd()
+    get_tte(dod_hosp_hadm_ids)
 
 
 if __name__ == "__main__":
