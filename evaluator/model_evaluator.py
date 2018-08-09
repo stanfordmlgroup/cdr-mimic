@@ -4,13 +4,15 @@ import torch
 import torch.nn as nn
 from tqdm import tqdm
 
+import optim
+
 from evaluator.average_meter import AverageMeter
 
 
 class ModelEvaluator(object):
     """Class for evaluating a model during training."""
 
-    def __init__(self, data_loaders, logger, max_eval=None, epochs_per_eval=1):
+    def __init__(self, args, data_loaders, logger, max_eval=None, epochs_per_eval=1):
         """
         Args:
             data_loaders: List of Torch `DataLoader`s to sample from.
@@ -22,7 +24,7 @@ class ModelEvaluator(object):
         self.data_loaders = data_loaders
         self.epochs_per_eval = epochs_per_eval
         self.logger = logger
-        self.loss_fn = nn.CrossEntropyLoss()
+        self.loss_fn = optim.get_loss_fn(args.loss_fn, args)
         self.max_eval = None if max_eval is None or max_eval < 0 else max_eval
 
     def evaluate(self, model, device, epoch=None):
@@ -72,7 +74,7 @@ class ModelEvaluator(object):
             num_examples = min(num_examples, self.max_eval)
 
         # Sample from the data loader and record model outputs
-        loss_fn = nn.KLDivLoss()
+        loss_fn = self.loss_fn
         num_evaluated = 0
         with tqdm(total=num_examples, unit=' ' + phase) as progress_bar:
             for inputs, targets in data_loader:
@@ -80,11 +82,20 @@ class ModelEvaluator(object):
                     break
 
                 with torch.no_grad():
-                    logits = model.forward(inputs.to(device))
-                    loss = loss_fn(logits, targets.to(device))
-                    print(logits.int(), targets)
+                    pred_params = model.forward(inputs.to(device))
+                    loss = loss_fn(pred_params, targets.to(device))
 
-                self._record_batch(logits, loss, **records)
+                    # TODO: This does not look right!
+                    # if loss < 2:
+                    dist_means = []
+                    for params in pred_params:
+                        mu, s = params[0], params[1]
+                        pred = torch.distributions.LogNormal(mu, abs(s))
+                        dist_mean = pred.mean
+                        dist_means.append(dist_mean)
+                    print(f'{dist_means}\n{targets}')
+
+                self._record_batch(pred_params, loss, **records)
 
                 progress_bar.update(min(inputs.size(0), num_examples - num_evaluated))
                 num_evaluated += inputs.size(0)

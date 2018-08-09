@@ -1,7 +1,5 @@
 import argparse
-from data.loader import load_data
-
-
+from data.loader import get_loader
 
 def get_parser():
     parser = argparse.ArgumentParser()
@@ -15,4 +13,8 @@ def get_parser():
 
 args = get_parser().parse_args()
 
-load_data(args)
+loader, D_in = get_loader(args)
+print(f'D_in is {D_in}')
+# print(iter(loader).next())
+for src, tgt in loader:
+	print(src, tgt)

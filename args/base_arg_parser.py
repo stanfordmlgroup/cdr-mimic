@@ -31,6 +31,7 @@ class BaseArgParser(object):
                                  help='Directory in which to save model checkpoints.')
         self.parser.add_argument('--dataset', type=str, default='mimic', choices=('mimic',),
                                  help='Dataset to use. Gets mapped to dataset class name.')
+        self.parser.add_argument('--verbose', action="store_true")
 
         self.is_training = None
 

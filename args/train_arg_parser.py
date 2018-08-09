@@ -30,7 +30,7 @@ class TrainArgParser(BaseArgParser):
         # Optimizer args
         self.parser.add_argument('--adam_beta_1', type=float, default=0.9, help='Adam beta 1 (Adam only).')
         self.parser.add_argument('--adam_beta_2', type=float, default=0.999, help='Adam beta 2 (Adam only).')
-        self.parser.add_argument('--lr', type=float, default=1e-3, help='Initial learning rate.')
+        self.parser.add_argument('--lr', type=float, default=1e-5, help='Initial learning rate.')
         self.parser.add_argument('--lr_scheduler', type=str, default='step', choices=('step', 'multi_step', 'plateau'),
                                  help='LR scheduler to use.')
         self.parser.add_argument('--lr_decay_gamma', type=float, default=0.1,

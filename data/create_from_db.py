@@ -236,7 +236,7 @@ def get_tte(remove_hadm_ids, last_dischtimes):
             print(f'***ERROR TTE is negative\nEvent occurs at {event}, dischtime at {dischtime}\nis_alive {is_alive}\nhadm_id {hadm_id}, subject_id {subject_id}')
         
         # Do not include hadm_ids or subject_ids
-        data_individual = [tte, is_alive]
+        data_individual = [tte, int(is_alive)]
         tgt.append(data_individual)
 
         # Include hadm_ids and subject_ids here in master csv file

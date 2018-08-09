@@ -8,43 +8,57 @@ import torch.nn as nn
 import torch.utils.data as data
 from torch.autograd import Variable
 
+SRC_FILE_NAME = 'src_sample.csv'
+TGT_FILE_NAME = 'tgt_sample.csv'
+
 # MIMIC Dataset
 class Dataset(data.Dataset):
     def __init__(self, args, phase, is_training_set=True):
         datadir = Path(args.data_dir)
 
-        src_csv_path = datadir / 'sample_src_3.csv'
-        tgt_csv_path = datadir / 'sample_tgt_3.csv'
+        src_csv_path = datadir / SRC_FILE_NAME
+        tgt_csv_path = datadir / TGT_FILE_NAME
 
         self.df_src = pd.read_csv(src_csv_path, delimiter='\n', header=None).values
         self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',', header=None).values
 
-        # if args.toy:
-        #     df = df.sample(frac=0.01)
+        if args.verbose:
+            print(f"{phase} number of examples: {len(self.df_src)}")
 
         self.num_classes = 1
 
-        # if args.verbose:
-        #     print(f"{split} number of examples: {len(self.df_src)}")
-        # self.df_src = np.array([np.array(i[0].replace(" ", "").replace("'", "").split(',')) for i in self.df_src])
+        index = 0
         self.vocab_w2i = {}
         self.vocab_i2w = {}
-        index = 0
         self.encoded_df_src = []
+
         self.is_training_set = is_training_set
         self.phase = phase
 
         for i, row in enumerate(self.df_src):
             parsed_row = row[0].replace(" ", "").replace("'", "").split(',')
             encoded_row = np.zeros(len(parsed_row))
-            for j, word in enumerate(parsed_row):
-                # adding to vocab dictionaries
+
+            # Demographics: (1) gender and (2) age of prediction
+            NUM_DEMOGRAPHICS = 2
+
+            gender = 0 if parsed_row[0] == 'M' else 1
+            encoded_row[0] = gender
+
+            age_of_pred = parsed_row[1]
+            encoded_row[1] = age_of_pred
+            
+            # After demographics, the rest are ICD codes
+            icd_codes = parsed_row[2:]
+
+            for j, word in enumerate(icd_codes):
+                # Add to vocab dictionaries
                 if word not in self.vocab_w2i.keys():
                     self.vocab_w2i[word] = index
                     self.vocab_i2w[index] = word
                     index += 1
-                # encoding strings to indexes
-                encoded_row[j] = self.vocab_w2i[word]
+                # Encode strings to indexes
+                encoded_row[j + NUM_DEMOGRAPHICS] = self.vocab_w2i[word]
             self.encoded_df_src.append(encoded_row)
         self.encoded_df_src = np.array(self.encoded_df_src)
 
@@ -54,32 +68,6 @@ class Dataset(data.Dataset):
         self.src_tensor = torch.FloatTensor(np.size(self.encoded_df_src), int(self.max_src_len)).fill_(-1)
         for i, row in enumerate(self.encoded_df_src):
             self.src_tensor[i, :np.size(row)] = torch.from_numpy(row)
-
-        # if args.weighted_loss:
-        #     neg_weight = self.df_tgt.mean()
-        #     self.weights = [neg_weight, 1 - neg_weight]
-
-        #     if args.verbose:
-        #         print(f"{split} weights: ", end="")
-        #         print(*self.weights)
-
-        #         p_count = (self.labels == 1).sum(axis = 0)[0]
-        #         n_count = (self.labels == 0).sum(axis = 0)[0]
-        #         total = p_count + n_count
-
-        #         random_loss = (self.weights[0] * p_count + self.weights[1] * n_count) *\
-        #                                            -np.log(0.5) / total
-        #         print (f"{split} random loss: {random_loss}")
-
-    # def weighted_loss(self, prediction, target):
-    #     weights_npy = np.array([self.weights[int(t[0])] for t in target.data])
-    #     weights_torch = Variable(torch.FloatTensor(weights_npy).cuda())
-
-    #     loss = nn.functional.binary_cross_entropy_with_logits(prediction,
-    #                                                           target,
-    #                                                           weight=weights_torch)
-
-    #     return loss
 
     def __getitem__(self, index):
         src = self.src_tensor[index]

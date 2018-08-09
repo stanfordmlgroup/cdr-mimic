@@ -12,7 +12,9 @@ class MLE(nn.Module):
         cum_loss = 0
         for pred_param, tgt in zip(pred_params, tgts):
             mu, s = pred_param[0], pred_param[1]
-            pred = torch.distributions.LogNormal(mu, s.exp())
+            pred = torch.distributions.LogNormal(mu, abs(s))
+            # pred = torch.distributions.LogNormal(mu, s.exp())
+
             # pred = self.arithmetic_mean(mu, s)
             # print("ARITHMETIC pred is:",pred)
             tte, is_alive = tgt[0], tgt[1]
@@ -31,11 +33,12 @@ class MLE(nn.Module):
                 if is_alive:
                     print("nan alive; pred cdf", pred.cdf(tte), "; pred", pred, "; log inner", 1 - pred.cdf(tte) + 1e-5, "; log", (1 - pred.cdf(tte) + 1e-5).log())
                 else:
-                    print("nan dead; pred log_prob", pred.log_prob(tte + 1e-5), "; tte + eps", tte + 1e-5)
+                    print("nan dead; pred log_prob", pred.log_prob(tte + 1e-5), "; tte + eps", tte + 1e-5, "; mu s.exp()", mu, s.exp())
                 print("pred params: mu, s", mu, s)
-            cum_loss += -((1 - pred.cdf(tte) + 1e-5).log()) if is_alive else -(1 - is_alive) * pred.log_prob(tte + 1e-5)
-            print("loss_val per", cum_loss)
-        print("loss val in mle.py", cum_loss)
+            # cum_loss += -((1 - pred.cdf(tte) + 1e-5).log()) if is_alive else -(1 - is_alive) * pred.log_prob(tte + 1e-5)
+            cum_loss += incr_loss
+        #     print("loss_val per", cum_loss)
+        # print("loss val in mle.py", cum_loss)
 
         return cum_loss / tgts.shape[0]
 

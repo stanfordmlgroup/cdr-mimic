@@ -6,6 +6,7 @@ class SimpleNN(nn.Module):
         super(SimpleNN, self).__init__()
 
         self.data_dir = data_dir
+        self.D_in = D_in
         self.model = nn.Sequential(
             nn.Linear(int(D_in), 1024),
             nn.ReLU(),
@@ -21,3 +22,13 @@ class SimpleNN(nn.Module):
     def forward(self, src):
         pred = self.model(src)
         return pred
+
+    def args_dict(self):
+        """Get a dictionary of args that can be used to reconstruct this architecture.
+        To use the returned dict, initialize the model with `ModelName(**model_args)`.
+        """
+        model_args = {
+            'D_in': self.D_in,
+        }
+
+        return model_args

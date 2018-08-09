@@ -36,14 +36,12 @@ class TrainLogger(BaseLogger):
 
             # Write a header for the log entry
             avg_time = (time() - self.iter_start_time) / self.batch_size
-            message = '[epoch: {}, iter: {} / {}, time: {:.2f}, loss: {:.3g}]' \
+            message = 'Epoch: {}, iter: {} / {}, time: {:.2f}, loss: {:.3g}' \
                 .format(self.epoch, self.iter, self.dataset_len, avg_time, self.loss_meter.avg)
 
             # Write all errors as scalars to the graph
             self._log_scalars({'batch_loss': self.loss_meter.avg}, print_to_stdout=False)
             self.loss_meter.reset()
-
-            message += '\n[debugging] src: {}, pred_params: {}, tgt: {}'.format(src, pred_params, tgt)
 
             self.write(message)
 
@@ -57,7 +55,7 @@ class TrainLogger(BaseLogger):
         """Log info for start of an epoch."""
         self.epoch_start_time = time()
         self.iter = 0
-        self.write('[start of epoch {}]'.format(self.epoch))
+        # self.write('[start of epoch {}]'.format(self.epoch))
 
     def end_epoch(self, metrics):
         """Log info for end of an epoch.
@@ -65,7 +63,7 @@ class TrainLogger(BaseLogger):
         Args:
             metrics: Dictionary of metric values. Items have format '{phase}_{metric}': value.
         """
-        self.write('[end of epoch {}, epoch time: {:.2g}]'.format(self.epoch, time() - self.epoch_start_time))
+        # self.write('[end of epoch {}, epoch time: {:.2g}]'.format(self.epoch, time() - self.epoch_start_time))
         self._log_scalars(metrics)
 
         self.epoch += 1
