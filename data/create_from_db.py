@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
 import time
 from datetime import timedelta, datetime, date
@@ -11,6 +11,8 @@ import csv
 admissions_table_path = '/deep/group/med/mimic-iii/ADMISSIONS.csv'
 diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
+
+SECONDS_PER_YEAR = 60 * 60 * 24 * 365.25
 
 def get_icd():
     icd_df = pd.read_csv(diagnoses_icd_table_path)
@@ -39,9 +41,6 @@ def get_icd():
     icd_codes_py = icd_df_grouped.values
     patients_py = patients_df.values
     admissions_py = admissions_df.values
-    print('patients_py eg', patients_py[0])
-    print('icd_codes_py eg', icd_codes_py[0])
-    print('admissions_py eg', admissions_py[0])
 
     """ Information from the patients table that we want
 
@@ -61,12 +60,9 @@ def get_icd():
                                     "gender": gender, 
                                     "dob": dob, 
                                     "dod": dod,
+                                    "is_dod": False if str(dod) == 'nan' else True,
                                     "is_dod_hosp": False if str(is_dod_hosp) == 'nan' else True,
                                 }
-    print('patients eg', patients[2])
-    print('patients gender eg', patients[2]['gender'])
-    print('patients dob eg', patients[2]['dob'])
-    print('patients dod eg', patients[2]['dod'])
 
     """ NB: implemented to make it easy to later add other demographics 
             in admissions.csv. 
@@ -80,167 +76,190 @@ def get_icd():
         dischtime = row[4]
         admissions[hadm_id] = {"dischtime": dischtime}
 
-    src = []
-    src_ids = []
-    obscured_age_count = 0
-    dod_hosp_hadm_ids = []
-    dod_hosp_count = 0
     # DOBs are obscured if patients are ever older than 89 in the system, and set back 300 years
     obscure_age_seconds = 300 * (365 * 24 * 60 * 60)
+    obscured_age_count = 0
+    dod_hosp_count = 0
+
+    # Stores the alive patients' last admission time { subject_id: last_dischtime }
+    last_dischtimes = {}
+    # Stores patients' admissions { subject_id: { hadm_id : dischtime }} 
+    subjects_to_admissions = defaultdict(lambda: defaultdict(datetime))
+
+    prelim_src = []
+    prelim_src_ids = []
+    remove_hadm_ids = []
     for row in icd_codes_py:
         subject_id = row[0]
         hadm_id = row[1]
 
-        # Remove hospital admissions where patients died in the hospital: if dischtime is after patient deathtime
-        dod = patients[subject_id]['dod']
-        dod = datetime.strptime(dod, "%Y-%m-%d %H:%M:%S")
         dischtime = admissions[hadm_id]['dischtime']
         dischtime = datetime.strptime(dischtime, "%Y-%m-%d %H:%M:%S")
-        if dischtime > dod:
-            dod_hosp_hadm_ids.append(hadm_id)
-            dod_hosp_count += 1
-
-        # Double check if patient died in hospital at this hadm (hospital admission)
-        # by seeing if this hadm is their last && they have a is_dod_hosp flag
-        # if patients[subject_id]['is_dod_hosp']:
-            # TODO HERE: reverse the icd_codes_py list (then re-reverse back the src list) to figure out it it's the last hospital admission
-
-        # Remove 
+        is_dod = patients[subject_id]['is_dod']
+        if is_dod:
+            # Dead patients: Remove hospital admissions where patients died in the hospital, ie. if dischtime is after patient deathtime
+            dod = patients[subject_id]['dod']
+            dod = datetime.strptime(dod, "%Y-%m-%d %H:%M:%S")
+            if dischtime > dod:
+                remove_hadm_ids.append(hadm_id)
+                dod_hosp_count += 1
+                continue
+        else:
+            # Add dichtime time to history
+            subjects_to_admissions[subject_id][hadm_id] = dischtime
 
         # Age at which prediction was made: DISCHTIME (admissions.csv) - DOB (patients.csv)
         dob = patients[subject_id]['dob']
         dob = datetime.strptime(dob, "%Y-%m-%d %H:%M:%S")
 
+        # Remove if dob was obscured (patient was 89+ yrs in db at some point)
         age_of_pred = dischtime - dob
         age_of_pred = age_of_pred.total_seconds()
         if age_of_pred > obscure_age_seconds:
-            # print('age was obscured. birth', dob, 'dischtime', dischtime)
             obscured_age_count += 1
-            # We set this as a flag in the db - can process downstream as 89 yo or just ignore val (most likely)
-            age_of_pred = -1
-
-        # Do not include hadm_ids or subject_ids
-        data_individual = list(patients[subject_id]['gender']) + list([age_of_pred]) + list(row[-1])
-        src.append(data_individual)
-
-        # Include hadm_ids and subject_ids here in master csv file
-        data_individual_ids = list(row[:-1]) + data_individual
-        src_ids.append(data_individual_ids)
-
-    print(f'{obscured_age_count/len(patients_py)*100:.2f}% of patients had their dobs obscured. Absolute nums are: {obscured_age_count}/{len(patients_py)}')
-    print('src eg', src[0])
-    
-    # Save to files
-    # np.save('src_master.npy', src_ids)
-    # with open('src_master.csv', 'w') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerows(src_ids)
-
-    # np.save('src_disch_alive.npy', src)
-    with open('src_disch_alive.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerows(src)
-    
-    # Return patient/subject ids that need to be removed from targets (tgt.csv) file(s)
-    print(f'{dod_hosp_count} patients died in the hospital - to be removed from dataset')
-    return dod_hosp_hadm_ids
-
-    # TODO LATER: Roll up past ICD codes for extra col in data
-    # subject_id = None
-    # for row in icd_df_grouped:
-    #     if subject_id != row['SUBJECT_ID']:
-    #         subject_id = row['SUBJECT_ID']
-
-
-    # Using pandas df to save to files
-
-    # np.save('src_master.npy', icd_df_grouped)
-    # icd_df_grouped.to_csv("src_master.csv", encoding="utf-8", index=False)
-
-    # select_icd_df_grouped = icd_df_grouped[['ICD9_CODE']]
-    # np.save('src.npy', select_icd_df_grouped)
-    # select_icd_df_grouped.to_csv("src.csv", encoding="utf-8", index=False)
-
-    # num_samples_list = [3, 20]
-    # for num_samples in num_samples_list:
-    #     sample_icd_df_grouped = select_icd_df_grouped.head(num_samples)
-    #     np.save('sample_src_' + str(num_samples) + '.npy', sample_icd_df_grouped)
-    #     sample_icd_df_grouped.to_csv("sample_src_" + str(num_samples) + ".csv", encoding="utf-8", index=False)
-
-
-def get_tte(dod_hosp_hadm_ids):
-    # Get time to event (mortality), from time of ICD code which is discharge time
-    def _tte(row):
-        if pd.isna(row['DOD']):
-            return 0
-        return max(0, time.mktime(time.strptime(row['DOD'], "%Y-%m-%d %H:%M:%S")) -
-                   time.mktime(time.strptime(row['DISCHTIME'], "%Y-%m-%d %H:%M:%S")))
-    # Bool for alive/dead
-    def _is_alive(row):
-        return 1 if pd.isna(row['DOD']) else 0
-
-    patients_df = pd.read_csv(patients_table_path)
-    admissions_df = pd.read_csv(admissions_table_path)
-    merged_df = pd.merge(patients_df, admissions_df, on='SUBJECT_ID', sort=True)
-
-    merged_df['TTE'] = merged_df.apply(lambda row: _tte(row), axis=1)
-    merged_df['IS_ALIVE'] = merged_df.apply(lambda row: _is_alive(row), axis=1)
-
-    merged_df = merged_df[['TTE', 'IS_ALIVE', 'SUBJECT_ID', 'HADM_ID']]
-    merged_df = merged_df.sort_values(["SUBJECT_ID", "HADM_ID"])
-    print(merged_df.head())
-
-    merged_py = merged_df.values
-    print('merged_py eg', merged_py[0])
-
-    # Remove patients who died in the hospital
-    tgt_disch_alive = []
-    tgt_disch_alive_ids = []
-    for row in merged_py:
-        subject_id = row[2]
-        if subject_id in dod_hosp_hadm_ids:
+            remove_hadm_ids.append(hadm_id)
             continue
 
-        # Do not include hadm_ids and subject_ids
-        tgt_individual = list(row[:2])
-        tgt_disch_alive.append(tgt_individual)
-        
+        # Convert age of pred to years for numerical instability
+        age_of_pred /= SECONDS_PER_YEAR
+
+        # Do not include hadm_ids or subject_ids
+        data_individual = list(patients[subject_id]['gender']) + [age_of_pred] + list(row[-1])
+        prelim_src.append(data_individual)
+
         # Include hadm_ids and subject_ids here in master csv file
-        tgt_individual_ids = list(row)
-        tgt_disch_alive_ids.append(tgt_individual_ids)
-    print('tgt_disch_alive eg', tgt_disch_alive[0])
+        data_individual_ids = [hadm_id, subject_id] + data_individual
+        prelim_src_ids.append(data_individual_ids)
+
+    # Remove alive patient's last admission (even if only one - only want those with 2+ admissions)
+    last_admission_count = 0
+    only_admission_count = 0
+    remove_src_hadm_ids = []
+    for subject_id, hadm_to_admissions in subjects_to_admissions.items():
+        hadm_ids = list(hadm_to_admissions.keys())
+        admission_history = list(hadm_to_admissions.values())
+
+        # Get last admission dischtime
+        idx_last_hadm = np.argmax(admission_history)
+        last_dischtimes[subject_id] = admission_history[idx_last_hadm] # Technically could go in for loop below to save memory, but looks cleaner this way
+
+        remove_hadm_ids.append(hadm_ids[idx_last_hadm])
+        remove_src_hadm_ids.append(hadm_ids[idx_last_hadm])
+
+        if len(hadm_ids) > 1:
+            last_admission_count += 1
+        else:
+            only_admission_count += 1
+
+    src = []
+    src_ids = []
+    for i, row in enumerate(prelim_src_ids):
+        hadm_id = row[0]
+        if hadm_id in remove_src_hadm_ids:
+            continue
+        src_ids.append(row)
+        src.append(prelim_src[i])
     
     # Save to files
-    # np.save('tgt_master.npy', tgt_disch_alive_ids)
-    # with open('tgt_master.csv', 'w') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerows(tgt_disch_alive_ids)
-
-    # np.save('tgt_disch_alive.npy', tgt_disch_alive)
-    with open('tgt_disch_alive.csv', 'w') as f:
+    np.save('src.npy', src)
+    with open('src.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerows(tgt_disch_alive)
+        writer.writerows(src)
+
+    np.save('src_master.npy', src_ids)
+    with open('src_master.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(['HADM_ID', 'SUBJECT_ID', 'GENDER', 'AGE_OF_PRED', 'ICD_CODES'])
+        writer.writerows(src_ids)
+
+    # Return hospital admission ids (hadm_ids) that need to be removed from targets (tgt.csv) file(s)
+    counter_remove_hadm_ids = Counter(remove_hadm_ids)
+    duplicate_count = sum(counter_remove_hadm_ids.values()) - len(counter_remove_hadm_ids)
+    remove_hadm_ids_count = len(remove_hadm_ids) - duplicate_count
+    print(f'{dod_hosp_count} patients died in the hospital - to be removed from dataset')
+    print(f'{obscured_age_count/len(patients_py)*100:.2f}% of patients had their dobs obscured. Absolute nums are: {obscured_age_count}/{len(patients_py)} - to be removed from dataset')
+    print(f'{only_admission_count} were single admission patients - to be removed from dataset')
+    print(f'{last_admission_count} were last admissions - to be removed from dataset')
+    print(f'{remove_hadm_ids_count} hospital admissions to be removed from dataset. \
+        This is {remove_hadm_ids_count/len(admissions_py)}% of all admissions, which totaled {len(admissions_py)}. \
+        {len(admissions_py) - remove_hadm_ids_count} admissions remain.')
+    return remove_hadm_ids, last_dischtimes
+
+
+def get_tte(remove_hadm_ids, last_dischtimes):
+    patients_df = pd.read_csv(patients_table_path)
+    admissions_df = pd.read_csv(admissions_table_path)
+
+    admissions_df = admissions_df.sort_values(['SUBJECT_ID', 'HADM_ID'])
     
-    return 
-    # Using pandas df
-    # np.save('tgt_master.npy', merged_df)
-    # merged_df.to_csv("tgt_master.csv", encoding="utf-8", index=False)
+    patients_py = patients_df.values
+    admissions_py = admissions_df.values
 
-    # select_merged_df = merged_df[['TTE', 'IS_ALIVE']]
-    # np.save('tgt.npy', select_merged_df)
-    # select_merged_df.to_csv("tgt.csv", encoding="utf-8", index=False)
+    # Get patient death info for is_alive col and computing tte col
+    patients = {}
+    for row in patients_py:
+        subject_id = row[1]
+        dod = row[4]
 
-    # num_samples_list = [3, 20]
-    # for num_samples in num_samples_list:
-    #     sample_merged_df = select_merged_df.head(num_samples)
-    #     np.save('sample_tgt_' + str(num_samples) + '.npy', sample_merged_df)
-    #     sample_merged_df.to_csv("sample_tgt_" + str(num_samples) + ".csv", encoding="utf-8", index=False)
+        patients[subject_id] = {
+                                    "dod": dod,
+                                    "is_alive": True if str(dod) == 'nan' else False,
+                                }
 
+    tgt = []
+    tgt_ids = []
+    for row in admissions_py:
+        hadm_id = row[2]
+        if hadm_id in remove_hadm_ids:
+            continue
+
+        subject_id = row[1]
+
+        dischtime = row[4]
+        dischtime = datetime.strptime(dischtime, "%Y-%m-%d %H:%M:%S")
+
+        is_alive = patients[subject_id]['is_alive']
+
+        # Calculate TTE (in years)
+        if is_alive:
+            # Alive: Get time to event (last encounter)
+            event = last_dischtimes[subject_id]
+        else:
+            # Dead: Get time to event (mortality), from time of ICD code which is discharge time
+            dod = patients[subject_id]['dod']
+            dod = datetime.strptime(dod, "%Y-%m-%d %H:%M:%S")
+            event = dod
+
+        tte = event - dischtime
+        tte = tte.total_seconds() / SECONDS_PER_YEAR
+        if tte < 0:
+            print(f'***ERROR TTE is negative\nEvent occurs at {event}, dischtime at {dischtime}\nis_alive {is_alive}\nhadm_id {hadm_id}, subject_id {subject_id}')
+        
+        # Do not include hadm_ids or subject_ids
+        data_individual = [tte, is_alive]
+        tgt.append(data_individual)
+
+        # Include hadm_ids and subject_ids here in master csv file
+        data_individual_ids = [hadm_id, subject_id] + data_individual
+        tgt_ids.append(data_individual_ids)
+
+    # Save to files
+    np.save('tgt.npy', tgt)
+    with open('tgt.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerows(tgt)
+
+    np.save('tgt_master.npy', tgt_ids)
+    with open('tgt_master.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(['HADM_ID', 'SUBJECT_ID', 'TTE', 'IS_ALIVE'])
+        writer.writerows(tgt_ids)
+    
+    return
 
 def main():
-    dod_hosp_hadm_ids = get_icd()
-    get_tte(dod_hosp_hadm_ids)
-
+    remove_hadm_ids, last_dischtimes = get_icd()
+    get_tte(remove_hadm_ids, last_dischtimes)
 
 if __name__ == "__main__":
     main()

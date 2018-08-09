@@ -17,7 +17,7 @@ class Dataset(data.Dataset):
         tgt_csv_path = datadir / 'sample_tgt_3.csv'
 
         self.df_src = pd.read_csv(src_csv_path, delimiter='\n', header=None).values
-        self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',').values
+        self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',', header=None).values
 
         # if args.toy:
         #     df = df.sample(frac=0.01)
