@@ -8,13 +8,17 @@ import pandas as pd
 
 import csv
 
+src_file_save = True
+tgt_file_save = True
+
 admissions_table_path = '/deep/group/med/mimic-iii/ADMISSIONS.csv'
 diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
 
 SECONDS_PER_YEAR = 60 * 60 * 24 * 365.25
+MANUAL_TTE_DELTA = 60 * 60 * 24 # seconds in one day
 
-def get_icd():
+def get_icd(src_file_save=False, keep_only_hadm=True, keep_last_hadm=True):
     icd_df = pd.read_csv(diagnoses_icd_table_path)
     icd_df_grouped = icd_df.groupby(["SUBJECT_ID", "HADM_ID"],
                                     as_index=False)
@@ -131,62 +135,84 @@ def get_icd():
         data_individual_ids = [hadm_id, subject_id] + data_individual
         prelim_src_ids.append(data_individual_ids)
 
-    # Remove alive patient's last admission (even if only one - only want those with 2+ admissions)
-    last_admission_count = 0
+    """ Alive patients processing. Either we: 
+        (a) Remove alive patient's last admission, even if it's their only one. We only want those with 2+ admissions. 
+                Stored in remove_src_hadm_ids to be processed in src just below in this function, and also added here to remove_hadm_ids.
+        (b) Pass these admissions for TTE calculation
+                Stored in manual_tte_hadm_ids
+        (c) Combination of (a) and (b) where we remove last admissions from patients with >1 visit, but keep those with only 1 admission
+    """
     only_admission_count = 0
+    last_admission_count = 0
     remove_src_hadm_ids = []
+    manual_tte_hadm_ids = []
     for subject_id, hadm_to_admissions in subjects_to_admissions.items():
         hadm_ids = list(hadm_to_admissions.keys())
         admission_history = list(hadm_to_admissions.values())
 
         # Get last admission dischtime
         idx_last_hadm = np.argmax(admission_history)
-        last_dischtimes[subject_id] = admission_history[idx_last_hadm] # Technically could go in for loop below to save memory, but looks cleaner this way
+        last_dischtimes[subject_id] = admission_history[idx_last_hadm]
 
-        remove_hadm_ids.append(hadm_ids[idx_last_hadm])
-        remove_src_hadm_ids.append(hadm_ids[idx_last_hadm])
-
-        if len(hadm_ids) > 1:
-            last_admission_count += 1
-        else:
+        # Single admission patients (only admission)
+        if len(hadm_ids) <= 1:
             only_admission_count += 1
+            if keep_only_hadm:
+                manual_tte_hadm_ids.append(hadm_ids[idx_last_hadm])
+            else:
+                remove_hadm_ids.append(hadm_ids[idx_last_hadm])
+                remove_src_hadm_ids.append(hadm_ids[idx_last_hadm])
+        # Last admissions from alive patients
+        else:
+            last_admission_count += 1
+            if keep_last_hadm:
+                manual_tte_hadm_ids.append(hadm_ids[idx_last_hadm])
+            else:
+                remove_hadm_ids.append(hadm_ids[idx_last_hadm])
+                remove_src_hadm_ids.append(hadm_ids[idx_last_hadm])
 
     src = []
     src_ids = []
-    for i, row in enumerate(prelim_src_ids):
-        hadm_id = row[0]
-        if hadm_id in remove_src_hadm_ids:
-            continue
-        src_ids.append(row)
-        src.append(prelim_src[i])
+    # Save to final src vars, removing extra admissions (last or only) if applicable - these are flags we can toggle (keep_only_hadm and keep_last_hadm)
+    if remove_src_hadm_ids:
+        for i, row in enumerate(prelim_src_ids):
+            hadm_id = row[0]
+            if hadm_id in remove_src_hadm_ids:
+                continue
+            src_ids.append(row)
+            src.append(prelim_src[i])
+    else:
+        src = prelim_src
+        src_ids = prelim_src_ids
     
     # Save to files
-    np.save('src.npy', src)
-    with open('src.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerows(src)
+    if src_file_save:
+        np.save('src.npy', src)
+        with open('src.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(src)
 
-    np.save('src_master.npy', src_ids)
-    with open('src_master.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(['HADM_ID', 'SUBJECT_ID', 'GENDER', 'AGE_OF_PRED', 'ICD_CODES'])
-        writer.writerows(src_ids)
+        np.save('src_master.npy', src_ids)
+        with open('src_master.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow(['HADM_ID', 'SUBJECT_ID', 'GENDER', 'AGE_OF_PRED', 'ICD_CODES'])
+            writer.writerows(src_ids)
 
     # Return hospital admission ids (hadm_ids) that need to be removed from targets (tgt.csv) file(s)
     counter_remove_hadm_ids = Counter(remove_hadm_ids)
     duplicate_count = sum(counter_remove_hadm_ids.values()) - len(counter_remove_hadm_ids)
     remove_hadm_ids_count = len(remove_hadm_ids) - duplicate_count
-    print(f'{dod_hosp_count} patients died in the hospital - to be removed from dataset')
-    print(f'{obscured_age_count/len(patients_py)*100:.2f}% of patients had their dobs obscured. Absolute nums are: {obscured_age_count}/{len(patients_py)} - to be removed from dataset')
-    print(f'{only_admission_count} were single admission patients - to be removed from dataset')
-    print(f'{last_admission_count} were last admissions - to be removed from dataset')
-    print(f'{remove_hadm_ids_count} hospital admissions to be removed from dataset. \
-        This is {remove_hadm_ids_count/len(admissions_py)}% of all admissions, which totaled {len(admissions_py)}. \
-        {len(admissions_py) - remove_hadm_ids_count} admissions remain.')
-    return remove_hadm_ids, last_dischtimes
+    n_admissions = len(admissions_py)
+    print(f'{dod_hosp_count} ({dod_hosp_count/n_admissions*100:.2f}%) admissions removed b/c patients died in the hospital')
+    print(f'{obscured_age_count} ({obscured_age_count/n_admissions*100:.2f}%) admissions removed b/c age was obscured')
+    print(f'[Formerly] {only_admission_count} ({only_admission_count/n_admissions*100:.2f}%) admissions removed b/c were single admission patients who stayed alive')
+    print(f'[Formerly] {last_admission_count} ({obscured_age_count/n_admissions*100:.2f}%) admissions removed b/c were alive patients last admissions')
+    print(f'{remove_hadm_ids_count} ({remove_hadm_ids_count/n_admissions}%) admissions removed from dataset total {n_admissions} with {n_admissions - remove_hadm_ids_count} admissions remaining.')
+    print(f'[Formerly] NB: {duplicate_count} of these admissions removed had 2 reasons for being removed')
+    return remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids
 
 
-def get_tte(remove_hadm_ids, last_dischtimes):
+def get_tte(remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids, tgt_file_save=False):
     patients_df = pd.read_csv(patients_table_path)
     admissions_df = pd.read_csv(admissions_table_path)
 
@@ -224,6 +250,8 @@ def get_tte(remove_hadm_ids, last_dischtimes):
         if is_alive:
             # Alive: Get time to event (last encounter)
             event = last_dischtimes[subject_id]
+            if hadm_id in manual_tte_hadm_ids:
+                event += timedelta(seconds=MANUAL_TTE_DELTA)
         else:
             # Dead: Get time to event (mortality), from time of ICD code which is discharge time
             dod = patients[subject_id]['dod']
@@ -244,22 +272,23 @@ def get_tte(remove_hadm_ids, last_dischtimes):
         tgt_ids.append(data_individual_ids)
 
     # Save to files
-    np.save('tgt.npy', tgt)
-    with open('tgt.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerows(tgt)
+    if tgt_file_save:
+        np.save('tgt.npy', tgt)
+        with open('tgt.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(tgt)
 
-    np.save('tgt_master.npy', tgt_ids)
-    with open('tgt_master.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(['HADM_ID', 'SUBJECT_ID', 'TTE', 'IS_ALIVE'])
-        writer.writerows(tgt_ids)
+        np.save('tgt_master.npy', tgt_ids)
+        with open('tgt_master.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow(['HADM_ID', 'SUBJECT_ID', 'TTE', 'IS_ALIVE'])
+            writer.writerows(tgt_ids)
     
     return
 
 def main():
-    remove_hadm_ids, last_dischtimes = get_icd()
-    get_tte(remove_hadm_ids, last_dischtimes)
+    remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids = get_icd(src_file_save)
+    get_tte(remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids, tgt_file_save)
 
 if __name__ == "__main__":
     main()

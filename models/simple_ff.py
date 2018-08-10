@@ -8,9 +8,9 @@ class SimpleNN(nn.Module):
         self.data_dir = data_dir
         self.D_in = D_in
         self.model = nn.Sequential(
-            nn.Linear(int(D_in), 1024),
-            nn.ReLU(),
-            nn.Linear(1024, 2)
+            nn.Linear(int(D_in), 16),
+            nn.Tanh(),
+            nn.Linear(16, 2)
         )
         # self.model.apply(self.init_weights)
 

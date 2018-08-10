@@ -27,48 +27,58 @@ class Dataset(data.Dataset):
 
         self.num_classes = 1
 
-        index = 0
+        index = 1
         self.vocab_w2i = {}
         self.vocab_i2w = {}
-        self.encoded_df_src = []
+        self.encoded_src = []
 
         self.is_training_set = is_training_set
         self.phase = phase
 
+        src_demographics = []
+        src_icd_codes = []
         for i, row in enumerate(self.df_src):
             parsed_row = row[0].replace(" ", "").replace("'", "").split(',')
-            encoded_row = np.zeros(len(parsed_row))
 
             # Demographics: (1) gender and (2) age of prediction
             NUM_DEMOGRAPHICS = 2
 
             gender = 0 if parsed_row[0] == 'M' else 1
-            encoded_row[0] = gender
-
             age_of_pred = parsed_row[1]
-            encoded_row[1] = age_of_pred
+            src_demographics.append([gender, age_of_pred])
             
             # After demographics, the rest are ICD codes
-            icd_codes = parsed_row[2:]
+            unencoded_icd_codes = parsed_row[2:]
 
-            for j, word in enumerate(icd_codes):
+            row_encoded_icd_codes = []
+            for j, word in enumerate(unencoded_icd_codes):
                 # Add to vocab dictionaries
                 if word not in self.vocab_w2i.keys():
                     self.vocab_w2i[word] = index
                     self.vocab_i2w[index] = word
                     index += 1
                 # Encode strings to indexes
-                encoded_row[j + NUM_DEMOGRAPHICS] = self.vocab_w2i[word]
-            self.encoded_df_src.append(encoded_row)
-        self.encoded_df_src = np.array(self.encoded_df_src)
+                row_encoded_icd_codes[j] = self.vocab_w2i[word]
+            src_icd_codes.append(row_encoded_icd_codes)
+        # src_icd_codes = np.array(src_icd_codes)
 
-        src_lengths = np.array([len(i) for i in self.encoded_df_src])
-        self.max_src_len = np.amax(src_lengths)
+        icd_code_lengths = np.array([len(i) for i in src_icd_codes])
+        max_icd_codes_len = np.amax(icd_code_lengths)
+        self.max_src_len = max_icd_codes_len + NUM_DEMOGRAPHICS
 
-        self.src_tensor = torch.FloatTensor(np.size(self.encoded_df_src), int(self.max_src_len)).fill_(-1)
-        for i, row in enumerate(self.encoded_df_src):
-            self.src_tensor[i, :np.size(row)] = torch.from_numpy(row)
+        icd_codes_tensor = torch.FloatTensor(np.size(src_icd_codes), int(max_icd_codes_len)).fill_(0)
+        for i, row in enumerate(src_icd_codes):
+            icd_codes_tensor[i, :np.size(row)] = torch.from_numpy(row)
 
+        # One-hot encoding for ICD codes
+        one_hot_icd_codes_tensor = torch.eye(max_icd_codes_len)
+        one_hot_icd_codes_tensor = one_hot_icd_codes[icd_codes_tensor]
+
+        # Concat tensors for demographics and icd codes
+        demographics_tensor = torch.FloatTensor(src_demographics)
+        self.src_tensor = torch.concat(demographics_tensor, one_hot_icd_codes_tensor)
+        print(self.src_tensor[0])
+        
     def __getitem__(self, index):
         src = self.src_tensor[index]
         tgt = self.df_tgt[index]
