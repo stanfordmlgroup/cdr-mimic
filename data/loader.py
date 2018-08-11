@@ -22,8 +22,9 @@ class Dataset(data.Dataset):
         self.df_src = pd.read_csv(src_csv_path, delimiter='\n', header=None).values
         self.df_tgt = pd.read_csv(tgt_csv_path, delimiter=',', header=None).values
 
+        self.num_examples = len(self.df_src)
         if args.verbose:
-            print(f"{phase} number of examples: {len(self.df_src)}")
+            print(f"{phase} number of examples: {self.num_examples}")
 
         self.num_classes = 1
 
@@ -44,7 +45,7 @@ class Dataset(data.Dataset):
             NUM_DEMOGRAPHICS = 2
 
             gender = 0 if parsed_row[0] == 'M' else 1
-            age_of_pred = parsed_row[1]
+            age_of_pred = float(parsed_row[1])
             src_demographics.append([gender, age_of_pred])
             
             # After demographics, the rest are ICD codes
@@ -58,27 +59,39 @@ class Dataset(data.Dataset):
                     self.vocab_i2w[index] = word
                     index += 1
                 # Encode strings to indexes
-                row_encoded_icd_codes[j] = self.vocab_w2i[word]
+                row_encoded_icd_codes.append(self.vocab_w2i[word])
             src_icd_codes.append(row_encoded_icd_codes)
-        # src_icd_codes = np.array(src_icd_codes)
+        src_icd_codes = np.array(src_icd_codes)
 
         icd_code_lengths = np.array([len(i) for i in src_icd_codes])
         max_icd_codes_len = np.amax(icd_code_lengths)
         self.max_src_len = max_icd_codes_len + NUM_DEMOGRAPHICS
 
-        icd_codes_tensor = torch.FloatTensor(np.size(src_icd_codes), int(max_icd_codes_len)).fill_(0)
+        icd_codes_tensor = torch.LongTensor(np.size(src_icd_codes), int(max_icd_codes_len)).fill_(0)
         for i, row in enumerate(src_icd_codes):
+            row = np.array(row)
             icd_codes_tensor[i, :np.size(row)] = torch.from_numpy(row)
 
         # One-hot encoding for ICD codes
-        one_hot_icd_codes_tensor = torch.eye(max_icd_codes_len)
-        one_hot_icd_codes_tensor = one_hot_icd_codes[icd_codes_tensor]
+        one_hot_icd_codes_tensor = torch.eye(index)
+        one_hot_icd_codes_tensor = one_hot_icd_codes_tensor[icd_codes_tensor]
 
         # Concat tensors for demographics and icd codes
-        demographics_tensor = torch.FloatTensor(src_demographics)
-        self.src_tensor = torch.concat(demographics_tensor, one_hot_icd_codes_tensor)
-        print(self.src_tensor[0])
-        
+        expanded_src_demographics = [[[v for i in range(index)] for v in d] for d in src_demographics]
+        demographics_tensor = torch.FloatTensor(expanded_src_demographics)
+        # demographics_tensor = demographics_tensor.view(demographics_tensor.size(1), self.num_examples, -1)
+        # one_hot_icd_codes_tensor = one_hot_icd_codes_tensor.view(one_hot_icd_codes_tensor.size(1), self.num_examples, -1)
+        print(demographics_tensor.size(), one_hot_icd_codes_tensor.size())
+        # print(demographics_tensor.expand_as(one_hot_icd_codes_tensor))
+        # print(one_hot_icd_codes_tensor)
+        # demographics_tensor = demographics_tensor.expand_as(one_hot_icd_codes_tensor)
+        self.src_tensor = torch.cat((demographics_tensor, one_hot_icd_codes_tensor), dim=1)
+        self.src_tensor = self.src_tensor.view(self.num_examples, -1, index)
+        for x in self.src_tensor:
+            print('-----')
+            print(x)
+            print('-----')
+
     def __getitem__(self, index):
         src = self.src_tensor[index]
         tgt = self.df_tgt[index]
