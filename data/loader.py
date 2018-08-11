@@ -28,7 +28,7 @@ class Dataset(data.Dataset):
 
         self.num_classes = 1
 
-        index = 1
+        vocab_index = 1
         self.vocab_w2i = {}
         self.vocab_i2w = {}
         self.encoded_src = []
@@ -55,13 +55,14 @@ class Dataset(data.Dataset):
             for j, word in enumerate(unencoded_icd_codes):
                 # Add to vocab dictionaries
                 if word not in self.vocab_w2i.keys():
-                    self.vocab_w2i[word] = index
-                    self.vocab_i2w[index] = word
-                    index += 1
+                    self.vocab_w2i[word] = vocab_index
+                    self.vocab_i2w[vocab_index] = word
+                    vocab_index += 1
                 # Encode strings to indexes
                 row_encoded_icd_codes.append(self.vocab_w2i[word])
             src_icd_codes.append(row_encoded_icd_codes)
         src_icd_codes = np.array(src_icd_codes)
+        self.vocab_size = vocab_index
 
         icd_code_lengths = np.array([len(i) for i in src_icd_codes])
         max_icd_codes_len = np.amax(icd_code_lengths)
@@ -73,24 +74,15 @@ class Dataset(data.Dataset):
             icd_codes_tensor[i, :np.size(row)] = torch.from_numpy(row)
 
         # One-hot encoding for ICD codes
-        one_hot_icd_codes_tensor = torch.eye(index)
+        one_hot_icd_codes_tensor = torch.eye(self.vocab_size)
         one_hot_icd_codes_tensor = one_hot_icd_codes_tensor[icd_codes_tensor]
 
         # Concat tensors for demographics and icd codes
-        expanded_src_demographics = [[[v for i in range(index)] for v in d] for d in src_demographics]
+        expanded_src_demographics = [[[v for i in range(self.vocab_size)] for v in d] for d in src_demographics]
         demographics_tensor = torch.FloatTensor(expanded_src_demographics)
-        # demographics_tensor = demographics_tensor.view(demographics_tensor.size(1), self.num_examples, -1)
-        # one_hot_icd_codes_tensor = one_hot_icd_codes_tensor.view(one_hot_icd_codes_tensor.size(1), self.num_examples, -1)
-        print(demographics_tensor.size(), one_hot_icd_codes_tensor.size())
-        # print(demographics_tensor.expand_as(one_hot_icd_codes_tensor))
-        # print(one_hot_icd_codes_tensor)
-        # demographics_tensor = demographics_tensor.expand_as(one_hot_icd_codes_tensor)
         self.src_tensor = torch.cat((demographics_tensor, one_hot_icd_codes_tensor), dim=1)
-        self.src_tensor = self.src_tensor.view(self.num_examples, -1, index)
-        for x in self.src_tensor:
-            print('-----')
-            print(x)
-            print('-----')
+        self.src_tensor = self.src_tensor.view(self.num_examples, -1, self.vocab_size)
+
 
     def __getitem__(self, index):
         src = self.src_tensor[index]
@@ -112,7 +104,7 @@ def get_loader(args, phase='train', is_training=True):
                                          shuffle=is_training)
     loader.phase = phase
     if is_training:
-        D_in = dataset.max_src_len
+        D_in = dataset.max_src_len * dataset.vocab_size
         return loader, D_in
     else:
         return loader

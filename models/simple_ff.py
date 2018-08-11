@@ -8,7 +8,7 @@ class SimpleNN(nn.Module):
         self.data_dir = data_dir
         self.D_in = D_in
         self.model = nn.Sequential(
-            nn.Linear(int(D_in), 16),
+            nn.Linear(D_in, 16),
             nn.Tanh(),
             nn.Linear(16, 2)
         )
@@ -20,6 +20,8 @@ class SimpleNN(nn.Module):
             m.bias.data.fill_(0.01)
 
     def forward(self, src):
+        src = src.view(-1, self.D_in * 15)
+        # b_size = src.size(0)
         pred = self.model(src)
         return pred
 

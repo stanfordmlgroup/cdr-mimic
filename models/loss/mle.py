@@ -12,8 +12,8 @@ class MLE(nn.Module):
         cum_loss = 0
         for pred_param, tgt in zip(pred_params, tgts):
             mu, s = pred_param[0], pred_param[1]
-            pred = torch.distributions.LogNormal(mu, abs(s))
-            # pred = torch.distributions.LogNormal(mu, s.exp())
+            # pred = torch.distributions.LogNormal(mu, abs(s))
+            pred = torch.distributions.LogNormal(mu, s.exp())
 
             # pred = self.arithmetic_mean(mu, s)
             # print("ARITHMETIC pred is:",pred)
