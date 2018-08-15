@@ -11,6 +11,8 @@ import csv
 src_file_save = True
 tgt_file_save = True
 
+NUM_SAMPLES = 3
+
 admissions_table_path = '/deep/group/med/mimic-iii/ADMISSIONS.csv'
 diagnoses_icd_table_path = '/deep/group/med/mimic-iii/DIAGNOSES_ICD.csv'
 patients_table_path = '/deep/group/med/mimic-iii/PATIENTS.csv'
@@ -198,6 +200,12 @@ def get_icd(src_file_save=False, keep_only_hadm=True, keep_last_hadm=True):
             writer.writerow(['HADM_ID', 'SUBJECT_ID', 'GENDER', 'AGE_OF_PRED', 'ICD_CODES'])
             writer.writerows(src_ids)
 
+        src_sample = src[:NUM_SAMPLES]
+        np.save('src_sample.npy', src_sample)
+        with open('src_sample.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerows(src_sample)
+
     # Return hospital admission ids (hadm_ids) that need to be removed from targets (tgt.csv) file(s)
     counter_remove_hadm_ids = Counter(remove_hadm_ids)
     duplicate_count = sum(counter_remove_hadm_ids.values()) - len(counter_remove_hadm_ids)
@@ -234,10 +242,13 @@ def get_tte(remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids, tgt_file_save
 
     tgt = []
     tgt_ids = []
+    row_idx = 0
     for row in admissions_py:
         hadm_id = row[2]
         if hadm_id in remove_hadm_ids:
             continue
+
+        row_idx += 1
 
         subject_id = row[1]
 
@@ -250,7 +261,7 @@ def get_tte(remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids, tgt_file_save
         if is_alive:
             # Alive: Get time to event (last encounter)
             event = last_dischtimes[subject_id]
-            if hadm_id in manual_tte_hadm_ids:
+            if hadm_id in manual_tte_hadm_ids: # if event == dischtime has a weird equality bug
                 event += timedelta(seconds=MANUAL_TTE_DELTA)
         else:
             # Dead: Get time to event (mortality), from time of ICD code which is discharge time
@@ -262,7 +273,7 @@ def get_tte(remove_hadm_ids, last_dischtimes, manual_tte_hadm_ids, tgt_file_save
         tte = tte.total_seconds() / SECONDS_PER_YEAR
         if tte < 0:
             print(f'***ERROR TTE is negative\nEvent occurs at {event}, dischtime at {dischtime}\nis_alive {is_alive}\nhadm_id {hadm_id}, subject_id {subject_id}')
-        
+
         # Do not include hadm_ids or subject_ids
         data_individual = [tte, int(is_alive)]
         tgt.append(data_individual)

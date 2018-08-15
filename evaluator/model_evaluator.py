@@ -88,7 +88,7 @@ class ModelEvaluator(object):
                     # Printing predictions incl. distribution means
                     for i, params in enumerate(pred_params):
                         mu, s = params[0], params[1]
-                        pred = torch.distributions.LogNormal(mu, abs(s))
+                        pred = torch.distributions.LogNormal(mu, s.exp())
                         print(f'mu, s: {mu}, {s}\ndist mean: {pred.mean}\ntarget: {targets[i]}')
 
                 self._record_batch(pred_params, loss, **records)

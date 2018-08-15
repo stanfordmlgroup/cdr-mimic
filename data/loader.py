@@ -8,8 +8,8 @@ import torch.nn as nn
 import torch.utils.data as data
 from torch.autograd import Variable
 
-SRC_FILE_NAME = 'src_sample.csv'
-TGT_FILE_NAME = 'tgt_sample.csv'
+SRC_FILE_NAME = 'src_sample_dead.csv'
+TGT_FILE_NAME = 'tgt_sample_dead.csv'
 
 # MIMIC Dataset
 class Dataset(data.Dataset):
@@ -104,7 +104,9 @@ def get_loader(args, phase='train', is_training=True):
                                          shuffle=is_training)
     loader.phase = phase
     if is_training:
-        D_in = dataset.max_src_len * dataset.vocab_size
+        # D_in = dataset.max_src_len * dataset.vocab_size
+        D_in = dataset.vocab_size
+        print(f'max_src_len {dataset.max_src_len}/ vocab_size {dataset.vocab_size}')
         return loader, D_in
     else:
         return loader
