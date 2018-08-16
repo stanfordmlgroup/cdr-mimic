@@ -28,27 +28,24 @@ class MLE(nn.Module):
 
             tte, is_alive = tgt[0], tgt[1]
             tte = tte.float().cuda()
-            print(type(tte))
 
             if is_alive:
                 incr_loss = -((1 - pred.cdf(tte) + 1e-5).log())
             else:
-                print(f'dead/tte {tte}/mu {mu}, s.exp() {s.exp()}')
-                print(f'log prob', pred.log_prob(tte + 1e-5))
+                #print(f'dead/tte {tte}/mu {mu}, s.exp() {s.exp()}')
+                #print(f'log prob', pred.log_prob(tte + 1e-5))
                 incr_loss = -(1 - is_alive) * pred.log_prob(tte + 1e-5)
 
             # Debugging numerical instability
             if torch.isnan(incr_loss) or incr_loss == float('inf'):
+                0 / 0
                 if is_alive:
                     print("nan alive; pred cdf", pred.cdf(tte), "; pred", pred, "; log inner", 1 - pred.cdf(tte) + 1e-5, "; log", (1 - pred.cdf(tte) + 1e-5).log())
                 else:
                     print("nan dead; pred log_prob", pred.log_prob(tte + 1e-5), "; tte + eps", tte + 1e-5, "; mu s.exp()", mu, s.exp())
                 print("pred params: mu, s", mu, s)
 
-            # cum_loss += -((1 - pred.cdf(tte) + 1e-5).log()) if is_alive else -(1 - is_alive) * pred.log_prob(tte + 1e-5)
             cum_loss += incr_loss
-        #     print("loss_val per", cum_loss)
-        # print("loss val in mle.py", cum_loss)
     
         return cum_loss / tgts.shape[0]
 

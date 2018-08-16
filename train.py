@@ -49,7 +49,7 @@ def train(args):
                 pred_params = model.forward(src.to(args.device))
                 # print("pred_params:", pred_params)
                 loss = loss_fn(pred_params, tgt.to(args.device))
-                # print("loss out", loss)
+                print("loss out", loss)
 
                 logger.log_iter(src, pred_params, tgt, loss)
 

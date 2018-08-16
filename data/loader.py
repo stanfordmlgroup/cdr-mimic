@@ -8,8 +8,8 @@ import torch.nn as nn
 import torch.utils.data as data
 from torch.autograd import Variable
 
-SRC_FILE_NAME = 'src_sample_dead.csv'
-TGT_FILE_NAME = 'tgt_sample_dead.csv'
+SRC_FILE_NAME = 'src_sample.csv'
+TGT_FILE_NAME = 'tgt_sample.csv'
 
 # MIMIC Dataset
 class Dataset(data.Dataset):
@@ -28,7 +28,7 @@ class Dataset(data.Dataset):
 
         self.num_classes = 1
 
-        vocab_index = 1
+        vocab_index = 0
         self.vocab_w2i = {}
         self.vocab_i2w = {}
         self.encoded_src = []
@@ -68,27 +68,19 @@ class Dataset(data.Dataset):
         max_icd_codes_len = np.amax(icd_code_lengths)
         self.max_src_len = max_icd_codes_len + NUM_DEMOGRAPHICS
 
-        icd_codes_tensor = torch.LongTensor(np.size(src_icd_codes), int(max_icd_codes_len)).fill_(0)
+        icd_codes_tensor = torch.LongTensor(np.size(src_icd_codes), int(self.vocab_size)).fill_(0)
         for i, row in enumerate(src_icd_codes):
             row = np.array(row)
-            icd_codes_tensor[i, :np.size(row)] = torch.from_numpy(row)
+            icd_codes_tensor[i, row] = 1.0
 
-        # One-hot encoding for ICD codes
-        one_hot_icd_codes_tensor = torch.eye(self.vocab_size)
-        one_hot_icd_codes_tensor = one_hot_icd_codes_tensor[icd_codes_tensor]
-
-        # Concat tensors for demographics and icd codes
-        expanded_src_demographics = [[[v for i in range(self.vocab_size)] for v in d] for d in src_demographics]
-        demographics_tensor = torch.FloatTensor(expanded_src_demographics)
-        self.src_tensor = torch.cat((demographics_tensor, one_hot_icd_codes_tensor), dim=1)
-        self.src_tensor = self.src_tensor.view(self.num_examples, -1, self.vocab_size)
+        demographics_tensor = torch.FloatTensor(src_demographics)
+        self.src_tensor = torch.cat((demographics_tensor, icd_codes_tensor.float()), dim=1)
 
 
     def __getitem__(self, index):
         src = self.src_tensor[index]
         tgt = self.df_tgt[index]
 
-        # tgt = np.array([np.array([time.mktime(time.strptime(tgt[0], "%Y-%m-%d"))]), tgt[1]])
         tgt = torch.FloatTensor(tgt)
 
         return src, tgt
@@ -104,8 +96,7 @@ def get_loader(args, phase='train', is_training=True):
                                          shuffle=is_training)
     loader.phase = phase
     if is_training:
-        # D_in = dataset.max_src_len * dataset.vocab_size
-        D_in = dataset.vocab_size
+        D_in = dataset.vocab_size + 2
         print(f'max_src_len {dataset.max_src_len}/ vocab_size {dataset.vocab_size}')
         return loader, D_in
     else:
