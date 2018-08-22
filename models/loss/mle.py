@@ -3,6 +3,7 @@ import torch
 import numpy as np
 from torch.autograd import Variable
 import torch.nn.functional as F
+import pdb
 
 class MLE(nn.Module):
     def __init__(self):
@@ -38,12 +39,13 @@ class MLE(nn.Module):
 
             # Debugging numerical instability
             if torch.isnan(incr_loss) or incr_loss == float('inf'):
-                0 / 0
+                print("!!!!ERROR, tgts", tgts)
                 if is_alive:
                     print("nan alive; pred cdf", pred.cdf(tte), "; pred", pred, "; log inner", 1 - pred.cdf(tte) + 1e-5, "; log", (1 - pred.cdf(tte) + 1e-5).log())
                 else:
                     print("nan dead; pred log_prob", pred.log_prob(tte + 1e-5), "; tte + eps", tte + 1e-5, "; mu s.exp()", mu, s.exp())
                 print("pred params: mu, s", mu, s)
+                pdb.set_trace()
 
             cum_loss += incr_loss
     

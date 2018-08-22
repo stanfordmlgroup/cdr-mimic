@@ -8,8 +8,8 @@ import torch.nn as nn
 import torch.utils.data as data
 from torch.autograd import Variable
 
-SRC_FILE_NAME = 'src_sample.csv'
-TGT_FILE_NAME = 'tgt_sample.csv'
+SRC_FILE_NAME = 'src.csv'
+TGT_FILE_NAME = 'tgt.csv'
 
 # MIMIC Dataset
 class Dataset(data.Dataset):
