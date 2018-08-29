@@ -20,11 +20,11 @@ def main(path='/deep/group/sharonz/cdr_mimic/data/', train_frac=0.8, valid_frac=
     valid_i = int(num_examples*valid_frac)
 
     x_train = X[:train_i]
-    x_valid = X[train_i, :train_i+valid_i]
+    x_valid = X[train_i:train_i+valid_i]
     x_test = X[train_i+valid_i:]
 
     y_train = y[:train_i]
-    y_valid = y[train_i, :train_i+valid_i]
+    y_valid = y[train_i:train_i+valid_i]
     y_test = y[train_i+valid_i:]
 
     print('splits made')
@@ -40,13 +40,13 @@ def main(path='/deep/group/sharonz/cdr_mimic/data/', train_frac=0.8, valid_frac=
     np.save('valid_tgt.npy', y_valid)
     np.save('test_tgt.npy', y_test)
 
-    np.savetxt('train_src.csv', x_train, fmt='%10.5f', delimiter=',')
-    np.savetxt('valid_src.csv', x_valid, fmt='%10.5f', delimiter=',')
-    np.savetxt('test_src.csv', x_test, fmt='%10.5f', delimiter=',')
+    np.savetxt('train_src.csv', x_train, fmt='%10.5f', delimiter='\t')
+    np.savetxt('valid_src.csv', x_valid, fmt='%10.5f', delimiter='\t')
+    np.savetxt('test_src.csv', x_test, fmt='%10.5f', delimiter='\t')
 
-    np.savetxt('train_tgt.csv', y_train, fmt='%10.5f', delimiter=',')
-    np.savetxt('valid_tgt.csv', y_valid, fmt='%10.5f', delimiter=',')
-    np.savetxt('test_tgt.csv', y_test, fmt='%10.5f', delimiter=',')
+    np.savetxt('train_tgt.csv', y_train, fmt='%10.5f', delimiter='\t')
+    np.savetxt('valid_tgt.csv', y_valid, fmt='%10.5f', delimiter='\t')
+    np.savetxt('test_tgt.csv', y_test, fmt='%10.5f', delimiter='\t')
 
 
 
