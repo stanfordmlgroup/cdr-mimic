@@ -50,11 +50,12 @@ def train(args):
         for src, tgt in train_loader:
             logger.start_iter()
             with torch.set_grad_enabled(True):
-                pred_params, embed_logits = model.forward(src.to(args.device))
+                pred_params = model.forward(src.to(args.device))
+                # pred_params, embed_logits = model.forward(src.to(args.device))
                 loss = loss_fn(pred_params, tgt.to(args.device))
-                embed_loss = loss_fn_embed(embed_logits) # tgt?
-                loss += embed_loss
-                
+                # embed_loss = loss_fn_embed(embed_logits) # tgt?
+                # loss += embed_loss
+
                 logger.log_iter(src, pred_params, tgt, loss)
 
                 optimizer.zero_grad()

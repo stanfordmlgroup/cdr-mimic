@@ -33,9 +33,11 @@ class SimpleNN(nn.Module):
     def forward(self, src):
         # src = src.view(-1, self.D_in)
         # b_size = src.size(0)
+        src = src.float()
         pred = self.model(src)
-        embed = self.embed(src[self.num_demographics:])
-        return pred, embed
+        # embed = self.embed(src[self.num_demographics:])
+        # return pred, embed
+        return pred
 
     def args_dict(self):
         """Get a dictionary of args that can be used to reconstruct this architecture.

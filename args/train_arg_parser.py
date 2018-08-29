@@ -10,7 +10,7 @@ class TrainArgParser(BaseArgParser):
         # Logger args
         self.parser.add_argument('--epochs_per_save', type=int, default=5,
                                  help='Number of epochs between saving a checkpoint to save_dir.')
-        self.parser.add_argument('--iters_per_print', type=int, default=10000,
+        self.parser.add_argument('--iters_per_print', type=int, default=20,
                                  help='Number of iterations between printing loss to the console and TensorBoard.')
         self.parser.add_argument('--epochs_per_eval', type=int, default=1,
                                  help='Number of epochs between evaluating model on the validation set.')

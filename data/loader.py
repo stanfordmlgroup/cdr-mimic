@@ -35,11 +35,10 @@ class Dataset(data.Dataset):
 
         self.num_examples = len(self.src)
         if args.verbose:
-            print(f'Loaded {src_path} and {tgt_path}')
+            # print(f'Loaded {src_path} and {tgt_path}')
             print(f"Phase: {phase}, number of examples: {self.num_examples}")
 
     def __getitem__(self, index):
-        print(index)
         src = self.src[index]
         tgt = self.tgt[index].float()
 
@@ -52,7 +51,7 @@ def get_loader(args, phase='train', is_training=True):
     dataset = Dataset(args, phase)
     loader = torch.utils.data.DataLoader(dataset,
                                          batch_size=args.batch_size,
-                                         num_workers=0,
+                                         num_workers=args.num_workers,
                                          shuffle=is_training)
     loader.phase = phase
     # loader.dataset = dataset
