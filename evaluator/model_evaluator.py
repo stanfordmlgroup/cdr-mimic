@@ -6,6 +6,9 @@ from tqdm import tqdm
 
 import optim
 
+import pdb
+import numpy as np
+
 from evaluator.average_meter import AverageMeter
 
 
@@ -26,6 +29,7 @@ class ModelEvaluator(object):
         self.logger = logger
         self.loss_fn = optim.get_loss_fn(args.loss_fn, args)
         self.max_eval = None if max_eval is None or max_eval < 0 else max_eval
+        self.name = args.name
 
     def evaluate(self, model, device, epoch=None):
         """Evaluate a model at the end of the given epoch.
@@ -85,11 +89,18 @@ class ModelEvaluator(object):
                     pred_params = model.forward(inputs.to(device))
                     loss = loss_fn(pred_params, targets.to(device))
 
-                    # Printing predictions incl. distribution means
-                    for i, params in enumerate(pred_params):
-                        mu, s = params[0], params[1]
-                        pred = torch.distributions.LogNormal(mu, s.exp())
-                        #print(f'mu, s: {mu}, {s}\ndist mean: {pred.mean}\ntarget: {targets[i]}')
+                    with open(self.name + '_' + phase + '_results.csv', 'ab') as f:
+                        np_pred_params = pred_params.data.cpu().numpy()
+                        np.savetxt(f, np_pred_params)
+
+                    # # Printing predictions incl. distribution means
+                    # for i, params in enumerate(pred_params):
+                    #     mu, s = params[0], params[1]
+                    #     pred = torch.distributions.LogNormal(mu, s.exp())
+                    #     # Write predictions to file
+                    #     with open('results.csv', 'a') as f:
+                    #         f.write(f'{phase}, {loss}, {mu}, {s}\n')
+                    #     #print(f'mu, s: {mu}, {s}\ndist mean: {pred.mean}\ntarget: {targets[i]}')
 
                 self._record_batch(pred_params, loss, **records)
 
@@ -115,6 +126,21 @@ class ModelEvaluator(object):
     @staticmethod
     def _get_summary_dict(phase, loss_meter=None):
         """Get summary dictionaries given dictionary of records kept during evaluation.
+
+        Args:
+            phase: Phase being evaluated. One of 'train', 'val', or 'test'.
+            loss_meter: AverageMeter keeping track of average loss during evaluation.
+
+        Returns:
+            metrics: Dictionary of metrics for the current model.
+        """
+        metrics = {phase + '_' + 'loss': loss_meter.avg}
+
+        return metrics
+
+    @staticmethod
+    def _write_summary_stats(phase, loss_meter=None):
+        """Write stats of evaluation to file.
 
         Args:
             phase: Phase being evaluated. One of 'train', 'val', or 'test'.

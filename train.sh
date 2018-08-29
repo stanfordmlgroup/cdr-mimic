@@ -1,7 +1,7 @@
 # DATADIR="/deep/group/med/mimic-iii/train/"
 # DATADIR="/Users/dmorina/mnt/cdr_mimic/"
 DATADIR="/deep/group/sharonz/cdr_mimic/data"
-NAME="DEBUG_NUM_INSTABILITY"
+NAME="DEBUG_DATA_SPLIT"
 NUM_EPOCHS=1000
 MODEL="SimpleNN"
 LR=1e-6

@@ -13,8 +13,9 @@ def get_parser():
 
 args = get_parser().parse_args()
 
-loader, D_in = get_loader(args)
-print(f'D_in is {D_in}')
+loader = get_loader(args)
 # print(iter(loader).next())
+import pdb
+pdb.set_trace()
 for src, tgt in loader:
-	print(src, tgt)
+	print(src[0]) #, tgt)

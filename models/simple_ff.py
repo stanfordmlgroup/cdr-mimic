@@ -7,12 +7,23 @@ class SimpleNN(nn.Module):
 
         self.data_dir = data_dir
         self.D_in = D_in
-        self.model = nn.Sequential(
-            nn.Linear(D_in, 2),
-            # nn.Tanh(),
-            # nn.Linear(16, 2)
-        )
+        self.num_demographics = 2
+        self.vocab_size = D_in - self.num_demographics
+        self.embedding_dim = 256
         # self.model.apply(self.init_weights)
+
+        self.model = nn.Sequential(
+            nn.Linear(D_in, 16),
+            nn.Tanh(),
+            nn.Linear(16, 2)
+        )
+
+        self.embed = nn.Sequential(
+            nn.Embedding(self.vocab_size, self.embedding_dim),
+            nn.Linear(self.embedding_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, self.vocab_size)
+        )
 
     def init_weights(self, m):
         if type(m) == nn.Linear:
@@ -23,7 +34,8 @@ class SimpleNN(nn.Module):
         # src = src.view(-1, self.D_in)
         # b_size = src.size(0)
         pred = self.model(src)
-        return pred
+        embed = self.embed(src[self.num_demographics:])
+        return pred, embed
 
     def args_dict(self):
         """Get a dictionary of args that can be used to reconstruct this architecture.
