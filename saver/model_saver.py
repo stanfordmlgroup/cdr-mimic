@@ -27,6 +27,8 @@ class ModelSaver(object):
         self.best_metric_val = None
         self.ckpt_paths = []
 
+        self.args = [kwargs['batch_size'], kwargs['num_workers']]
+
     def _is_best(self, metric_val):
         """Check whether metric_val is the best one we've seen so far."""
         if metric_val is None:
@@ -48,6 +50,10 @@ class ModelSaver(object):
         """
         if epoch % self.epochs_per_save != 0:
             return
+
+        import pdb
+        pdb.set_trace()
+        print(f'batch size: {args[0]}, num workers: {args[1]}')
 
         ckpt_dict = {
             'ckpt_info': {'epoch': epoch, self.metric_name: metric_val},

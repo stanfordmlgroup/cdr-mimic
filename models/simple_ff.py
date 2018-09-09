@@ -18,12 +18,7 @@ class SimpleNN(nn.Module):
             nn.Linear(16, 2)
         )
 
-        self.embed = nn.Sequential(
-            nn.Embedding(self.vocab_size, self.embedding_dim),
-            nn.Linear(self.embedding_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, self.vocab_size)
-        )
+        self.embed = nn.Linear(self.vocab_size, self.embedding_dim)
 
     def init_weights(self, m):
         if type(m) == nn.Linear:
@@ -34,6 +29,9 @@ class SimpleNN(nn.Module):
         # src = src.view(-1, self.D_in)
         # b_size = src.size(0)
         src = src.float()
+        src_dem = src[:self.num_demographics]
+        src_codes = src[self.num_demographics:]
+        src = torch.cat((src_dem,self.embed(src_codes)))
         pred = self.model(src)
         # embed = self.embed(src[self.num_demographics:])
         # return pred, embed

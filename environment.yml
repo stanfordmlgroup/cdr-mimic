@@ -6,7 +6,6 @@ channels:
 dependencies:
   - absl-py=0.2.2=py_0
   - appdirs=1.4.3=py_1
-  - asn1crypto=0.24.0=py_1
   - astor=0.7.1=py_0
   - attrs=18.1.0=py_1
   - automat=0.7.0=py36_0
@@ -116,7 +115,6 @@ dependencies:
   - tornado=5.1=py36_0
   - tqdm=4.23.4=py_0
   - traitlets=4.3.2=py36_0
-  - twisted=18.7.0=py36h470a237_0
   - wcwidth=0.1.7=py_1
   - webencodings=0.5=py36_0
   - werkzeug=0.14.1=py_0
@@ -140,5 +138,5 @@ dependencies:
   - torchvision=0.2.1=py36_1
   - pip:
     - torch==0.4.0
-prefix: /sailhome/sharonz/miniconda2/envs/cdr
+prefix: /deep/group/packages/miniconda2/envs/cdr
 

@@ -67,7 +67,7 @@ def train(args):
         metrics = evaluator.evaluate(model, args.device, logger.epoch)
         # print(metrics)
         saver.save(logger.epoch, model, optimizer, lr_scheduler, args.device,
-                   metric_val=metrics.get(args.metric_name, None))
+                   metric_val=metrics.get(args.metric_name, None), args=args)
         logger.end_epoch(metrics=metrics)
         # logger.end_epoch({})
         # optim.step_scheduler(lr_scheduler, metrics, logger.epoch)

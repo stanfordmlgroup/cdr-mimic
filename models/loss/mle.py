@@ -30,6 +30,7 @@ class MLE(nn.Module):
             tte, is_alive = tgt[0], tgt[1]
             tte = tte.float().cuda()
 
+            pdb.set_trace()
             if is_alive:
                 incr_loss = -((1 - pred.cdf(tte) + 1e-5).log())
             else:
