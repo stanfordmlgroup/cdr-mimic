@@ -1,5 +1,5 @@
 import torch.nn as nn
-
+import torch
 
 class SimpleNN(nn.Module):
     def __init__(self, data_dir, D_in, **kwargs):
@@ -13,7 +13,8 @@ class SimpleNN(nn.Module):
         # self.model.apply(self.init_weights)
 
         self.model = nn.Sequential(
-            nn.Linear(D_in, 16),
+            # nn.Linear(D_in, 16),
+            nn.Linear(self.num_demographics + self.embedding_dim, 16),
             nn.Tanh(),
             nn.Linear(16, 2)
         )
@@ -29,10 +30,11 @@ class SimpleNN(nn.Module):
         # src = src.view(-1, self.D_in)
         # b_size = src.size(0)
         src = src.float()
-        src_dem = src[:self.num_demographics]
-        src_codes = src[self.num_demographics:]
-        src = torch.cat((src_dem,self.embed(src_codes)))
-        pred = self.model(src)
+        src_dem = src[:, :self.num_demographics]
+        src_codes = src[:, self.num_demographics:]
+        embedded_codes = self.embed(src_codes)
+        src = torch.cat((src_dem.view(-1, 1), embedded_codes.view(-1, 1)))
+        pred = self.model(src.view(1, -1))
         # embed = self.embed(src[self.num_demographics:])
         # return pred, embed
         return pred
