@@ -26,21 +26,27 @@ class MLE(nn.Module):
         for pred_param, tgt in zip(pred_params, tgts):
             mu, s = pred_param[0], pred_param[1]
             pred = torch.distributions.LogNormal(mu, s.exp())
-
+            # pdb.set_trace()
+            # print('tgt', tgt.shape, type(tgt))
             tte, is_alive = tgt[0], tgt[1]
-            tte = tte.float().cuda()
+            tte = tte.cuda()
 
+            print(type(tte), type(is_alive), tte.shape, is_alive.shape)
             print(is_alive)
             print(tte)
             print(mu, s)
 
-            pdb.set_trace()
-            if is_alive:
-                incr_loss = -((1 - pred.cdf(tte) + 1e-5).log())
-            else:
+            #pdb.set_trace()
+            alive_loss = -((1 - pred.cdf(tte) + 1e-5).log())
+            dead_loss = - pred.log_prob(tte + 1e-5)
+            incr_loss = is_alive * alive_loss + (1 - is_alive) * dead_loss
+            
+            #if is_alive:
+            #    incr_loss = -((1 - pred.cdf(tte) + 1e-5).log())
+            #else:
                 #print(f'dead/tte {tte}/mu {mu}, s.exp() {s.exp()}')
                 #print(f'log prob', pred.log_prob(tte + 1e-5))
-                incr_loss = -(1 - is_alive) * pred.log_prob(tte + 1e-5)
+            #    incr_loss = -(1 - is_alive) * pred.log_prob(tte + 1e-5)
 
             # Debugging numerical instability
             if torch.isnan(incr_loss) or incr_loss == float('inf'):

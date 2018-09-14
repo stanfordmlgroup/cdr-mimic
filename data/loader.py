@@ -39,9 +39,10 @@ class Dataset(data.Dataset):
             print(f"Phase: {phase}, number of examples: {self.num_examples}")
 
     def __getitem__(self, index):
-        src = self.src[index]
+        src = self.src[index].float()
         tgt = self.tgt[index].float()
-
+        print('src', src.shape, src.dtype)
+        print('tgt', tgt.shape, tgt.dtype)
         return src, tgt
 
     def __len__(self):
