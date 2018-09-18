@@ -34,7 +34,7 @@ def train(args):
 
     # Embedding loss and optimizer
     # optimizer_embed = optim.SGD(model.parameters(), lr=0.001)
-    loss_fn_embed = nn.NLLLoss()
+    # loss_fn_embed = nn.NLLLoss()
 
     logger = TrainLogger(args, len(train_loader.dataset))
     eval_loaders = [get_loader(args, phase='train', is_training=False),
@@ -66,8 +66,8 @@ def train(args):
 
         metrics = evaluator.evaluate(model, args.device, logger.epoch)
         # print(metrics)
-        saver.save(logger.epoch, model, optimizer, lr_scheduler, args.device,
-                   metric_val=metrics.get(args.metric_name, None), args=args)
+        saver.save(logger.epoch, model, optimizer, lr_scheduler, args.device,\
+                   metric_val=metrics.get(args.metric_name, None))
         logger.end_epoch(metrics=metrics)
         # logger.end_epoch({})
         # optim.step_scheduler(lr_scheduler, metrics, logger.epoch)

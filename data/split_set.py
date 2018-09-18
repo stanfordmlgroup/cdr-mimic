@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.cross_validation import train_test_split
 
-def main(path='/deep/group/tony/cdr-mimic/data/', train_frac=0.8, valid_frac=0.1, src_name='src.npy', tgt_name='tgt.npy'):
+def main(path='/deep/group/sharonz/cdr_mimic/data/', train_frac=0.8, valid_frac=0.1, src_name='src.npy', tgt_name='tgt.npy'):
     X = np.load(path + src_name)
     y = np.load(path + tgt_name)
 

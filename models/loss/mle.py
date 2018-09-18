@@ -32,7 +32,7 @@ class MLE(nn.Module):
             #print(type(tte), type(is_alive), tte.shape, is_alive.shape)
             #print(is_alive)
             #print(tte)
-            print(mu, s)
+            #print(mu, s)
 
             #pdb.set_trace()
             alive_loss = -((1 - pred.cdf(tte) + 1e-5).log())

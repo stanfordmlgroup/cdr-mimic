@@ -27,7 +27,7 @@ class ModelSaver(object):
         self.best_metric_val = None
         self.ckpt_paths = []
 
-        self.args = [kwargs['batch_size'], kwargs['num_workers']]
+        self.args = [kwargs['batch_size'], kwargs['num_workers'], kwargs['data_dir']]
 
     def _is_best(self, metric_val):
         """Check whether metric_val is the best one we've seen so far."""
@@ -48,17 +48,21 @@ class ModelSaver(object):
             device: Device where the model/optimizer parameters belong.
             metric_val: Value for determining whether checkpoint is best so far.
         """
+        
+
+        import pdb
+        #pdb.set_trace()
+        print(f'batch size: {self.args[0]}, num workers: {self.args[1]}')
+
         if epoch % self.epochs_per_save != 0:
             return
 
-        import pdb
-        pdb.set_trace()
-        print(f'batch size: {args[0]}, num workers: {args[1]}')
-
         ckpt_dict = {
             'ckpt_info': {'epoch': epoch, self.metric_name: metric_val},
-            'model_name': model.module.__class__.__name__,
-            'model_args': model.module.args_dict(),
+            #'model_name': model.module.__class__.__name__,
+            'model_name': 'SimpleNN',
+            #'model_args': model.module.args_dict(),
+            'model_args': {'D_in' : 6800},
             'model_state': model.to('cpu').state_dict(),
             'optimizer': optimizer.state_dict(),
             'lr_scheduler': lr_scheduler.state_dict()
@@ -96,8 +100,10 @@ class ModelSaver(object):
         # Build model, load parameters
         model_fn = models.__dict__[ckpt_dict['model_name']]
         model_args = ckpt_dict['model_args']
-        model = model_fn(**model_args)
-        model = nn.DataParallel(model, gpu_ids)
+        if not model_args:
+            model_args = {'D_in' : 6800}
+        model = model_fn(data_dir="/deep/group/sharonz/cdr_mimic/data", **model_args)
+        #model = nn.DataParallel(model, gpu_ids)
         model.load_state_dict(ckpt_dict['model_state'])
 
         return model, ckpt_dict['ckpt_info']
