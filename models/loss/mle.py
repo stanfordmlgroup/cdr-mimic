@@ -26,14 +26,12 @@ class MLE(nn.Module):
         for pred_param, tgt in zip(pred_params, tgts):
             mu, s = pred_param[0], pred_param[1]
             pred = torch.distributions.LogNormal(mu, s.exp())
-            # pdb.set_trace()
-            # print('tgt', tgt.shape, type(tgt))
             tte, is_alive = tgt[0], tgt[1]
             tte = tte.cuda()
 
-            print(type(tte), type(is_alive), tte.shape, is_alive.shape)
-            print(is_alive)
-            print(tte)
+            #print(type(tte), type(is_alive), tte.shape, is_alive.shape)
+            #print(is_alive)
+            #print(tte)
             print(mu, s)
 
             #pdb.set_trace()

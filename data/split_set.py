@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.cross_validation import train_test_split
 
-def main(path='/deep/group/sharonz/cdr_mimic/data/', train_frac=0.8, valid_frac=0.1, src_name='src_padded.npy', tgt_name='tgt_padded.npy'):
+def main(path='/deep/group/tony/cdr-mimic/data/', train_frac=0.8, valid_frac=0.1, src_name='src.npy', tgt_name='tgt.npy'):
     X = np.load(path + src_name)
     y = np.load(path + tgt_name)
 
@@ -53,19 +53,19 @@ def main(path='/deep/group/sharonz/cdr_mimic/data/', train_frac=0.8, valid_frac=
     np.save('valid_tgt_sample.npy', y_valid_sample)
     np.save('test_tgt_sample.npy', y_test_sample)
 
-    np.savetxt('train_src.csv', x_train, fmt='%10.5f', delimiter='\t')
-    np.savetxt('valid_src.csv', x_valid, fmt='%10.5f', delimiter='\t')
-    np.savetxt('test_src.csv', x_test, fmt='%10.5f', delimiter='\t')
-    np.savetxt('train_src_sample.csv', x_train_sample, fmt='%10.5f', delimiter='\t')
-    np.savetxt('valid_src_sample.csv', x_valid_sample, fmt='%10.5f', delimiter='\t')
-    np.savetxt('test_src_sample.csv', x_test_sample, fmt='%10.5f', delimiter='\t')
+    np.savetxt('train_src.csv', x_train, delimiter='\t')
+    np.savetxt('valid_src.csv', x_valid,  delimiter='\t')
+    np.savetxt('test_src.csv', x_test, delimiter='\t')
+    np.savetxt('train_src_sample.csv', x_train_sample,  delimiter='\t')
+    np.savetxt('valid_src_sample.csv', x_valid_sample, delimiter='\t')
+    np.savetxt('test_src_sample.csv', x_test_sample,  delimiter='\t')
 
-    np.savetxt('train_tgt.csv', y_train, fmt='%10.5f', delimiter='\t')
-    np.savetxt('valid_tgt.csv', y_valid, fmt='%10.5f', delimiter='\t')
-    np.savetxt('test_tgt.csv', y_test, fmt='%10.5f', delimiter='\t')
-    np.savetxt('train_tgt_sample.csv', y_train_sample, fmt='%10.5f', delimiter='\t')
-    np.savetxt('valid_tgt_sample.csv', y_valid_sample, fmt='%10.5f', delimiter='\t')
-    np.savetxt('test_tgt_sample.csv', y_test_sample, fmt='%10.5f', delimiter='\t')
+    np.savetxt('train_tgt.csv', y_train,  delimiter='\t')
+    np.savetxt('valid_tgt.csv', y_valid,  delimiter='\t')
+    np.savetxt('test_tgt.csv', y_test,  delimiter='\t')
+    np.savetxt('train_tgt_sample.csv', y_train_sample,  delimiter='\t')
+    np.savetxt('valid_tgt_sample.csv', y_valid_sample,  delimiter='\t')
+    np.savetxt('test_tgt_sample.csv', y_test_sample,  delimiter='\t')
 
 
 

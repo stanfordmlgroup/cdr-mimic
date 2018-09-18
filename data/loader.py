@@ -23,27 +23,32 @@ class Dataset(data.Dataset):
         src_path = datadir / src_file_name
         tgt_path = datadir / tgt_file_name
 
-        self.src = torch.from_numpy(np.load(src_path)).cuda()
-        self.tgt = torch.from_numpy(np.load(tgt_path)).cuda()
+        self.src = np.load(src_path)
+        self.tgt = np.load(tgt_path)
 
         self.num_classes = 1
 
         self.is_training_set = is_training_set
         self.phase = phase
 
-        self.D_in = len(self.src[0])
+        self.w2i = pd.read_csv("data/vocab_w2i.csv", header = None)
+        self.w2i = self.w2i.set_index(0)
+        self.vector_size = len(self.w2i) + 2
+        self.D_in = self.vector_size
 
         self.num_examples = len(self.src)
         if args.verbose:
-            # print(f'Loaded {src_path} and {tgt_path}')
             print(f"Phase: {phase}, number of examples: {self.num_examples}")
 
     def __getitem__(self, index):
-        src = self.src[index].float()
-        tgt = self.tgt[index].float()
-        print('src', src.shape, src.dtype)
-        print('tgt', tgt.shape, tgt.dtype)
-        return src, tgt
+        vector = np.zeros(self.vector_size)
+        vector[0] = 1 if self.src[index][0] == "M" else 0
+        vector[1] = self.src[index][1]
+        indices = self.w2i.loc[self.src[index][2:]]
+        vector[indices + 2] = 1
+        tgt = self.tgt[index]
+        print("index: %d" % index)
+        return torch.FloatTensor(vector), torch.FloatTensor(tgt)
 
     def __len__(self):
         return len(self.src)
@@ -55,8 +60,6 @@ def get_loader(args, phase='train', is_training=True):
                                          num_workers=args.num_workers,
                                          shuffle=is_training)
     loader.phase = phase
-    # loader.dataset = dataset
-
     num_demographics = 2
     loader.D_in = dataset.D_in
     return loader
