@@ -72,7 +72,12 @@ def generate_stats(src_path="src.npy", tgt_path="tgt.npy"):
 
 
 def main():
-    generate_stats()
+    print('============Train================')
+    generate_stats('train_src.npy', 'train_tgt.npy')
+    print('============Valid================')
+    generate_stats('valid_src.npy', 'valid_tgt.npy')
+    print('============Test================')
+    generate_stats('test_src.npy', 'test_tgt.npy')
 
 if __name__ == "__main__":
     main()

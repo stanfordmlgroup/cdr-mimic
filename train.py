@@ -9,6 +9,7 @@ from data import Dataset, get_loader
 from evaluator import ModelEvaluator
 from logger import TrainLogger
 from saver import ModelSaver
+import pdb
 
 def train(args):
     train_loader = get_loader(args=args)
@@ -32,10 +33,6 @@ def train(args):
     # Get logger, evaluator, saver
     loss_fn = optim.get_loss_fn(args.loss_fn, args)
 
-    # Embedding loss and optimizer
-    # optimizer_embed = optim.SGD(model.parameters(), lr=0.001)
-    # loss_fn_embed = nn.NLLLoss()
-
     logger = TrainLogger(args, len(train_loader.dataset))
     eval_loaders = [get_loader(args, phase='train', is_training=False),
                     get_loader(args, phase='valid', is_training=False)]
@@ -51,10 +48,8 @@ def train(args):
             logger.start_iter()
             with torch.set_grad_enabled(True):
                 pred_params = model.forward(src.to(args.device))
-                # pred_params, embed_logits = model.forward(src.to(args.device))
-                loss = loss_fn(pred_params, tgt.to(args.device))
-                # embed_loss = loss_fn_embed(embed_logits) # tgt?
-                # loss += embed_loss
+                ages = src[:, 1]
+                loss = loss_fn(pred_params, tgt.to(args.device), ages.to(args.device), args.use_intvl)
 
                 logger.log_iter(src, pred_params, tgt, loss)
 

@@ -30,6 +30,7 @@ class ModelEvaluator(object):
         self.loss_fn = optim.get_loss_fn(args.loss_fn, args)
         self.max_eval = None if max_eval is None or max_eval < 0 else max_eval
         self.name = args.name
+        self.use_intvl = args.use_intvl
 
     def evaluate(self, model, device, epoch=None):
         """Evaluate a model at the end of the given epoch.
@@ -87,8 +88,8 @@ class ModelEvaluator(object):
 
                 with torch.no_grad():
                     pred_params = model.forward(inputs.to(device))
-                    loss = loss_fn(pred_params, targets.to(device))
-
+                    ages = inputs[:, 1]
+                    loss = loss_fn(pred_params, targets.to(device), ages, self.use_intvl)
                     with open(self.name + '_' + phase + '_results.csv', 'ab') as f:
                         np_pred_params = pred_params.data.cpu().numpy()
                         np.savetxt(f, np_pred_params)

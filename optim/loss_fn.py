@@ -10,5 +10,7 @@ def get_loss_fn(loss_name, args=None):
         Differentiable criterion that can be applied to targets, logits.
     """
 
-    # if loss_name == 'mle':
-    return MLE()
+    if loss_name == 'mle':
+    	return MLE()
+    elif loss_name == 'crps':
+    	return CRPS()

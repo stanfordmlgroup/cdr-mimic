@@ -5,8 +5,8 @@ ARGUMENTS="
     --data_dir $DATADIR
     --phase test
     --num_workers $NUM_WORKERS
-    --name DEBUG_FULL
-    --ckpt_path ckpts/DEBUG_FULL/epoch_1.pth.tar
-    --gpu_ids 2
+    --name DEBUG_TESTSET
+    --ckpt_path ckpts/DEBUG_TESTSET/epoch_81.pth.tar
+    --gpu_ids 1
     "
 python test.py ${ARGUMENTS}

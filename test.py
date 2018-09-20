@@ -31,8 +31,6 @@ def test(args):
     all_s2 = []
     with tqdm(total=len(data_loader.dataset), unit=' windows') as progress_bar:
         for i, (src, tgt) in enumerate(data_loader):
-            #import pdb
-            #pdb.set_trace()
             all_gender.extend([int(x) for x in src[:,0]])
             all_age.extend([float(x) for x in src[:,1]])
             all_tte.extend([float(x) for x in tgt[:,0]])
@@ -40,9 +38,11 @@ def test(args):
             with torch.no_grad():
                 pred_params = model.forward(src.to(args.device))
 
+                # import pdb
+                # pdb.set_trace()
                 outputs = pred_params.cpu().numpy()
-                all_mu.extend([float(x) for x in outputs[0]])
-                all_s2.extend([float(x) for x in outputs[1]])
+                all_mu.extend([float(x) for x in outputs[:,0]])
+                all_s2.extend([float(x) for x in outputs[:,1]])
 
             progress_bar.update(src.size(0))
 
