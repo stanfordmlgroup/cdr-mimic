@@ -43,7 +43,7 @@ class Dataset(data.Dataset):
     def __getitem__(self, index):
         vector = np.zeros(self.vector_size)
         vector[0] = 1 if self.src[index][0] == "M" else 0
-        vector[1] = self.src[index][1]
+        vector[1] = self.src[index][1] / 100.
         #pdb.set_trace()
         #positions = np.argwhere(self.src[index][2:] == 1)
         #indices = self.w2i[positions]
