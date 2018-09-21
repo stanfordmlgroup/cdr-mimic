@@ -14,11 +14,11 @@ class SimpleNN(nn.Module):
 
         self.model = nn.Sequential(
             nn.Linear(self.num_demographics + self.embedding_dim, 128),
-            nn.ReLU(),
+            nn.SELU(),
             nn.Linear(128, 64),
-            nn.ReLU(),
+            nn.SELU(),
             nn.Linear(64, 64),
-            nn.ReLU(),
+            nn.SELU(),
             nn.Linear(64, 2),
         )
 
