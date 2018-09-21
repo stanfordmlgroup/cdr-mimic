@@ -3,10 +3,10 @@ NUM_WORKERS=0
 
 ARGUMENTS="
     --data_dir $DATADIR
-    --phase test
+    --phase train
     --num_workers $NUM_WORKERS
-    --name DEBUG_TESTSET
-    --ckpt_path ckpts/DEBUG_TESTSET/epoch_81.pth.tar
-    --gpu_ids 1
+    --name CRPS_LR1e2
+    --ckpt_path ckpts/CRPS_LR1e2/epoch_1.pth.tar
+    --gpu_ids 0
     "
 python test.py ${ARGUMENTS}

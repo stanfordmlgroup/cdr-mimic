@@ -16,7 +16,7 @@ def get_optimizer(parameters, args):
                               weight_decay=args.weight_decay, dampening=args.sgd_dampening)
 
     elif args.optimizer == 'adam':
-        optimizer = optim.Adam(parameters, args.learning_rate,
+        optimizer = optim.Adam(parameters, args.lr,
                                betas=(args.adam_beta_1, args.adam_beta_2), weight_decay=args.weight_decay)
     else:
         raise ValueError('Unsupported optimizer: {}'.format(args.optimizer))

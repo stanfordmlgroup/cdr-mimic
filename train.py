@@ -20,7 +20,6 @@ def train(args):
         model_fn = models.__dict__[args.model]
         args.D_in = train_loader.D_in
         model = model_fn(**vars(args))
-        # model = nn.DataParallel(model, args.gpu_ids)
     model = model.to(args.device)
     model.train()
 
@@ -50,9 +49,7 @@ def train(args):
                 pred_params = model.forward(src.to(args.device))
                 ages = src[:, 1]
                 loss = loss_fn(pred_params, tgt.to(args.device), ages.to(args.device), args.use_intvl)
-
                 logger.log_iter(src, pred_params, tgt, loss)
-
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()

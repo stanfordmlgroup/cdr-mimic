@@ -13,22 +13,13 @@ class SimpleNN(nn.Module):
         # self.model.apply(self.init_weights)
 
         self.model = nn.Sequential(
-            # nn.Linear(D_in, 16),
             nn.Linear(self.num_demographics + self.embedding_dim, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 128),
-            nn.Tanh(),
-            nn.Linear(128, 2),
+            nn.SELU(),
+            nn.Linear(128, 64),
+            nn.SELU(),
+            nn.Linear(64, 64),
+            nn.SELU(),
+            nn.Linear(64, 2),
         )
 
         self.embed = nn.Embedding(self.vocab_size, self.embedding_dim)

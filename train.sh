@@ -1,16 +1,16 @@
 # DATADIR="/deep/group/med/mimic-iii/train/"
 # DATADIR="/Users/dmorina/mnt/cdr_mimic/"
 DATADIR="/deep/group/sharonz/cdr_mimic/data"
-NAME="CRPS_LR1e5"
-NUM_EPOCHS=200
+NAME="CRPS_LR1e3"
+NUM_EPOCHS=1
 LOSS_FN='crps'
 USE_INTVL='false'
 MODEL="SimpleNN"
-LR=1e-5
+LR=0.001
 NUM_WORKERS=0
 EPOCHS_PER_SAVE=1
-BATCH_SIZE=9000
-GPU_ID=3
+BATCH_SIZE=50
+GPU_ID=0
 
 ARGUMENTS="--data_dir $DATADIR 
 		   --name $NAME 
@@ -23,6 +23,7 @@ ARGUMENTS="--data_dir $DATADIR
            --epochs_per_save $EPOCHS_PER_SAVE 
            --num_workers $NUM_WORKERS 
            --gpu_ids $GPU_ID 
+           --optimizer adam
            --verbose"
 
 python train.py ${ARGUMENTS}
