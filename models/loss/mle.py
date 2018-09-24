@@ -53,15 +53,15 @@ class MLE(nn.Module):
                 dead_loss = - pred.log_prob(tte + self.eps)
                 incr_loss = is_alive * alive_loss + (1 - is_alive) * dead_loss
 
-                # Debugging numerical instability
-                if torch.isnan(incr_loss) or incr_loss == float('inf'):
-                    print("!!!!ERROR, tgts", tgts)
-                    if is_alive:
-                        print("nan alive; pred cdf", pred.cdf(tte), "; pred", pred, "; log inner", 1 - pred.cdf(tte) + self.eps, "; log", (1 - pred.cdf(tte) + self.eps).log())
-                    else:
-                        print("nan dead; pred log_prob", pred.log_prob(tte + self.eps), "; tte + eps", tte + self.eps, "; mu s.exp()", mu, s.exp())
-                    print("pred params: mu, s", mu, s)
-                    pdb.set_trace()
+            # Debugging numerical instability
+            if torch.isnan(incr_loss) or incr_loss == float('inf'):
+                print("!!!!ERROR, tgts", tgts)
+                if is_alive:
+                    print("nan alive; pred cdf", pred.cdf(tte), "; pred", pred, "; log inner", 1 - pred.cdf(tte) + self.eps, "; log", (1 - pred.cdf(tte) + self.eps).log())
+                else:
+                    print("nan dead; pred log_prob", pred.log_prob(tte + self.eps), "; tte + eps", tte + self.eps, "; mu s.exp()", mu, s.exp())
+                print("pred params: mu, s", mu, s)
+                pdb.set_trace()
 
             cum_loss += incr_loss
     

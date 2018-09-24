@@ -69,6 +69,10 @@ class CRPS(nn.Module):
             max_tte = self.age_max - age
             incr_loss = self.CRPS_surv_norm(mu, s.exp(), tte, is_alive, max_tte, use_intvl)
 
+            # Debugging numerical instability
+            if torch.isnan(incr_loss) or incr_loss == float('inf'):
+                print("!!!!ERROR, tgts", tgts)
+                pdb.set_trace()
             cum_loss += incr_loss
 
         return cum_loss / tgts.shape[0]
