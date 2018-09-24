@@ -6,14 +6,14 @@ NUM_EPOCHS=1
 LOSS_FN='crps'
 USE_INTVL='true'
 MODEL="SimpleNN"
-LR=1e2
+LR=1e-2
 NUM_WORKERS=0
 EPOCHS_PER_SAVE=1
 BATCH_SIZE=50
-GPU_ID=3
+GPU_ID=0
 
 ARGUMENTS="--data_dir $DATADIR 
-	   --name $NAME 
+	         --name $NAME 
            --num_epochs $NUM_EPOCHS 
            --loss_fn $LOSS_FN
            --model $MODEL 

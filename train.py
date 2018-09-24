@@ -49,6 +49,7 @@ def train(args):
                 pred_params = model.forward(src.to(args.device))
                 ages = src[:, 1]
                 loss = loss_fn(pred_params, tgt.to(args.device), ages.to(args.device), args.use_intvl)
+                #loss = loss_fn(pred_params, tgt.to(args.device), src.to(args.device), args.use_intvl)
                 logger.log_iter(src, pred_params, tgt, loss)
                 optimizer.zero_grad()
                 loss.backward()

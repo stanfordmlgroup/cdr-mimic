@@ -57,21 +57,29 @@ class CRPS(nn.Module):
         return crps
 
     def forward(self, pred_params, tgts, ages, use_intvl):
+    #def forward(self, pred_params, tgts, srcs, use_intvl):
 
         cum_loss = 0
 
         for pred_param, tgt, age in zip(pred_params, tgts, ages):
+        #for i, (pred_param, tgt, src) in enumerate(zip(pred_params, tgts, srcs)):
+
             mu, s = pred_param[0], pred_param[1]
+            #print(mu, s)
+            # if mu < 0:
+            #     print(src, tgt)
+            #     pdb.set_trace()
             pred = torch.distributions.LogNormal(mu, s.exp())
             tte, is_alive = tgt[0], tgt[1]
             tte = tte.cuda()
+            #age = src[1]
             age = age.cuda()
             max_tte = self.age_max - age
             incr_loss = self.CRPS_surv_norm(mu, s.exp(), tte, is_alive, max_tte, use_intvl)
 
             # Debugging numerical instability
             if torch.isnan(incr_loss) or incr_loss == float('inf'):
-                print("!!!!ERROR, tgts", tgts)
+                #print("!!!!ERROR, tgts", tgts)
                 pdb.set_trace()
             cum_loss += incr_loss
 
