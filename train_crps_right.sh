@@ -1,19 +1,17 @@
-# DATADIR="/deep/group/med/mimic-iii/train/"
-# DATADIR="/Users/dmorina/mnt/cdr_mimic/"
 DATADIR="/deep/group/sharonz/cdr_mimic/data"
-NAME="CRPS_INTVL_LR1e2"
-NUM_EPOCHS=1
+NAME="CRPS_RIGHT"
+NUM_EPOCHS=5
 LOSS_FN='crps'
 USE_INTVL='true'
 MODEL="SimpleNN"
-LR=1e-2
+LR=1e-3
 NUM_WORKERS=0
 EPOCHS_PER_SAVE=1
 BATCH_SIZE=50
 GPU_ID=0
 
 ARGUMENTS="--data_dir $DATADIR 
-	         --name $NAME 
+	   --name $NAME 
            --num_epochs $NUM_EPOCHS 
            --loss_fn $LOSS_FN
            --model $MODEL 
