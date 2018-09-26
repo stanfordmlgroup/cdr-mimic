@@ -42,11 +42,13 @@ class MLE(nn.Module):
             if use_intvl:
                 age = age.cuda()
                 max_tte = self.age_max - age
-                incr_loss = -self.log_intervalmass(mu, s.exp(), tte, max_tte)
-                if is_alive and incr_loss < -self.eps and int(incr_loss) != 0:
-                    print('Error: negative loss when patient is alive.', incr_loss)
-                    #pdb.set_trace()
-                    incr_loss = self.debug(mu, s.exp(), tte, max_tte)
+                alive_loss = -self.log_intervalmass(mu, s.exp(), tte, max_tte)
+                dead_loss = -pred.log_prob(tte + self.eps)
+                incr_loss = is_alive * alive_loss + (1 - is_alive) * dead_loss
+                #if is_alive and incr_loss < -self.eps and int(incr_loss) != 0:
+                #    print('Error: negative loss when patient is alive.', incr_loss)
+                #    #pdb.set_trace()
+                #    incr_loss = self.debug(mu, s.exp(), tte, max_tte)
 
             else:
                 alive_loss = -((1 - pred.cdf(tte) + self.eps).log())
