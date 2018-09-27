@@ -1,6 +1,6 @@
 DATADIR="/deep/group/sharonz/cdr_mimic/data"
 NAME="MLE_RIGHT"
-NUM_EPOCHS=5
+NUM_EPOCHS=50
 LOSS_FN='mle'
 USE_INTVL='false'
 MODEL="SimpleNN"

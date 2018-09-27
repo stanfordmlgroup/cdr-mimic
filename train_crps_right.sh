@@ -1,6 +1,6 @@
 DATADIR="/deep/group/sharonz/cdr_mimic/data"
 NAME="CRPS_RIGHT"
-NUM_EPOCHS=5
+NUM_EPOCHS=50
 LOSS_FN='crps'
 USE_INTVL='true'
 MODEL="SimpleNN"
@@ -8,7 +8,7 @@ LR=1e-3
 NUM_WORKERS=0
 EPOCHS_PER_SAVE=1
 BATCH_SIZE=50
-GPU_ID=0
+GPU_ID=2
 
 ARGUMENTS="--data_dir $DATADIR 
 	   --name $NAME 
