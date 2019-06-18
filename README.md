@@ -1,3 +1,1 @@
-# AI for Healthcare: Summer 18, CDR MIMIC
-
-Extending CRPS on MIMIC Dataset
+# Official Repository for Countdown Regression on the MIMIC-III Dataset
